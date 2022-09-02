@@ -16,6 +16,10 @@ public class Brewery {
         this.breweryHours = breweryHours;
     }
 
+    public Brewery(){
+
+    }
+
     public long getBreweryId() {
         return breweryId;
     }
