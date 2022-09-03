@@ -5,18 +5,24 @@ import java.util.Map;
 public class Brewery {
     private long breweryId;
     private String breweryName;
-    private String breweryAddress;
+    private String breweryStreet;
+    private String breweryCity;
+    private String breweryState;
+    private String breweryPostCode;
     private List<Beer> beerList;
     private Map<Integer, String> breweryHours;
 
-    public Brewery(String breweryName, String breweryAddress, List<Beer> beerList, Map<Integer, String> breweryHours) {
+    public Brewery(String breweryName, String breweryStreet, String breweryCity, String breweryState, String breweryPostCode, List<Beer> beerList, Map<Integer, String> breweryHours) {
         this.breweryName = breweryName;
-        this.breweryAddress = breweryAddress;
+        this.breweryStreet = breweryStreet;
+        this.breweryCity = breweryCity;
+        this.breweryState = breweryState;
+        this.breweryPostCode = breweryPostCode;
         this.beerList = beerList;
         this.breweryHours = breweryHours;
     }
 
-    public Brewery(){
+    public Brewery() {
 
     }
 
@@ -36,12 +42,36 @@ public class Brewery {
         this.breweryName = breweryName;
     }
 
-    public String getBreweryAddress() {
-        return breweryAddress;
+    public String getBreweryStreet() {
+        return breweryStreet;
     }
 
-    public void setBreweryAddress(String breweryAddress) {
-        this.breweryAddress = breweryAddress;
+    public void setBreweryStreet(String breweryStreet) {
+        this.breweryStreet = breweryStreet;
+    }
+
+    public String getBreweryCity() {
+        return breweryCity;
+    }
+
+    public void setBreweryCity(String breweryCity) {
+        this.breweryCity = breweryCity;
+    }
+
+    public String getBreweryState() {
+        return breweryState;
+    }
+
+    public void setBreweryState(String breweryState) {
+        this.breweryState = breweryState;
+    }
+
+    public String getBreweryPostCode() {
+        return breweryPostCode;
+    }
+
+    public void setBreweryPostCode(String breweryPostCode) {
+        this.breweryPostCode = breweryPostCode;
     }
 
     public List<Beer> getBeerList() {

@@ -14,7 +14,7 @@ public interface BreweryDao {
 
     Brewery getBreweryByName(String breweryName) throws Exception;
 
-    boolean create(String name, String Address, List<Beer> beers, Map<Integer, String> breweryHours);
+    boolean create(String name, String street, String city, String state, String postCode, Map<Integer, String> breweryHours);
 
     void updateHours(Map<Integer, String> newHours);
 

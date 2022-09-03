@@ -1,12 +1,13 @@
 package com.techelevator.model;
 
 public class Beer {
-    private long beerId;
+    private Long beerId;
     private String beerName;
     private double beerABV;
     private String beerType;
     private String beerDescription;
     private String beerImage;
+    private Long brewery;
 
     public Beer(String beerName, double beerABV, String beerType, String beerDescription, String beerImage) {
         this.beerName = beerName;
@@ -15,12 +16,23 @@ public class Beer {
         this.beerDescription = beerDescription;
         this.beerImage = beerImage;
     }
+    public Beer(){
 
-    public long getBeerId() {
+    }
+
+    public Long getBrewery() {
+        return brewery;
+    }
+
+    public void setBrewery(Long brewery) {
+        this.brewery = brewery;
+    }
+
+    public Long getBeerId() {
         return beerId;
     }
 
-    public void setBeerId(long beerId) {
+    public void setBeerId(Long beerId) {
         this.beerId = beerId;
     }
 
