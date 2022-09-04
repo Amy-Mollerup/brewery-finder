@@ -6,6 +6,7 @@ import Home from '../Home/Home'
 import {addToken, deleteUser} from '../../Redux/actionCreators'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
+import Hero from '../LandingPage/Hero'
 
 const mapStateToProps = state => {
     return {
@@ -32,6 +33,7 @@ class Main extends Component {
     render(){
         return(
             <div>
+                           
                 {this.props.token.token !== undefined ?
                         <div>
                             <Link to='/home'>Home | </Link>
