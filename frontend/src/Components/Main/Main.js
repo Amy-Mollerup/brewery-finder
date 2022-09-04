@@ -33,22 +33,14 @@ class Main extends Component {
     render(){
         return(
             <div>
-                           
-                {this.props.token.token !== undefined ?
-                        <div>
-                            <Link to='/home'>Home | </Link>
-                            <Link to='/login' onClick={this.handleLogout}>logout</Link> 
-                            <Redirect to='/home'/>
-
-                        </div>  
-                    : 
-                        <Link to='/login'>Home | </Link>
-                }
+                <Hero />          
+           
                 <Switch>
+                    <Route path='/landingPage'component={() => <Hero/>}/>
                     <Route path='/login' component={() => <Login/>}/>
                     <Route path='/register'component={() => <Register/>}/>
                     <Route path='/home' component={this.props.token.token !== undefined ? () => <Home/> : null}/>
-                    <Redirect to='/login'/>
+                    <Redirect to='/ladingPage'/>
                 </Switch>
             </div>
         )
@@ -56,3 +48,30 @@ class Main extends Component {
 } 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+
+/* 
+render(){
+    return(
+        <div>
+                       
+            {this.props.token.token !== undefined ?
+                    <div>
+                        <Link to='/home'>Home | </Link>
+                        <Link to='/login' onClick={this.handleLogout}>logout</Link> 
+                        <Redirect to='/home'/>
+
+                    </div>  
+                : 
+                    <Link to='/login'>Home | </Link>
+            }
+            <Switch>
+                <Route path='/landingPage'component={() => <Hero/>}/>
+                <Route path='/login' component={() => <Login/>}/>
+                <Route path='/register'component={() => <Register/>}/>
+                <Route path='/home' component={this.props.token.token !== undefined ? () => <Home/> : null}/>
+                <Redirect to='/login'/>
+            </Switch>
+        </div>
+    )
+}
+}  */

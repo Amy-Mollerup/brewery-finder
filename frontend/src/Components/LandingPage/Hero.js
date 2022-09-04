@@ -1,10 +1,11 @@
 import { Button} from 'reactstrap';
-import { useNavigate } from "react-router-dom";
+import {Switch, Route, Redirect, Link} from 'react-router-dom'
 import Footer from '../Footer/Footer';
 import LandingNav from './LandingNav';
 import './HeroStyle.css';
 import videoBg from '../assets/pexels-cottonbro-5538282.mp4'
 import Login from '../Login/Login';
+import Register from '../Register/Register';
 const Hero = () => {
  
    
@@ -13,7 +14,7 @@ const Hero = () => {
 
 <video src= {videoBg} autoPlay loop muted/>
 <LandingNav/>
-<header  text-align= "center" >
+<header  text-align= "center"  >
     <h4>FINDING A BREWERY FINDER! </h4>
     <h2>easy way to discover </h2>
     <h5> Simply join the journey and then receive a list of local breweries. </h5>
@@ -24,6 +25,12 @@ const Hero = () => {
     By using the Brewery Finder, you'll be able to understand and enjoy the many wonders of 
     craft beer.
     </p>
+    {/*     <Switch>
+                    <Route path='/landingPage'component={() => <Hero/>}/>
+                    <Route path='/login' component={() => <Login/>}/>
+                    <Route path='/register'component={() => <Register/>}/>
+                  
+        </Switch> */}
     <button className = " btn " > Sing Up </button>
   <button className = " btn " >Login </button > 
  </header>
