@@ -334,3 +334,7 @@ section {
   -webkit-transform: skew(-10deg,2deg);
   transform: skew(-10deg,2deg);
 }
+
+footer{
+margin-top: 10rem;
+}
