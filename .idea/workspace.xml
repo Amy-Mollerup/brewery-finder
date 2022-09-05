@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="added database files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/database/brewery_hours.sql" beforeDir="false" afterPath="$PROJECT_DIR$/java/database/brewery_hours.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BreweryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/model/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/model/Brewery.java" afterDir="false" />
+    <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="adjusted database and brewery model added jdbc for creating brewery and updating, getting, and setting hours">
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BeerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BeerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BreweryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BreweryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662358166683</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="adjusted database and brewery model added jdbc for creating brewery and updating, getting, and setting hours">
+      <created>1662368672755</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662368672755</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +119,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added database files" />
-    <option name="LAST_COMMIT_MESSAGE" value="added database files" />
+    <MESSAGE value="adjusted database and brewery model added jdbc for creating brewery and updating, getting, and setting hours" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjusted database and brewery model added jdbc for creating brewery and updating, getting, and setting hours" />
   </component>
 </project>
