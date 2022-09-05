@@ -10,9 +10,9 @@ public class Brewery {
     private String breweryState;
     private String breweryPostCode;
     private List<Beer> beerList;
-    private Map<Integer, String> breweryHours;
+    private Map<Integer, String[]> breweryHours;
 
-    public Brewery(String breweryName, String breweryStreet, String breweryCity, String breweryState, String breweryPostCode, List<Beer> beerList, Map<Integer, String> breweryHours) {
+    public Brewery(String breweryName, String breweryStreet, String breweryCity, String breweryState, String breweryPostCode, List<Beer> beerList, Map<Integer, String[]> breweryHours) {
         this.breweryName = breweryName;
         this.breweryStreet = breweryStreet;
         this.breweryCity = breweryCity;
@@ -82,11 +82,11 @@ public class Brewery {
         this.beerList = beerList;
     }
 
-    public Map<Integer, String> getBreweryHours() {
+    public Map<Integer, String[]> getBreweryHours() {
         return breweryHours;
     }
 
-    public void setBreweryHours(Map<Integer, String> breweryHours) {
+    public void setBreweryHours(Map<Integer, String[]> breweryHours) {
         this.breweryHours = breweryHours;
     }
 }

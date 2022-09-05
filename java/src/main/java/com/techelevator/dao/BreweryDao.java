@@ -10,12 +10,15 @@ public interface BreweryDao {
 
     List<Brewery> findAll();
 
-    Brewery getBreweryById(int breweryId);
+    Brewery getBreweryById(long breweryId);
 
     Brewery getBreweryByName(String breweryName) throws Exception;
 
-    boolean create(String name, String street, String city, String state, String postCode, Map<Integer, String> breweryHours);
+    boolean create(String name, String street, String city, String state, String postCode, Map<Integer, String[]> breweryHours);
 
-    void updateHours(Map<Integer, String> newHours);
+    Map<Integer, String[]> getHours(long breweryId);
 
+    void createHours(Long breweryId, Map<Integer, String[]> newHours);
+
+    void updateHours(Long breweryId, Map<Integer, String[]> newHours);
 }

@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/java/database/beer.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/database/breweries.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/database/breweries.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/database/breweries_data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/database/brewery_hours.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/final-capstone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/final-capstone.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="added database files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/database/create.sh" beforeDir="false" afterPath="$PROJECT_DIR$/java/database/create.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBeerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBeerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/database/brewery_hours.sql" beforeDir="false" afterPath="$PROJECT_DIR$/java/database/brewery_hours.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BreweryDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/model/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/model/Brewery.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +41,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PairProgramming/module-2-capstone" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -97,6 +91,14 @@
       <option name="presentableId" value="Default" />
       <updated>1661991768195</updated>
     </task>
+    <task id="LOCAL-00001" summary="added database files">
+      <created>1662358166683</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662358166683</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,5 +114,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added database files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added database files" />
   </component>
 </project>

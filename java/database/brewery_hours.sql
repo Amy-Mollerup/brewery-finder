@@ -6,8 +6,8 @@ CREATE TABLE IF NOT EXISTS public.brewery_hours
 (
     brewery_id integer NOT NULL,
     day_id integer NOT NULL,
-    open time without time zone,
-    close time without time zone,
+    open character varying,
+    close character varying,
     CONSTRAINT pk_brewery_day PRIMARY KEY (brewery_id, day_id)
 )
 
