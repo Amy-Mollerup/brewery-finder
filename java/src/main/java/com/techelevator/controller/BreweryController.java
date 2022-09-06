@@ -28,11 +28,11 @@ public class BreweryController {
         return brewery;
     }
 
-    @GetMapping(value = "breweries/{name}")
-    public Brewery getBreweryByName(String name) throws Exception {
-        Brewery brewery = breweryDao.getBreweryByName(name);
-        return brewery;
-    }
+//    @GetMapping(value = "breweries/{name}")
+//    public Brewery getBreweryByName(String name) throws Exception {
+//        Brewery brewery = breweryDao.getBreweryByName(name);
+//        return brewery;
+//    }
 
     @PostMapping(value = "/breweries")
     public Boolean createBrewery(@RequestBody Brewery brewery) {

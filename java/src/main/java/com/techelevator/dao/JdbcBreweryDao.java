@@ -36,7 +36,7 @@ public class JdbcBreweryDao implements BreweryDao{
 
     @Override
     public Brewery getBreweryById(long breweryId) {
-        String sql = "SELECT * FROM breweries WHERE brewery_id = ?";
+        String sql = "SELECT * FROM breweries WHERE id = ?";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, breweryId);
         if(results.next()) {
             Brewery brewery = mapRowToBrewery(results);
@@ -76,7 +76,7 @@ public class JdbcBreweryDao implements BreweryDao{
     @Override
     public Map<Integer, String[]> getHours(long breweryId) {
         String sql = "SELECT * FROM brewery_hours WHERE brewery_id = ?";
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, breweryId);
         Map<Integer, String[]> hours = new HashMap<>();
         while(results.next()){
             hours.put(results.getInt("day_id"), new String[]{results.getString("open"), results.getString("close")});
