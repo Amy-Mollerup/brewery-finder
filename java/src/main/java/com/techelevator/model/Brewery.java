@@ -9,22 +9,30 @@ public class Brewery {
     private String breweryCity;
     private String breweryState;
     private String breweryPostCode;
+    private String phoneNumber;
+    private String website;
     private List<Beer> beerList;
     private Map<Integer, String[]> breweryHours;
+    private Long brewer;
 
-    public Brewery(String breweryName, String breweryStreet, String breweryCity, String breweryState, String breweryPostCode, List<Beer> beerList, Map<Integer, String[]> breweryHours) {
+    public Brewery() {
+
+    }
+
+    public Brewery(long breweryId, String breweryName, String breweryStreet, String breweryCity, String breweryState, String breweryPostCode, String phoneNumber, String website, List<Beer> beerList, Map<Integer, String[]> breweryHours, Long brewer) {
+        this.breweryId = breweryId;
         this.breweryName = breweryName;
         this.breweryStreet = breweryStreet;
         this.breweryCity = breweryCity;
         this.breweryState = breweryState;
         this.breweryPostCode = breweryPostCode;
+        this.phoneNumber = phoneNumber;
+        this.website = website;
         this.beerList = beerList;
         this.breweryHours = breweryHours;
+        this.brewer = brewer;
     }
 
-    public Brewery() {
-
-    }
 
     public long getBreweryId() {
         return breweryId;
@@ -33,6 +41,22 @@ public class Brewery {
     public void setBreweryId(long breweryId) {
         this.breweryId = breweryId;
     }
+
+    public Long getBrewer() {
+        return brewer;
+    }
+
+    public void setBrewer(Long brewer) {
+        this.brewer = brewer;
+    }
+
+    public String getWebsite() {return website;}
+
+    public void setWebsite(String website) {this.website = website;}
+
+    public String getPhoneNumber() {return phoneNumber;}
+
+    public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;}
 
     public String getBreweryName() {
         return breweryName;

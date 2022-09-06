@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.BeerDao;
 import com.techelevator.model.Beer;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,5 +42,10 @@ public class BeerController {
                    beer.getBeerDescription(), beer.getBeerImage());
        }
        return beerAdded;
+    }
+
+    @DeleteMapping(value = "/beer/{id}")
+    public void deleteBeer(@PathVariable long id){
+        beerDao.deleteBeer(id);
     }
 }

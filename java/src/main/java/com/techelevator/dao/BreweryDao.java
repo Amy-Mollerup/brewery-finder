@@ -2,6 +2,7 @@ package com.techelevator.dao;
 
 import com.techelevator.model.Beer;
 import com.techelevator.model.Brewery;
+import com.techelevator.model.User;
 
 import java.util.List;
 import java.util.Map;
@@ -14,11 +15,14 @@ public interface BreweryDao {
 
     Brewery getBreweryByName(String breweryName) throws Exception;
 
-    boolean create(String name, String street, String city, String state, String postCode, Map<Integer, String[]> breweryHours);
+    boolean create(String name, String street, String city, String state, String postCode, String phone, String website, Long brewer, Map<Integer, String[]> breweryHours);
 
     Map<Integer, String[]> getHours(long breweryId);
 
-    void createHours(Long breweryId, Map<Integer, String[]> newHours);
+    boolean createHours(Long breweryId, Map<Integer, String[]> newHours);
 
-    void updateHours(Long breweryId, Map<Integer, String[]> newHours);
+    boolean updateHours(Long breweryId, Map<Integer, String[]> newHours);
+
+    boolean updateBrewery(Brewery brewery);
+
 }

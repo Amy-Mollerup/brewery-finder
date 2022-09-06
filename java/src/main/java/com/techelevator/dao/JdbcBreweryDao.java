@@ -25,9 +25,10 @@ public class JdbcBreweryDao implements BreweryDao{
         String sql = "select * from breweries";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+        results.beforeFirst();
         while(results.next()) {
             Brewery brewery = mapRowToBrewery(results);
-            brewery.setBreweryHours(getHours(brewery.getBreweryId()));
+             brewery.setBreweryHours(getHours(brewery.getBreweryId()));
             breweries.add(brewery);
         }
 
@@ -38,19 +39,21 @@ public class JdbcBreweryDao implements BreweryDao{
     public Brewery getBreweryById(long breweryId) {
         String sql = "SELECT * FROM breweries WHERE id = ?";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, breweryId);
-        if(results.next()) {
-            Brewery brewery = mapRowToBrewery(results);
+        Brewery brewery = new Brewery();
+        if (results.next()) {
+            brewery = mapRowToBrewery(results);
             brewery.setBreweryHours(getHours(breweryId));
-            return brewery;
-        } else {
-            throw new RuntimeException("breweryId "+breweryId+" was not found.");
-        }
+         }
+        return brewery;
     }
 
     @Override
     public Brewery getBreweryByName(String breweryName) throws Exception {
         for (Brewery brewery : this.findAll()) {
             if( brewery.getBreweryName().toLowerCase().equals(breweryName.toLowerCase())) {
+                if(brewery.getBrewer() == 0){
+                    brewery.setBrewer(null);
+                }
                 return brewery;
             }
         }
@@ -58,14 +61,22 @@ public class JdbcBreweryDao implements BreweryDao{
     }
 
     @Override
-    public boolean create(String name, String street, String city, String state, String postCode, Map<Integer, String[]> breweryHours) {
+    public boolean create(String name, String street, String city, String state, String postCode, String phone, String website, Long brewer, Map<Integer, String[]> breweryHours) {
         boolean breweryCreated = false;
 
-        String sql = "insert into breweries (name, street, city, state, post_code,) values(?,?,?,?,?)";
+        String sql = "insert into breweries (name, street, city, state, post_code, phone, website, brewer) values (?,?,?,?,?,?,?,?)";
         try {
-            jdbcTemplate.update(sql, name, street, city, state, postCode);
-            sql = "select from breweries where name = ? AND street = ? AND city = ? AND state = ?";
-            createHours(mapRowToBrewery(jdbcTemplate.queryForRowSet(sql,name,street,city ,state)).getBreweryId(), breweryHours);
+            jdbcTemplate.update(sql, name, street, city, state, postCode, phone, website, brewer);
+            String newSql = "select * from breweries where name = ? AND street = ? AND city = ? AND state = ?";
+            SqlRowSet results = jdbcTemplate.queryForRowSet(newSql, name,street,city,state);
+            long id = 0;
+            if (results.next()){
+                Brewery brewery = mapRowToBrewery(results);
+                id = brewery.getBreweryId();
+            }
+            if(!createHours(id, breweryHours)){
+                throw new Exception();
+            }
             breweryCreated = true;
         }catch (Exception e){
             breweryCreated = false;
@@ -85,47 +96,90 @@ public class JdbcBreweryDao implements BreweryDao{
     }
 
     @Override
-    public void createHours(Long breweryId, Map<Integer, String[]> newHours) {
-        String[] sunday = newHours.get(0);
-        String[] monday = newHours.get(1);
-        String[] tuesday = newHours.get(2);
-        String[] wednesday = newHours.get(3);
-        String[] thursday = newHours.get(4);
-        String[] friday = newHours.get(5);
-        String[] saturday = newHours.get(6);
+    public boolean createHours(Long breweryId, Map<Integer, String[]> newHours) {
 
-        String sql = "BEGIN TRANSACTION; " +
+        String[] sunday = {"",""};
+        String[] monday = {"",""};
+        String[] tuesday = {"",""};
+        String[] wednesday = {"",""};
+        String[] thursday = {"",""};
+        String[] friday = {"",""};
+        String[] saturday = {"",""};
+        if(!newHours.isEmpty()) {
+            sunday = newHours.get(0);
+            monday = newHours.get(1);
+            tuesday = newHours.get(2);
+            wednesday = newHours.get(3);
+            thursday = newHours.get(4);
+            friday = newHours.get(5);
+            saturday = newHours.get(6);
+        }
+
+        String sql =
                 "INSERT INTO brewery_hours (brewery_id, day_id, open, close) " +
                 "VALUES" +
-                "(?, 0, ?, ?), (?, 1, ?, ?), (?, 2, ?, ?), (?, 3, ?, ?), (?, 4, ?, ?), (?, 5, ?, ?), (?, 6, ?, ?) " +
-                "COMMIT TRANSACTION";
+                "(?, 0, ?, ?), (?, 1, ?, ?), (?, 2, ?, ?), (?, 3, ?, ?), (?, 4, ?, ?), (?, 5, ?, ?), (?, 6, ?, ?)";
 
-        jdbcTemplate.update(sql, breweryId, sunday[0], sunday[1], breweryId, monday[0], monday[1], breweryId, tuesday[0], tuesday[2],
-                breweryId, wednesday[0], wednesday[1], breweryId, thursday[0], thursday[1], breweryId, friday[0], friday[1], breweryId, saturday[0], saturday[1]);
+        try{
+            jdbcTemplate.update(sql, breweryId, sunday[0], sunday[1], breweryId, monday[0], monday[1], breweryId, tuesday[0], tuesday[1],
+                    breweryId, wednesday[0], wednesday[1], breweryId, thursday[0], thursday[1], breweryId, friday[0], friday[1], breweryId, saturday[0], saturday[1]);
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
     }
 
     @Override
-    public void updateHours(Long breweryId, Map<Integer, String[]> newHours) {
-        String[] sunday = newHours.get(0);
-        String[] monday = newHours.get(1);
-        String[] tuesday = newHours.get(2);
-        String[] wednesday = newHours.get(3);
-        String[] thursday = newHours.get(4);
-        String[] friday = newHours.get(5);
-        String[] saturday = newHours.get(6);
+    public boolean updateHours(Long breweryId, Map<Integer, String[]> newHours) {
+        try{
+            String[] sunday = newHours.get(0);
+            String[] monday = newHours.get(1);
+            String[] tuesday = newHours.get(2);
+            String[] wednesday = newHours.get(3);
+            String[] thursday = newHours.get(4);
+            String[] friday = newHours.get(5);
+            String[] saturday = newHours.get(6);
 
-        String sql = "BEGIN TRANSACTION; " +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 0" +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 1" +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 2" +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 3" +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 4" +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 5" +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 6" +
+            String sql = "BEGIN TRANSACTION; " +
+                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 0;" +
+                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 1;" +
+                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 2;" +
+                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 3;" +
+                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 4;" +
+                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 5;" +
+                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 6;" +
                     "COMMIT TRANSACTION";
 
-        jdbcTemplate.update(sql, sunday[0], sunday[1], breweryId, monday[0], monday[1], breweryId, tuesday[0], tuesday[2], breweryId,
-                wednesday[0], wednesday[1], breweryId, thursday[0], thursday[1], breweryId, friday[0], friday[1], breweryId, saturday[0], saturday[1], breweryId);
+
+            jdbcTemplate.update(sql, sunday[0], sunday[1], breweryId, monday[0], monday[1], breweryId, tuesday[0], tuesday[1], breweryId,
+                    wednesday[0], wednesday[1], breweryId, thursday[0], thursday[1], breweryId, friday[0], friday[1], breweryId, saturday[0], saturday[1], breweryId);
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+
+    @Override
+    public boolean updateBrewery(Brewery brewery) {
+
+        String sql = "UPDATE breweries " +
+                    "SET name = ?, street = ?, city = ?, state = ?, post_code = ?, phone = ?, website = ?, brewer = ?" +
+                    "WHERE id = ?";
+        try {
+            Long brewer = null;
+            if (brewery.getBrewer()==0){
+                brewery.setBrewer(null);
+            }
+            jdbcTemplate.update(sql, brewery.getBreweryName(), brewery.getBreweryStreet(), brewery.getBreweryCity(),
+                    brewery.getBreweryState(), brewery.getBreweryPostCode(),brewery.getPhoneNumber(), brewery.getWebsite(), brewery.getBrewer(), brewery.getBreweryId());
+            updateHours(brewery.getBreweryId(), brewery.getBreweryHours());
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
     }
 
     private Brewery mapRowToBrewery(SqlRowSet rs) {
@@ -136,6 +190,14 @@ public class JdbcBreweryDao implements BreweryDao{
         brewery.setBreweryCity(rs.getString("city"));
         brewery.setBreweryState(rs.getString("state"));
         brewery.setBreweryPostCode(rs.getString("post_code"));
+        brewery.setPhoneNumber(rs.getString("phone"));
+        brewery.setWebsite(rs.getString("website"));
+        if (rs.getLong("brewer") == 0){
+            brewery.setBrewer(null);
+        }else{
+            brewery.setBrewer(rs.getLong("brewer"));
+        }
+
         return brewery;
     }
 

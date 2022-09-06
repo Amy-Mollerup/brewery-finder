@@ -28,26 +28,29 @@ public class BreweryController {
         return brewery;
     }
 
-//    @GetMapping(value = "breweries/{name}")
-//    public Brewery getBreweryByName(String name) throws Exception {
-//        Brewery brewery = breweryDao.getBreweryByName(name);
-//        return brewery;
-//    }
+    @GetMapping(value = "/breweries/named/{name}")
+    public Brewery getBreweryByName(String name) throws Exception {
+        Brewery brewery = breweryDao.getBreweryByName(name);
+        return brewery;
+    }
 
     @PostMapping(value = "/breweries")
     public Boolean createBrewery(@RequestBody Brewery brewery) {
         return breweryDao.create(brewery.getBreweryName(), brewery.getBreweryStreet(), brewery.getBreweryCity(), brewery.getBreweryState(),
-                brewery.getBreweryPostCode(), brewery.getBreweryHours());
+                brewery.getBreweryPostCode(), brewery.getPhoneNumber(), brewery.getWebsite(), brewery.getBrewer(), brewery.getBreweryHours());
+    }
+//error
+    @PutMapping(value = "/breweries/{id}")
+    public Boolean updateBrewery(@RequestBody Brewery brewery){
+        return breweryDao.updateBrewery(brewery);
     }
 
     @PutMapping(value = "/breweries/{id}/hours")
     public void updateHours(@PathVariable long id, @RequestBody Map<Integer, String[]> newHours){
-        if (breweryDao.getBreweryById(id).getBreweryHours().isEmpty()){
+        if (!breweryDao.updateHours(id,newHours)){
             breweryDao.createHours(id, newHours);
         }
-        else {
-            breweryDao.updateHours(id,newHours);
-        }
+
     }
 
 }
