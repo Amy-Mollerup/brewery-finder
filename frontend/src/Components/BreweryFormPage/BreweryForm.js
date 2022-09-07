@@ -4,10 +4,10 @@ import "./BreweryFormStyle.css";
 
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import BusinessHours from "../BusinessHours/BusinessHours";
-import BrewerInformation from "../BrewerInformation/BrewerInformation";
-import FileUploader from "../FileUploader/FileUploader";
-import BreweryProfileDetail from "../BreweryProfileDetail/BreweryProfileDetail";
+import BusinessHours from "../BusinessHoursComponent/BusinessHours";
+import BrewerInformation from "../BrewerInformationComponent/BrewerInformation";
+import FileUploader from "../FileUploaderComponent/FileUploader";
+import BreweryProfileDetail from "../BreweryProfileDetailComponent/BreweryProfileDetail";
 
 export default function BreweryForm() {
   return (
