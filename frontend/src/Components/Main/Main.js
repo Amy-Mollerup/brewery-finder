@@ -11,6 +11,7 @@ import Hero from '../LandingPage/Hero'
 import BrewerDashboard from '../BrewerDashboardPage/BrewerDashboard'
 import BreweryForm from '../BreweryFormPage/BreweryForm'
 import BeerDetails from '../BeerDetailPage/BeerDetail'
+import BeerList from '../BeerListPage/BeerList'
 
 const mapStateToProps = state => {
     return {
@@ -37,7 +38,7 @@ class Main extends Component {
     render(){
         return(
             <div>
-                 <Hero />      
+                 <BeerDetails />      
            
                 <Switch>
                     <Route path='/landingPage'component={() => <Hero/>}/>
@@ -46,6 +47,8 @@ class Main extends Component {
                     <Route path='/home' component={this.props.token.token !== undefined ? () => <Home/> : null}/>
                     <Route path='/beerDetails' component={() => <BeerDetails/>}/>
                     <Route path='/brewery' component={() => <BreweryForm />}/>
+                    <Route path='/beerList' component={() => <BeerList />}/>
+                    <Route path='/breweryDash' component={() => <BrewerDashboard/>}/>
                     <Redirect to='/ladingPage'/>
                 </Switch>
             </div>

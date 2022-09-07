@@ -68,7 +68,7 @@ class FileUploader extends Component {
   render() {
     return (
       <div className="uploadPic--section">
-        <h5>Upload Brewer Picture!</h5>
+        <h5>Upload a Picture!</h5>
         <div>
           <input type="file" onChange={this.onFileChange} />
           <button onClick={this.onFileUpload}>Upload!</button>
