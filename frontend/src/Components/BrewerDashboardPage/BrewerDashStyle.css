@@ -60,3 +60,23 @@
     margin-top: 0.8rem;
     margin-left: 0.4rem;
 }
+
+.form-control-plaintext{
+    width: 100%;
+    padding: 0.1px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    transition: all 0.5s ease;
+  /*   opacity: 0.5; */
+}
+
+Label{
+font-size: 14px;
+
+}
+

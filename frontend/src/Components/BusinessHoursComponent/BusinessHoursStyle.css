@@ -1,0 +1,31 @@
+.businessHour--section {
+margin-top: 4.1rem;
+margin-left: 1rem;
+color: white;
+}
+
+.businessHour--section span{
+ 
+    margin-bottom: 9.1rem;
+ color: white;
+    }
+
+.businessHour--list  h5{
+    text-align: justify;
+    font-size: 14px;
+}
+
+.businessHour--list{
+margin-top: 0.1rem;
+}
+
+.businessHour--list > time{
+    margin-top: 1.1rem;
+    }
+
+.businessHour--section > p {
+    text-align: left ;
+    font-size: 5rem;
+    }
+    
+    

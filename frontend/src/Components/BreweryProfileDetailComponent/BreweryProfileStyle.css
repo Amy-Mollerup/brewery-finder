@@ -1,0 +1,22 @@
+
+.breweryInfo--profile {
+    margin-top: 0.2rem;
+    margin-left: 1rem;
+  }
+  
+  .breweryName--contain > span {
+    display: flex;
+    margin-left: 3.5rem;
+    color: azure;
+    width: 150px ;
+  }
+  
+  .breweryInfo--profile > img {
+    display: inline-flex;
+    height: 65px;
+    border-radius: 50%;
+    display: inline-block;
+    border: solid;
+    margin-right: 10px;
+    color: white;
+  }

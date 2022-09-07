@@ -8,7 +8,10 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 
 import Hero from '../LandingPage/Hero'
-import BrewerDashboard from '../Brewer-Dashboard/BrewerDashboard'
+import BrewerDashboard from '../BrewerDashboardPage/BrewerDashboard'
+import BreweryForm from '../BreweryFormPage/BreweryForm'
+import BeerDetails from '../BeerDetailPage/BeerDetail'
+import BeerList from '../BeerListPage/BeerList'
 
 const mapStateToProps = state => {
     return {
@@ -35,13 +38,17 @@ class Main extends Component {
     render(){
         return(
             <div>
-                 <BrewerDashboard />      
+                 <BeerDetails />      
            
                 <Switch>
                     <Route path='/landingPage'component={() => <Hero/>}/>
                     <Route path='/login' component={() => <Login/>}/>
-                    <Route path='/register'component={() => <Register/>}/>
+                    <Route path='/register'component={() => <Register/>}/>\
                     <Route path='/home' component={this.props.token.token !== undefined ? () => <Home/> : null}/>
+                    <Route path='/beerDetails' component={() => <BeerDetails/>}/>
+                    <Route path='/brewery' component={() => <BreweryForm />}/>
+                    <Route path='/beerList' component={() => <BeerList />}/>
+                    <Route path='/breweryDash' component={() => <BrewerDashboard/>}/>
                     <Redirect to='/ladingPage'/>
                 </Switch>
             </div>
