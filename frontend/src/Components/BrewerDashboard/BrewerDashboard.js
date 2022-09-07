@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
+import {Row, Col } from "reactstrap";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./BrewerDashStyle.css";

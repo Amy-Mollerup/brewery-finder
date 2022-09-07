@@ -8,7 +8,8 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 
 import Hero from '../LandingPage/Hero'
-import BrewerDashboard from '../Brewer-Dashboard/BrewerDashboard'
+import BrewerDashboard from '../BrewerDashboard/BrewerDashboard'
+import BreweryForm from '../BreweryForm/BreweryForm'
 
 const mapStateToProps = state => {
     return {
@@ -35,7 +36,7 @@ class Main extends Component {
     render(){
         return(
             <div>
-                 <BrewerDashboard />      
+                 <BreweryForm />      
            
                 <Switch>
                     <Route path='/landingPage'component={() => <Hero/>}/>
