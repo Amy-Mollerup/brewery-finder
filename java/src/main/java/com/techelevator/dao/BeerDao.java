@@ -15,6 +15,8 @@ public interface BeerDao {
 
     boolean createBeerWithoutBrewery(String name, double abv, String type, String description, String image);
 
+    boolean updateBeer(Beer beer);
+
     void deleteBeer(Long beerId);
 
     boolean reviewBeer(Long beerId, String review, Integer rating);

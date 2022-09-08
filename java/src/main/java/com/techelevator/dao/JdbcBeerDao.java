@@ -37,10 +37,14 @@ public class JdbcBeerDao implements BeerDao{
     @Override
     public Beer getBeerByName(String beerName) {
         String sql = "select * from beers where name = ?";
+        Beer beer = new Beer();
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, beerName);
-        Beer beer = mapRowToBeer(results);
-        beer.setReviews(getReviews(beer.getBeerId()));
+        while (results.next()){
+            beer = mapRowToBeer(results);
+            beer.setReviews(getReviews(beer.getBeerId()));
+        }
+
         return beer;
     }
 
@@ -72,6 +76,23 @@ public class JdbcBeerDao implements BeerDao{
     }
 
     @Override
+    public boolean updateBeer(Beer beer) {
+        String sql = "update beers " +
+                    "set name = ?, abv = ?, type = ?, description = ?, image = ?, brewery = ? " +
+                    "where id = ?";
+
+        try {
+            jdbcTemplate.update(sql, beer.getBeerName(), beer.getBeerABV(), beer.getBeerType(), beer.getBeerDescription(),
+                    beer.getBeerImage(), beer.getBrewery(), beer.getBeerId());
+            return true;
+        }
+        catch (Exception e){
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
+
+    @Override
     public void deleteBeer(Long beerId) {
         String sql = "delete from beers where id = ?";
         jdbcTemplate.update(sql, beerId);
@@ -80,7 +101,7 @@ public class JdbcBeerDao implements BeerDao{
 
     @Override
     public boolean reviewBeer(Long beerId, String review, Integer rating) {
-        String sql = "insert into beer_review (beer_id, review, rating) values (?,?,?)";
+        String sql = "insert into beer_reviews (beer_id, review, rating) values (?,?,?)";
         try{
             jdbcTemplate.update(sql, beerId, review, rating);
             return true;
@@ -93,7 +114,7 @@ public class JdbcBeerDao implements BeerDao{
     @Override
     public List<Review> getReviews(Long beerId) {
         List<Review> reviews = new ArrayList<>();
-        String sql = "select * from beer_review where beer_id = ?";
+        String sql = "select * from beer_reviews where beer_id = ?";
         SqlRowSet rs = jdbcTemplate.queryForRowSet(sql, beerId);
         while (rs.next()){
             Review review = new Review();

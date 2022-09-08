@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.BeerDao;
 import com.techelevator.model.Beer;
+import com.techelevator.model.Review;
 import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,19 +18,24 @@ public class BeerController {
         this.beerDao = beerDao;
     }
 
-    @RequestMapping(value = "/{breweryId}/beers", method = RequestMethod.GET)
+    @GetMapping(value = "/{breweryId}/beers")
     public List<Beer> getBeerByBrewery(@PathVariable long breweryId) {
         List<Beer> beers = beerDao.listBeerByBrewery(breweryId);
         return beers;
     }
 
-    @RequestMapping(value = "/beer/{name}", method = RequestMethod.GET)
+    @GetMapping(value = "/beer/{name}")
     public Beer getBeer(@PathVariable String name){
         Beer beer = beerDao.getBeerByName(name);
         return beer;
     }
 
-    @RequestMapping(value = "/beer", method = RequestMethod.POST)
+    @GetMapping(value = "/beer/{id}/reviews")
+    public List<Review> getReviews(@PathVariable Long id){
+        return beerDao.getReviews(id);
+    }
+
+    @PostMapping(value = "/beer")
     public boolean addBeer(@RequestBody Beer beer){
         boolean beerAdded = false;
 
@@ -44,8 +50,20 @@ public class BeerController {
        return beerAdded;
     }
 
+    @PostMapping(value = "/beer/{id}/reviews")
+    public boolean reviewBeer(@PathVariable long id, @RequestBody Review review){
+        return beerDao.reviewBeer(id, review.getReview(), review.getRating());
+    }
+
+    @PutMapping(value = "/beer/{id}")
+    public boolean updateBeer(@PathVariable long id, @RequestBody Beer beer){
+        return beerDao.updateBeer(beer);
+    }
+
     @DeleteMapping(value = "/beer/{id}")
     public void deleteBeer(@PathVariable long id){
         beerDao.deleteBeer(id);
     }
+
+
 }
