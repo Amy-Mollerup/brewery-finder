@@ -1,6 +1,8 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Beer;
+import com.techelevator.model.Review;
+
 import java.util.List;
 
 public interface BeerDao {
@@ -14,5 +16,9 @@ public interface BeerDao {
     boolean createBeerWithoutBrewery(String name, double abv, String type, String description, String image);
 
     void deleteBeer(Long beerId);
+
+    boolean reviewBeer(Long beerId, String review, Integer rating);
+
+    List<Review> getReviews(Long beerId);
 
 }

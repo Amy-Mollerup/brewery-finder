@@ -39,7 +39,6 @@ public class BreweryController {
         return breweryDao.create(brewery.getBreweryName(), brewery.getBreweryStreet(), brewery.getBreweryCity(), brewery.getBreweryState(),
                 brewery.getBreweryPostCode(), brewery.getPhoneNumber(), brewery.getWebsite(), brewery.getBrewer(), brewery.getBreweryHours());
     }
-//error
     @PutMapping(value = "/breweries/{id}")
     public Boolean updateBrewery(@RequestBody Brewery brewery){
         return breweryDao.updateBrewery(brewery);

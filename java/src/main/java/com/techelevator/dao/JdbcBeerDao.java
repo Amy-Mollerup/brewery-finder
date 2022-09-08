@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Beer;
+import com.techelevator.model.Review;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
@@ -26,6 +27,7 @@ public class JdbcBeerDao implements BeerDao{
 
         while (results.next()){
             Beer beer = mapRowToBeer(results);
+            beer.setReviews(getReviews(beer.getBeerId()));
             beers.add(beer);
         }
 
@@ -38,6 +40,7 @@ public class JdbcBeerDao implements BeerDao{
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, beerName);
         Beer beer = mapRowToBeer(results);
+        beer.setReviews(getReviews(beer.getBeerId()));
         return beer;
     }
 
@@ -73,6 +76,34 @@ public class JdbcBeerDao implements BeerDao{
         String sql = "delete from beers where id = ?";
         jdbcTemplate.update(sql, beerId);
 
+    }
+
+    @Override
+    public boolean reviewBeer(Long beerId, String review, Integer rating) {
+        String sql = "insert into beer_review (beer_id, review, rating) values (?,?,?)";
+        try{
+            jdbcTemplate.update(sql, beerId, review, rating);
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+
+    @Override
+    public List<Review> getReviews(Long beerId) {
+        List<Review> reviews = new ArrayList<>();
+        String sql = "select * from beer_review where beer_id = ?";
+        SqlRowSet rs = jdbcTemplate.queryForRowSet(sql, beerId);
+        while (rs.next()){
+            Review review = new Review();
+            review.setId(rs.getLong("review_id"));
+            review.setReview(rs.getString("review"));
+            review.setRating(rs.getInt("rating"));
+
+            reviews.add(review);
+        }
+        return reviews;
     }
 
     private Beer mapRowToBeer(SqlRowSet rs) {

@@ -1,5 +1,7 @@
 package com.techelevator.model;
 
+import java.util.List;
+
 public class Beer {
     private Long beerId;
     private String beerName;
@@ -8,6 +10,7 @@ public class Beer {
     private String beerDescription;
     private String beerImage;
     private Long brewery;
+    private List<Review> reviews;
 
     public Beer(String beerName, double beerABV, String beerType, String beerDescription, String beerImage) {
         this.beerName = beerName;
@@ -18,18 +21,6 @@ public class Beer {
     }
     public Beer(){
 
-    }
-
-    public Long getBrewery() {
-        return brewery;
-    }
-
-    public void setBrewery(Long brewery) {
-        this.brewery = brewery;
-    }
-
-    public Long getBeerId() {
-        return beerId;
     }
 
     public void setBeerId(Long beerId) {
@@ -74,5 +65,24 @@ public class Beer {
 
     public void setBeerImage(String beerImage) {
         this.beerImage = beerImage;
+    }
+
+    public Long getBrewery() {
+        return brewery;
+    }
+
+    public void setBrewery(Long brewery) {
+        this.brewery = brewery;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+    public Long getBeerId() {
+        return beerId;
     }
 }

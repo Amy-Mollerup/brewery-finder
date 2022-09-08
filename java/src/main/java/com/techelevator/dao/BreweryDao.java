@@ -25,4 +25,6 @@ public interface BreweryDao {
 
     boolean updateBrewery(Brewery brewery);
 
+
+
 }
