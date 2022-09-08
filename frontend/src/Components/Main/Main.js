@@ -38,7 +38,7 @@ class Main extends Component {
     render(){
         return(
             <div>
-                 <BeerDetails />      
+                 <BeerList />      
            
                 <Switch>
                     <Route path='/landingPage'component={() => <Hero/>}/>

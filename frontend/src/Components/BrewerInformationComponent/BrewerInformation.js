@@ -20,7 +20,7 @@ export default function BrewerInformation() {
             <Input
               id="brewerId"
               name="brewer"
-              placeholder="Brewer or Company Name"
+              placeholder="Brewer Name"
               type="text"
               autoComplete="off"
               className="form-control-plaintext"

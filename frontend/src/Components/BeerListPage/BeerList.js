@@ -2,29 +2,24 @@ import React from "react";
 import {Row, Col, Button } from "reactstrap";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import BreweryProfileDetail from "../BreweryProfileDetailComponent/BreweryProfileDetail";
+import BrewerBeerList from "../BeerListComponent/BrewerBeerList";
 
 
 
 export default function BeerList() {
 return (
-    <>
-      <Header />
-
-      <Row xs="3">
-        <Col xs="2">
-         Beer Name
+    < div className="ur">
+     <Header />
+      <Row >
+        <Col xs="1" className="mt-1">
+         <BreweryProfileDetail />
         </Col>
-
-        <Col md="5">
-          Beer Details
+        <Col sm="22">
+          <BrewerBeerList />
         </Col>
-
-        <Col md="5">
-         <button> Edit</button>
-         <button> Delete</button>
-        </Col>
-      </Row>
+        </Row>
       <Footer />
-    </>
+    </div>
   );
 }

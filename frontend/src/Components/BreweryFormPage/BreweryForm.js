@@ -23,7 +23,7 @@ export default function BreweryForm() {
         </Col>
 
         <Col md="5">
-          <BusinessHours />
+          <BusinessHours  />
           <FileUploader />
           <Button> Submit </Button>
         </Col>

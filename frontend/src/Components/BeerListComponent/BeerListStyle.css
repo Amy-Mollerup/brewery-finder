@@ -1,0 +1,128 @@
+.main_content,
+.main_content .card,
+.main_content .card .card_header,
+.btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+.main_content {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    margin: 50px auto;
+    padding: 50px 0 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.main_content h3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #2d343e;
+    font-size: 10.5vw;
+}
+
+.main_content .card {
+    width: 14.9rem;
+    border-radius: 15px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    margin-bottom: 50px;
+}
+
+.main_content .card .card_img {
+    margin-top: -5vw;
+}
+
+.main_content .card .card_img img {
+    width: 200px;
+}
+
+.main_content .card .card_header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    margin: 25px 0;
+}
+
+.main_content .card .card_header h2 {
+    font-size: 22px;
+    color: #000;
+}
+
+.main_content .card .card_header p {
+    font-size: 14px;
+    text-align: center;
+    color: rgba(67, 64, 64, 0.934);
+    margin: 8px 0;
+}
+
+.main_content .card .card_header .price {
+    font-size: 25px;
+    color: #fe8033;
+}
+
+.main_content .card .card_header .price span {
+    font-size: 18px;
+    display: inline-block;
+    border-radius: 45%;
+    vertical-align: top;
+    padding-left: 9px;
+}
+
+.main_content .card:hover {
+    background-color: #ffffff92;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+  
+}
+
+.main_content .card:hover .beer-btn {
+    background-color: #fe8033;
+    color: #fff;
+}
+
+.beer-btn {
+    width: 130px;
+    height: 35px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 35px;
+    background-color: #efeceb;
+    color: #fe8033;
+    cursor: pointer;
+    position: relative;
+    flex-direction: row-reverse;
+    -webkit-transition: background-color .3s ease;
+    transition: background-color .3s ease;
+    overflow: hidden;
+    margin-bottom: 0.3rem;
+    padding-top: 0.2rem;
+  
+}
+
