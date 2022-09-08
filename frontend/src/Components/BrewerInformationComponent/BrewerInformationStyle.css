@@ -1,0 +1,27 @@
+.breweryInfo--container {
+    color: aliceblue;
+    margin-left: 2.2rem;
+    
+}
+
+
+textarea {
+    height: 12em;
+}
+
+
+.breweryInfo--container img {
+    height: 50px;
+    width: 50px;
+    /* border-radius: 50%; */
+    display: inline-block;
+    margin-bottom: 1.2rem;
+ /*    border: solid; */
+}
+
+.breweryInfo--container span {
+   margin-left: 0.8rem;
+   font-size: 18px;
+    
+ /*    border: solid; */
+}
