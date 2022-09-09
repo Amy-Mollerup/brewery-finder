@@ -26,10 +26,16 @@ function LandingNav(props) {
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="/about">About</NavLink>
+              <NavLink href="/about">Beers</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/contact">Contact</NavLink>
+              <NavLink href="/contact">Dashboard</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/about">Contact</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/contact">Settings</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

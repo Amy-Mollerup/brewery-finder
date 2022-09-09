@@ -213,10 +213,10 @@ p {
 header,
 section {
   position: relative;
-  margin-top: 8rem;
-  margin-left: calc(2rem - 0.1vh);
-  margin-right: 2rem;
-  max-width: 1024px;
+    margin-top: 5rem;
+    /* margin-left: calc(19rem - 7.100000000000001vh); */
+    margin-right: 0rem;
+    max-width: 100%;
 }
 
 
