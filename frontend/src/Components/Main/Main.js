@@ -11,8 +11,11 @@ import Hero from '../LandingPage/Hero'
 import BrewerDashboard from '../BrewerDashboardPage/BrewerDashboard'
 import BreweryForm from '../BreweryFormPage/BreweryForm'
 import BeerDetails from '../BeerDetailPage/BeerDetail'
-import BeerList from '../BeerListPage/BeerList'
-import Header from '../Header/Header'
+import BeerLoverWelcomePage from '../BeerLoverWelcomePage/BeerLoverWelcomePage'
+import BeerList from "../BreweryBeerListPage/BeerList"
+import UserBeerList from '../UserBeerListPage/UserBeerListPage'
+import BeerReviewPage from '../BeerReviewPage/BeerReviewPage'
+import BrewerBeerList from '../BeerListComponent/BrewerBeerList'
 
 const mapStateToProps = state => {
     return {
@@ -38,7 +41,20 @@ class Main extends Component {
 
     render(){
         return(
-            <div>  
+            <div>
+            {/* <Hero /> */}
+            {/* <Login /> */}
+            {/* <Register /> */}
+            {/* <BrewerDashboard /> */}
+            {/* <BreweryForm /> */}
+            {/* <BeerDetails /> */}
+           {/*  <BrewerBeerList /> */}
+            {/* <BeerReviewPage /> */}
+           {/*  <UserBeerList /> */}
+           {/*  <BeerReviewPage /> */}
+            
+                 
+                
                 <Switch>
                     <Route path='/landingPage'component={() => <Hero/>}/>
                     <Route path='/login' component={() => <Login/>}/>

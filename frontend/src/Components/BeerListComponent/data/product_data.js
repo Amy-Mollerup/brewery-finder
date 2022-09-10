@@ -4,23 +4,26 @@ const product_card = [
         name: "Amber Ale",
         description: "This classification of beer is based on how the beer is made",
         abv: 4.5,
-        type: "IPA",
-        thumb: "./images/Beer-Pic.png"
+        type: "Lager",
+        thumb: "./images/Beer-Pic.png",
+        packagePic: "./images/bells-amber-ale-12pk.jpg"
     },
     {
         id: 2,
         name: " Dark Lager",
-        description: "Double IPA & Imperial IPA: where they come from, their appearance, flavour & aroma",
+        description: "Green Eyed Cat Wheat Buzz Southern-Style India Pale Ale (IPA) .Special Rye Beer are Bitter made predominantly with Lager yeasts",
         abv: 2.5,
-        type: "Cyider",
-        thumb: "./images/Beer-Pic.png"
+        type: "Pilsner",
+        thumb: "./images/Beer-Pic.png",
+        packagePic: "./images/rogue-honey-kolsch-6pk.png"
     },
     {
         id: 3,
         name: "Barleywine",
         description: "Double IPA & Imperial IPA: where they come from, their appearance, flavour & aroma",
         abv: 3.5,
-        type: "IPA",
+        type: "Dunkel",
+        packagePic: "./images/shock-top-belgian-white-ale-6pk.jpg",
         thumb: "./images/Beer-Pic.png"
     },
     {
@@ -28,7 +31,8 @@ const product_card = [
         name: "Berliner Weisse",
         description: "Double IPA & Imperial IPA: where they come from, their appearance, flavour & aroma",
         abv: 3.0,
-        type: "IPA",
+        type: "Bock",
+        packagePic: "./images/shiner-bock-12pk.jpg",
         thumb: "./images/Beer-Pic.png"
     },
     {
@@ -36,7 +40,8 @@ const product_card = [
         name: "Golden Ale",
         description: "Double IPA & Imperial IPA: where they come from, their appearance, flavour & aroma",
         abv: 4.0,
-        type: "IPA",
+        type: "Stout",
+        packagePic: "./images/voodoo-ranger-ipa.png",
        thumb: "./images/Beer-Pic.png"
     },
     {
@@ -44,7 +49,8 @@ const product_card = [
         name: "Porter",
         description: "Double IPA & Imperial IPA: where they come from, their appearance, flavour & aroma",
         abv: 3.5,
-        type: "IPA",
+        type: "Bock",
+        packagePic: "./images/breckenridge-vanilla-porter-6pk.png",
         thumb: "./images/Beer-Pic.png"
     },
     {
@@ -52,7 +58,8 @@ const product_card = [
         name: "Strong Ale",
         description: "Double IPA & Imperial IPA: where they come from, their appearance, flavour & aroma",
         abv: 3.0,
-        type: "IPA",
+        type: "Dunkel",
+        packagePic: "./images/sierra-nevada-6pk.jpg",
         thumb: "./images/Beer-Pic.png"
     },
     {
@@ -61,6 +68,7 @@ const product_card = [
         description: "Double IPA & Imperial IPA: where they come from, their appearance, flavour & aroma",
         abv: 5.0,
         type: "IPA",
+        packagePic: "./images/oak-creek-amber-ale-12pk.png",
        thumb: "./images/Beer-Pic.png"
     },
     {
@@ -69,6 +77,7 @@ const product_card = [
         description: "Double IPA & Imperial IPA: where they come from, their appearance, flavour & aroma",
         abv: 4.5,
         type: "IPA",
+        packagePic: "./images/lagunitas-pils-12pk.jpg",
         thumb: "./images/Beer-Pic.png"
     }
 ]

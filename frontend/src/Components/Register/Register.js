@@ -3,7 +3,6 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import { baseUrl } from "../../Shared/baseUrl";
 import "../Login/LoginStyle.css";
-import Header from '../Header/Header'
 
 class Register extends Component {
   constructor(props) {
@@ -38,7 +37,7 @@ class Register extends Component {
 
   render() {
     return (
-      <><Header /><div className="grid-container">
+      <div className="grid-container">
         <div className="pic--left"> </div>
         <div className="signIn--text">
           <h1>Create Account</h1>
@@ -46,7 +45,7 @@ class Register extends Component {
             <p>
               A Brewery is a place where different kinds of beer are made for
               commercial use or enjoyment by consumers.
-              <span>Let's Join the club</span>
+              <span >Let's Join the club</span>
             </p>
           </div>
         </div>
@@ -61,7 +60,8 @@ class Register extends Component {
             placeholder="Username"
             v-model="user.username"
             onChange={this.handleInputChange}
-            required />
+            required
+          />
           <label class="sr-only">Password</label>
           <input
             type="password"
@@ -71,7 +71,8 @@ class Register extends Component {
             placeholder="Password"
             v-model="user.password"
             onChange={this.handleInputChange}
-            required />
+            required
+          />
           <input
             type="password"
             id="password-confirm"
@@ -80,7 +81,8 @@ class Register extends Component {
             placeholder="Confirm Password"
             v-model="user.password"
             onChange={this.handleInputChange}
-            required />
+            required
+          />
 
           <input
             type="date"
@@ -90,7 +92,8 @@ class Register extends Component {
             placeholder="Date of Birth"
             v-model="user.password"
             onChange={this.handleInputChange}
-            required />
+            required
+          />
           <Link to="/login">Have an account?</Link>
           <button
             className="btn--signIn"
@@ -102,12 +105,12 @@ class Register extends Component {
 
           <div className="sticker">
             <span class="text">Are You 21+?</span>
-          </div>
+            </div>
 
         </div>
-
+       
         <div className="pic--right"></div>
-      </div></>
+      </div>
     );
   }
 }

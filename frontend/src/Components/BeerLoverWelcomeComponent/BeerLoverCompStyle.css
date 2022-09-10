@@ -1,0 +1,134 @@
+.beerLover--container{
+max-width: 400px;
+margin-top: 7rem;
+margin-bottom: 2rem;
+}
+
+.beerLover--container h2{
+font-size: 46px;
+font-weight: 800;
+font-stretch: expanded;
+letter-spacing: 2px;
+}
+
+.beerLover--container h3{
+font-size: 38px;
+margin-top: -1.3rem;
+margin-left: 10.5rem;
+font-weight: 600;
+color:coral;
+font-style: italic;
+}
+
+.beerLover--container strong{
+color:coral ;
+}
+
+.beerLover--container p{
+  font-size: 16px;
+  margin-top: -0.8rem;
+  margin-left: 4.1rem;
+  width: 395px;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.beerLover--container button {
+  align-content: space-between;
+  margin-left: 5.04rem;
+  border: 0;
+  border-radius: 20px;
+  padding: 12px 30px;
+  margin-top: 30px;
+  cursor: pointer;
+  color: #FFF;
+  background-color: coral;
+  width: 119px;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.2rem;
+}
+
+/* Card Styles */
+
+.cardContainer {
+  width: 98%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; 
+  margin: auto;
+}
+
+.card {
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--radius);
+  position: relative;
+  background-size: cover;
+  margin: calc(var(--size) * -2/10 );
+  
+}
+.card:before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  border-radius: var(--radius);
+  z-index: -1;
+  filter: blur(12px);
+  opacity: 0.6;
+  left: 50%;
+  transform: translate(-50%, 10%);
+}
+
+
+.card:nth-child(6n - 5) {
+  height: 28%;
+  margin: 1rem;
+  margin-bottom: 2rem;
+   
+}
+
+.card:nth-child(6n-4) {
+  height: 55%;
+  margin: 0.8rem;
+}
+
+.card:nth-child(6n-3) {
+  height: 50%;
+  margin: 0.8rem;
+  margin-top: -1rem;
+}
+
+.card:nth-child(6n-2) {
+  height: 40%;
+  margin: 0.6rem;
+}
+
+.card:nth-child(6n-1) {
+  height: 60%;
+  margin: 0.5rem;
+}
+
+.card:nth-child(6n) {
+  height: 33.333%;
+  margin: 0.2rem ;
+  margin-top: 0.6rem;
+}
+

@@ -6,13 +6,12 @@ import 'bootstrap-social/bootstrap-social.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import 'mdb-react-ui-kit/dist/css/mdb.min.css'
-import { BrowserRouter as Router } from 'react-router-dom';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
 ReactDOM.render(
-  <Router>
+  <React.StrictMode>
     <App />
-  </Router>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

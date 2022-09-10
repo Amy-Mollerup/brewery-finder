@@ -1,29 +1,19 @@
 import { Button} from 'reactstrap';
+import {Switch, Route, Redirect, Link} from 'react-router-dom'
+import Footer from '../Footer/Footer';
 import LandingNav from './LandingNav';
 import './HeroStyle.css';
 import videoBg from '../assets/pexels-cottonbro-5538282.mp4'
-import React from 'react'
-import {Navigate} from 'react-router';
-
-
-
+import Login from '../Login/Login';
+import Register from '../Register/Register';
 const Hero = () => {
-  const [goToRegister, setGoToRegister] = React.useState(false);
-  const [goToLogin, setGoToLogin] = React.useState(false);
-  
-  if (goToRegister) {
-    return <Navigate to="../Register/Register.js" />;
-  }
-  if (goToLogin) {
-    return <Navigate to="../Login/Login.js" />;
-  }
+ 
    
-  const newLocal = <LandingNav />;
   return (
 <div classNameName="container">
 
 <video src= {videoBg} autoPlay loop muted/>
-      {newLocal}
+<LandingNav/>
 <header  text-align= "center"  >
     <h4>FINDING A BREWERY FINDER! </h4>
     <h2>easy way to discover </h2>
@@ -35,12 +25,14 @@ const Hero = () => {
     By using the Brewery Finder, you'll be able to understand and enjoy the many wonders of 
     craft beer.
     </p>
-        <div className="btncontainer">
-        <Button onClick={()=> setGoToRegister(true)}>Sign Up</Button>
-        <hr />
-        <Button onClick={()=> setGoToLogin(true)}>Log in</Button>
-
-  </div>
+    {/*     <Switch>
+                    <Route path='/landingPage'component={() => <Hero/>}/>
+                    <Route path='/login' component={() => <Login/>}/>
+                    <Route path='/register'component={() => <Register/>}/>
+                  
+        </Switch> */}
+    <button className = " btn " > Sing Up </button>
+  <button className = " btn " >Login </button > 
  </header>
 
 </div>

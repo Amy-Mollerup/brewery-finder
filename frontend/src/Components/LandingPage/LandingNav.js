@@ -1,40 +1,31 @@
-import React, { useState } from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-} from 'reactstrap';
-import './LandingNav.css'
-import beerlogo from "../assets/beer-bottle.png";
+import React, {useState} from "react";
+import { Button } from "reactstrap";
+import logo from "../assets/beer-bottle.png";
 
-function LandingNav(props) {
-  const [collapsed, setCollapsed] = useState(true);
-
-  const toggleNavbar = () => setCollapsed(!collapsed);
+function LandingNav() {
+    const [open, setOpen] = useState(false);
 
   return (
-    <div>
-      <Navbar color="faded" light>
-      <NavbarBrand href="/" className="me-auto">
-        <h4 className="logocont">Brewery<img src={beerlogo} alt="logo" className="navlogo" /> Finder</h4>
-      </NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} className="me-2" />
-        <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
-            <NavItem>
-              <NavLink href="/about">About</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/contact">Contact</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
-    </div>
+    <nav className="nav">
+
+      <a href="https://google.com">
+        {" "}
+        Brewery <img src={logo} alt="logo" className="logo" />
+        Finder
+      </a>
+
+      <ul className={open ? "nav-links active" : "nav-links"} >
+        <li>About</li>
+        <li>Beers</li>
+        <li>Contact</li>
+        
+      
+        <i className={open ? "fas fa-bars close": "fas fa-bars open"}
+        onClick= {() => setOpen(true)}></i>
+        <i className={open ? "fas fa-times close":  "fas fa-times open"}
+         onClick= {() => setOpen(false)}></i>
+      </ul>
+    </nav>
   );
 }
 

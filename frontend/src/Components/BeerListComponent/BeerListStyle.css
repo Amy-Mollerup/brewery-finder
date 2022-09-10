@@ -11,13 +11,14 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    margin-top: -9rem;
 }
 
 
 .main_content {
     position: relative;
     width: 70%;
-    height: 100%;
+    height: 80%;
     margin: 50px auto;
     padding: 50px 0 0;
     -webkit-box-sizing: border-box;
@@ -38,7 +39,8 @@
 }
 
 .main_content .card {
-    width: 14.9rem;
+    width: 16rem;
+    height: 580px;
     border-radius: 15px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -49,7 +51,7 @@
     transform: scale(0.8);
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    margin-bottom: 50px;
+    margin-bottom: 55px;
 }
 
 .main_content .card .card_img {
@@ -79,7 +81,15 @@
     text-align: center;
     color: rgba(67, 64, 64, 0.934);
     margin: 8px 0;
-}
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    max-width: 240px;
+    
+   }
 
 .main_content .card .card_header .price {
     font-size: 25px;
@@ -96,8 +106,8 @@
 
 .main_content .card:hover {
     background-color: #ffffff92;
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85);
     cursor: pointer;
   
 }
@@ -126,3 +136,11 @@
   
 }
 
+.close{
+ 
+/*     font-size: 25px;
+    text-align: center;
+    margin-top: -705px;
+    margin-left: 12px;
+ */
+}

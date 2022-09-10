@@ -6,8 +6,6 @@ import { addToken, addUser } from "../../Redux/actionCreators";
 import { baseUrl } from "../../Shared/baseUrl";
 import axios from "axios";
 import "./LoginStyle.css";
-import Header from "../Header/Header";
-import '../Header/HeaderStyle.css';
 
 const mapDispatchToProps = (dispatch) => ({
   addToken: () => dispatch(addToken()),
@@ -45,13 +43,11 @@ class Login extends Component {
 
   render() {
     return (
-      <>
-      <Header />
       <div className="grid-container">
         <div className="pic--left"></div>
 
         <div className="signIn--text">
-          <h1>Sign In </h1>
+          <h1>Sign In </h1> 
           <div className="signDetail">
             <p>
               Since beer is an international product with strong local
@@ -71,7 +67,8 @@ class Login extends Component {
             placeholder="Username"
             v-model="user.username"
             onChange={this.handleInputChange}
-            required />
+            required
+          />
           <label className="sr-only">Password</label>
           <input
             type="password"
@@ -81,7 +78,8 @@ class Login extends Component {
             placeholder="Password"
             v-model="user.password"
             onChange={this.handleInputChange}
-            required />
+            required
+          />
           <Link to="/register">Need an account?</Link>
           <button
             className="btn--signIn"
@@ -93,7 +91,6 @@ class Login extends Component {
         </div>
         <div className="pic--right"></div>
       </div>
-      </>
     );
   }
 }
