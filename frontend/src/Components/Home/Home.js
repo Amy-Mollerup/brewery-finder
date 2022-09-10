@@ -1,9 +1,10 @@
 import {Link} from 'react-router-dom'
+import Header from '../Header/Header'
 
 function Home(props) {
     return(
         <div>
-            You must be authorized to see this page.
+           <Header />
         </div>
     )
 }

@@ -16,7 +16,7 @@ button:focus:not(:focus-visible) {
 }
 
 .navbar{
-    background-color: rgb(200, 34, 34);
+    background-color: rgba(200, 34, 34, 0);
     padding: 0;
     margin: 0;
     border: 0;
@@ -27,7 +27,7 @@ button:focus:not(:focus-visible) {
     letter-spacing: .1rem;
     text-transform: uppercase;
     font-weight: 700;
-    position: fixed;
+    position: initial;
     top: 0;
     width: 100%;
     z-index: 999;
