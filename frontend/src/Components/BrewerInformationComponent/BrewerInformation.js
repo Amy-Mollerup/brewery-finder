@@ -2,7 +2,7 @@ import React from "react";
 import { Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
 import "./BrewerInformationStyle.css";
 
-export default function BrewerInformation() {
+export default function BrewerInformation(props) {
   return (
     <Form className="breweryInfo--container">
       <Col>
@@ -16,14 +16,16 @@ export default function BrewerInformation() {
       <Row>
         <Col>
           <FormGroup>
-            <Label for="brewerName">Brewer Name</Label>
+            <Label for="breweryName">Brewer Name</Label>
             <Input
-              id="brewerId"
-              name="brewer"
-              placeholder="Brewer Name"
+              id="breweryName"
+              name="breweryName"
+              placeholder="Brewer or Company Name"
               type="text"
               autoComplete="off"
               className="form-control-plaintext"
+              value={props.breweryName}
+              onChange={props.handleChange}
               required
             />
           </FormGroup>
@@ -37,16 +39,20 @@ export default function BrewerInformation() {
           placeholder="http://"
           autoComplete="off"
           className="form-control-plaintext"
+          value={props.website}
+          onChange={props.handleChange}
         />
       </FormGroup>
       <FormGroup>
         <Label for="exampleAddress">Address</Label>
         <Input
           id="exampleAddress"
-          name="address"
+          name="breweryStreet"
           placeholder="1234 Main St"
           autoComplete="off"
           className="form-control-plaintext"
+          value={props.breweryStreet}
+          onChange={props.handleChange}
           required
         />
       </FormGroup>
@@ -56,9 +62,11 @@ export default function BrewerInformation() {
             <Label for="exampleCity">City</Label>
             <Input
               id="exampleCity"
-              name="city"
+              name="breweryCity"
               autoComplete="off"
               className="form-control-plaintext"
+              value={props.breweryCity}
+              onChange={props.handleChange}
               required
             />
           </FormGroup>
@@ -68,9 +76,11 @@ export default function BrewerInformation() {
             <Label for="exampleState">State</Label>
             <Input
               id="exampleState"
-              name="state"
+              name="breweryState"
               autoComplete="off"
               className="form-control-plaintext"
+              value={props.brewerState}
+              onChange={props.handleChange}
               required
             />
           </FormGroup>
@@ -80,9 +90,11 @@ export default function BrewerInformation() {
             <Label for="exampleZip">Zip Code</Label>
             <Input
               id="exampleZip"
-              name="post_code"
+              name="breweryPostCode"
               autoComplete="off"
               className="form-control-plaintext"
+              value={props.breweryPostCode}
+              onChange={props.handleChange}
               required
             />
           </FormGroup>
@@ -94,11 +106,13 @@ export default function BrewerInformation() {
           <Label for="examplePhone">Phone</Label>
           <Input
             id="phoneId"
-            name="phone"
+            name="phoneNumber"
             placeholder="8062317495"
             type="text"
             autoComplete="off"
             className="form-control-plaintext"
+            value={props.phoneNumber}
+            onChange={props.handleChange}
           />
         </FormGroup>
       </Col>
@@ -117,7 +131,7 @@ export default function BrewerInformation() {
         />
       </FormGroup>
 
-      <Label for="examplePhone">Is company in operation?</Label>
+      <Label for="exampleCheck">Is company in operation?</Label>
       <Row>
         <Col md={3}>
           <FormGroup check>
