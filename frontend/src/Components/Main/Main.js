@@ -16,6 +16,7 @@ import BeerList from "../BreweryBeerListPage/BeerList"
 import UserBeerList from '../UserBeerListPage/UserBeerListPage'
 import BeerReviewPage from '../BeerReviewPage/BeerReviewPage'
 import BrewerBeerList from '../BeerListComponent/BrewerBeerList'
+import BreweriesListPage from '../BreweriesListPage/BreweriesListPage'
 
 const mapStateToProps = state => {
     return {
@@ -52,6 +53,9 @@ class Main extends Component {
             {/* <BeerReviewPage /> */}
            {/*  <UserBeerList /> */}
            {/*  <BeerReviewPage /> */}
+           <BreweriesListPage />
+           {/*BrewerAccessReview*/}
+
             
                  
                 
