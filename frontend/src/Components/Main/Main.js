@@ -44,19 +44,19 @@ class Main extends Component {
     render(){
         return(
             <div>
-            {/* <Hero /> */}
+            <Hero />
             {/* <Login /> */}
             {/* <Register /> */}
             {/* <BrewerDashboard /> */}
             {/* <BreweryForm /> */}
             {/* <BeerDetails /> */}
-           {/*  <BrewerBeerList /> */}
+            {/* <BrewerBeerList /> */}
             {/* <BeerReviewPage /> */}
-           {/*  <UserBeerList /> */}
-           {/*  <BeerReviewPage /> */}
-           <BreweriesListPage />
+            {/* <UserBeerList /> */}
+            {/* <BeerReviewPage /> */}
+           {/* <BreweriesListPage /> */}
            {/*BrewerAccessReview*/}
-           <BeerListModal />
+           {/* <BeerListModal /> */}
 
             
                  

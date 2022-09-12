@@ -14,12 +14,14 @@ public class Brewery {
     private List<Beer> beerList;
     private Map<Integer, String[]> breweryHours;
     private Long brewer;
+    private String description;
+    private String image;
 
     public Brewery() {
 
     }
 
-    public Brewery(long breweryId, String breweryName, String breweryStreet, String breweryCity, String breweryState, String breweryPostCode, String phoneNumber, String website, List<Beer> beerList, Map<Integer, String[]> breweryHours, Long brewer) {
+    public Brewery(long breweryId, String breweryName, String breweryStreet, String breweryCity, String breweryState, String breweryPostCode, String phoneNumber, String website, List<Beer> beerList, Map<Integer, String[]> breweryHours, Long brewer, String description, String image) {
         this.breweryId = breweryId;
         this.breweryName = breweryName;
         this.breweryStreet = breweryStreet;
@@ -31,8 +33,9 @@ public class Brewery {
         this.beerList = beerList;
         this.breweryHours = breweryHours;
         this.brewer = brewer;
+        this.description = description;
+        this.image = image;
     }
-
 
     public long getBreweryId() {
         return breweryId;
@@ -113,5 +116,13 @@ public class Brewery {
     public void setBreweryHours(Map<Integer, String[]> breweryHours) {
         this.breweryHours = breweryHours;
     }
-}
 
+    public String getDescription() {return description;}
+
+    public void setDescription(String description) {this.description = description;}
+
+    public String getImage() {return image;}
+
+    public void setImage(String image) {this.image = image;}
+
+}

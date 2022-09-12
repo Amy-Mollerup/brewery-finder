@@ -42,7 +42,7 @@ public class JdbcBreweryDao implements BreweryDao{
         if (results.next()) {
             brewery = mapRowToBrewery(results);
             brewery.setBreweryHours(getHours(breweryId));
-         }
+        }
         return brewery;
     }
 
@@ -60,20 +60,24 @@ public class JdbcBreweryDao implements BreweryDao{
     }
 
     @Override
-    public boolean create(String name, String street, String city, String state, String postCode, String phone, String website, Long brewer, Map<Integer, String[]> breweryHours) {
+    public boolean create(Brewery brewery) {
         boolean breweryCreated = false;
 
-        String sql = "insert into breweries (name, street, city, state, post_code, phone, website, brewer) values (?,?,?,?,?,?,?,?)";
+        String sql = "insert into breweries (name, street, city, state, post_code, phone, website, brewer, image, description) values (?,?,?,?,?,?,?,?,?,?)";
         try {
-            jdbcTemplate.update(sql, name, street, city, state, postCode, phone, website, brewer);
+            jdbcTemplate.update(sql, brewery.getBreweryName(),
+                    brewery.getBreweryState(), brewery.getBreweryCity(), brewery.getBreweryState(),
+                    brewery.getBreweryPostCode(), brewery.getPhoneNumber(), brewery.getWebsite(),
+                    brewery.getBrewer(), brewery.getImage(), brewery.getDescription());
             String newSql = "select * from breweries where name = ? AND street = ? AND city = ? AND state = ?";
-            SqlRowSet results = jdbcTemplate.queryForRowSet(newSql, name,street,city,state);
+            SqlRowSet results = jdbcTemplate.queryForRowSet(newSql, brewery.getBreweryName(),
+                    brewery.getBreweryStreet(),brewery.getBreweryCity(),brewery.getBreweryState());
             long id = 0;
             if (results.next()){
-                Brewery brewery = mapRowToBrewery(results);
-                id = brewery.getBreweryId();
+                Brewery brewery1 = mapRowToBrewery(results);
+                id = brewery1.getBreweryId();
             }
-            if(!createHours(id, breweryHours)){
+            if(!createHours(id, brewery.getBreweryHours())){
                 throw new Exception();
             }
             breweryCreated = true;
@@ -116,8 +120,8 @@ public class JdbcBreweryDao implements BreweryDao{
 
         String sql =
                 "INSERT INTO brewery_hours (brewery_id, day_id, open, close) " +
-                "VALUES" +
-                "(?, 0, ?, ?), (?, 1, ?, ?), (?, 2, ?, ?), (?, 3, ?, ?), (?, 4, ?, ?), (?, 5, ?, ?), (?, 6, ?, ?)";
+                        "VALUES" +
+                        "(?, 0, ?, ?), (?, 1, ?, ?), (?, 2, ?, ?), (?, 3, ?, ?), (?, 4, ?, ?), (?, 5, ?, ?), (?, 6, ?, ?)";
 
         try{
             jdbcTemplate.update(sql, breweryId, sunday[0], sunday[1], breweryId, monday[0], monday[1], breweryId, tuesday[0], tuesday[1],
@@ -141,13 +145,13 @@ public class JdbcBreweryDao implements BreweryDao{
             String[] saturday = newHours.get(6);
 
             String sql = "BEGIN TRANSACTION; " +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 0;" +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 1;" +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 2;" +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 3;" +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 4;" +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 5;" +
-                        "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 6;" +
+                    "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 0;" +
+                    "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 1;" +
+                    "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 2;" +
+                    "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 3;" +
+                    "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 4;" +
+                    "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 5;" +
+                    "UPDATE brewery_hours " + "SET open = ?, close = ?" + "Where brewery_id = ? AND day_id = 6;" +
                     "COMMIT TRANSACTION";
 
 
@@ -164,15 +168,16 @@ public class JdbcBreweryDao implements BreweryDao{
     public boolean updateBrewery(Brewery brewery) {
 
         String sql = "UPDATE breweries " +
-                    "SET name = ?, street = ?, city = ?, state = ?, post_code = ?, phone = ?, website = ?, brewer = ?" +
-                    "WHERE id = ?";
+                "SET name = ?, street = ?, city = ?, state = ?, post_code = ?, phone = ?, website = ?, brewer = ?, image = ?, description = ?" +
+                "WHERE id = ?";
         try {
             Long brewer = null;
             if (brewery.getBrewer()==0){
                 brewery.setBrewer(null);
             }
             jdbcTemplate.update(sql, brewery.getBreweryName(), brewery.getBreweryStreet(), brewery.getBreweryCity(),
-                    brewery.getBreweryState(), brewery.getBreweryPostCode(),brewery.getPhoneNumber(), brewery.getWebsite(), brewery.getBrewer(), brewery.getBreweryId());
+                    brewery.getBreweryState(), brewery.getBreweryPostCode(),brewery.getPhoneNumber(), brewery.getWebsite(), brewery.getBrewer(), brewery.getImage(),
+                    brewery.getDescription(), brewery.getBreweryId());
             updateHours(brewery.getBreweryId(), brewery.getBreweryHours());
             return true;
         }
@@ -191,6 +196,8 @@ public class JdbcBreweryDao implements BreweryDao{
         brewery.setBreweryPostCode(rs.getString("post_code"));
         brewery.setPhoneNumber(rs.getString("phone"));
         brewery.setWebsite(rs.getString("website"));
+        brewery.setDescription(rs.getString("description"));
+        brewery.setImage(rs.getString("image"));
         if (rs.getLong("brewer") == 0){
             brewery.setBrewer(null);
         }else{
