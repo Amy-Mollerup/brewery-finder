@@ -2,12 +2,13 @@ const Breweries_list = [
   {
     id: 23,
     name: "Ausable Brewing Co",
-    steert: "765 Mace Chasm Rd",
+    street: "765 Mace Chasm Rd",
     city: "Keeseville",
     state: "New York",
     post_code: "12944-2425",
     phone: "3152443295",
     website: "http://ausablebrewing.tumblr.com",
+    image: "./images/Brewery 7.jpg"
   },
 
   {
@@ -17,6 +18,7 @@ const Breweries_list = [
     city: "New York",
     state: "New York",
     post_code: "10018-2797",
+    image: "./images/Brewery 8.jpg"
   },
 
   {
@@ -28,6 +30,7 @@ const Breweries_list = [
     post_code: "13053-9630",
     phone: "6078448474",
     website: "http://www.bacchusbrewing.com",
+    image: "./images/Brewery 9.jpg"
   },
   {
     id: 26,
@@ -38,6 +41,7 @@ const Breweries_list = [
     post_code: "14847",
     phone: "6072295608",
     website: "http://www.bandwagonbeer.com",
+    image: "./images/Brewery 10.jpg"
   },
 
   {
@@ -49,6 +53,7 @@ const Breweries_list = [
     post_code: "13367-1601",
     phone: "3157758959",
     website: "http://www.barkeaterbrew.com",
+    image: "./images/Brewery 1.jpg"
   },
 
   {
@@ -60,6 +65,7 @@ const Breweries_list = [
     post_code: "11801-6574",
     phone: "5163766514",
     website: "http://www.barnshedbrewing.com",
+    image: "./images/Brewery 2.jpg"
   },
 
   {
@@ -71,6 +77,7 @@ const Breweries_list = [
     post_code: "11735-5625",
     phone: "6313357941",
     website: "http://www.barragebrewing.com",
+    image: "./images/Brewery 3.jpg"
   },
 
   {
@@ -82,6 +89,7 @@ const Breweries_list = [
     post_code: "11572-2747",
     phone: "5165941028",
     website: "http://www.barrierbrewing.com",
+    image: "./images/Brewery 4.jpg"
   },
 
   {
@@ -90,9 +98,10 @@ const Breweries_list = [
     street: "4 Charles Street",
     city: "Fort Ann",
     state: "New York",
-    psot_code: "12827",
+    post_code: "12827",
     phone: "5186391033",
     website: "http://www.battlehillbrewing.com",
+    image: "./images/Brewery 5.jpg"
   },
 
   {
@@ -103,6 +112,7 @@ const Breweries_list = [
     state: "New York",
     post_code: "13833",
     website: "http://www.beertreebrew.com",
+    image: "./images/Brewery 6.jpg"
   },
 ];
 export default Breweries_list;

@@ -1,0 +1,250 @@
+
+#beer--container {
+  background:rgba(255, 255, 255, 0.507);
+  margin:10% auto;
+  display:block;
+  max-width:800px;
+  height:600px;
+  width:100%;
+  overflow-y: auto;
+  overflow-x:hidden;
+  border-radius: 25px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+  -webkit-box-shadow:0px 5px 80px #d8d8d8;
+  -moz-box-shadow:0px 5px 80px #d8d8d8;
+  -o-box-shadow:0px 5px 80px #d8d8d8;
+  box-shadow:0px 5px 80px #d8d8d8;
+    text-shadow: none;   
+}
+
+.beerList--product {
+    background: #fff;
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    position: relative;
+    margin-top: 1rem;
+    
+  
+  }
+  
+  .beerList--img {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    -khtml-transform: translate(-50%);
+    width: 100%;
+    padding: 25px;
+    transition: all 0.2s ease-in-out;
+    
+  }
+  
+  .beerList--img img {
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    border-radius: 16px;
+  }
+  
+  .beerList--product:hover .beerList-cp-img {
+    top: -40px;
+  }
+  
+  .beerList--product:hover .beerList-cp-img img {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+  
+  .beerList--text {
+    padding-top: 60%;
+  }
+  
+  .beerList--text .category {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 45px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .beerList--text .category>* {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -khtml-transform: translate(-50%, -50%);
+  
+  }
+  
+  .beerList--text .category>span {
+    padding: 12px 30px;
+    border: 1px solid #313131;
+    background: #212121;
+    color: #fff;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    border-radius: 27px;
+    transition: all 0.05s ease-in-out;
+  
+  }
+  
+  .beerList--product:hover .beerList--text .category>span {
+    border-color: #ddd;
+    box-shadow: none;
+  
+    padding: 11px 28px;
+  }
+  
+  .beerList--product:hover .beerList--text .category {
+    margin-top: 0px;
+  }
+  
+  .beerList--text .title--product {
+    text-align: center;
+  }
+  
+  .beerList--text .title--product h3 {
+    font-size: 20px;
+    font-weight: 900;
+    margin: 15px auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    
+  }
+  
+  .beerList--text .description--prod p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+  
+    color: rgba(67, 64, 64, 0.934);
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    
+  }
+  
+  /* Truncate */
+  .beerList--text .description--prod {
+    text-align: center;
+ 
+    height: 62px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 15px;
+  }
+  
+  .card--footer {
+    padding: 25px 0 5px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .card--footer:after,
+  .card--footer:before {
+    content: '';
+    display: table;
+  }
+  
+  .card--footer:after {
+    clear: both;
+  }
+  
+  .card--footer .beerList--left {
+    float: left;
+  
+  }
+  
+  .card--footer .beerList--right {
+    float: right;
+  }
+  
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+  }
+ 
+  
+  .beerList--btn {
+    display: inline-block;
+    color: #212121;
+    text-align: center;
+    font-size: 18px;
+    transition: all 0.2s ease-in-out;
+    border-color: #FF9800;
+    background: #FF9800;
+    padding: 12px 30px;
+    border-radius: 27px;
+    margin: 0 5px;
+  }
+  
+  .beerList--btn:hover,
+  .beerList--btn:focus,
+  .beerList--btn:active {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .red {
+    color: #F44336;
+    font-size: 22px;
+    display: inline-block;
+    margin: 0 5px;
+  }
+  
+  @media screen and (max-width: 991px) {
+    .beerList--product {
+      margin: 40px auto;
+    }
+  
+    .beerList--product .beerList--img {
+      top: -40px;
+    }
+  
+    .beerList--product .beerList--img img {
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    }
+  
+    .beerList--product .beerList--text .category>span {
+      border-color: #ddd;
+      box-shadow: none;
+      padding: 11px 28px;
+    }
+  
+    .beerList--product .beerList--text .category {
+      margin-top: 0px;
+    }
+  
+    a.review--btn {
+      border-color: #FF9800;
+      background: #FF9800;
+      color: #fff;
+    }
+  }
+  
+  
+  .close{
+  font-size: 35px;
+  position: absolute;
+  top:75.9px;
+  width: 50px;
+  height: 50px;
+  color: rgb(138, 132, 132);
+  
+  }

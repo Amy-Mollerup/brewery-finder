@@ -1,73 +1,61 @@
-import React from 'react'
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.css';
+import Popup from "reactjs-popup";
+import "./BreweriesListStyle.css";
+import  bList from "./data/Breweries_list"
+import BeerListModal from "../BeerListComponent/BeerListModal";
 
-export default function BreweriesListPage() {
-  return(
-    const { isLoading, users } = this.state;
-    return(
-    <section className="section">
-        <div className="container">
-          {!isLoading ? (
-            users.map(user => {
-              return <Users key={user.username} user={user} />;
-            })
-          ) : (
-            <p>Loading...</p>
-          )}
-        </div>;
+const BreweriesListComp = () => {
+  const beerList = <BeerListModal  />
 
-    </section>
-  );
-  )
-}
+  const breweriesList =bList.map((item) =>
+    <div className="businessCard--content">
+      <div id="busicard">
+          <div className="user">
+          <img src={item.image} alt =""/>
+        </div>
+        <h1>{item.name}</h1>
+        <ul className="info">
+          <li>{item.street} 
+            {item.city} {item.state}  
+          {item.post_code} </li>
+                 
+     {/*      <span className="hrtop"></span> */}
+         <li> {item.phone} </li>
+          <li> <a href={item.website}>{item.website} </a></li>
 
-const Users = ({user}) => {
-    return (
-      <div className="box media">
-        <figure className="image is-96x96 media-left">
-            <img src={user.image} alt={user.name} />
-        </figure>
-        <div className="media-content">
-          <p className="subtitle">{user.name}</p>
-          <p>{user.email}</p>
+        </ul>
+        
+        <div className="beerListFromId">
+        
+          <Popup
+                  trigger={<span> Beer List</span>}
+                  position="center center"
+                  modal
+                  >
+                  {(close) => (
+                    <div>
+                      {beerList}
+                      <a className="close" onClick={close}>
+                        {" "}
+                        &times;
+                      </a>
+                    </div>
+                  )}
+                </Popup>
         </div>
       </div>
-    )
-  }
-  
-  
-  class App extends React.Component {
-    state = {
-      users: [],
-      isLoading: true,
-      errors: null
-    };
-  
-    getUsers() {
-      axios
-        .get("https://randomuser.me/api/?results=5")
-        .then(response =>
-          response.data.results.map(user => ({
-            name: `${user.name.first} ${user.name.last}`,
-            username: `${user.login.username}`,
-            email: `${user.email}`,
-            image: `${user.picture.thumbnail}`
-          }))
-        )
-        .then(users => {
-          this.setState({
-            users,
-            isLoading: false
-          });
-        })
-        .catch(error => this.setState({ error, isLoading: false }));
-    }
-  
-    componentDidMount() {
-      this.getUsers();
-    }
-  
-    render() 
-  }
-  
-  ReactDOM.render(<App />,
-  document.getElementById("root"))
+    </div>
+  );
+
+
+  return (
+    <div className="main_content">
+        {/* <h3>Beer List</h3> */}
+        {breweriesList}
+    </div>
+)
+
+}
+
+export default BreweriesListComp;
