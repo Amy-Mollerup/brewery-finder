@@ -40,7 +40,14 @@
 }
 
 
-.dashboard--item>img {
+.dashboard--item>img, svg {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    display: inline-block;
+
+}
+a {
     height: 80px;
     width: 80px;
     border-radius: 50%;
@@ -80,3 +87,13 @@ font-size: 14px;
 
 }
 
+.h3brew{
+    padding-top: 80px;
+}
+img.svg{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    padding-right: 3px;
+}

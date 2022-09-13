@@ -44,7 +44,7 @@ class Main extends Component {
     render(){
         return(
             <div>
-            <Hero />
+            {/* <Hero /> */}
             {/* <Login /> */}
             {/* <Register /> */}
             {/* <BrewerDashboard /> */}
@@ -70,7 +70,7 @@ class Main extends Component {
                     <Route path='/brewery' component={() => <BreweryForm />}/>
                     <Route path='/beerList' component={() => <BeerList />}/>
                     <Route path='/breweryDash' component={() => <BrewerDashboard/>}/>
-                    <Redirect to='/ladingPage'/>
+                    <Redirect to='/landingPage'/>
                 </Switch>
             </div>
         )

@@ -45,7 +45,7 @@ export default function Header(args) {
                         Beers
                     </NavLink>
                 </NavItem>
-
+                
                 <NavItem>
                     <NavLink href="/breweryDash">
                         Dashboards
@@ -91,8 +91,8 @@ export default function Header(args) {
                     <Route path='/breweryDash' component={() => <BrewerDashboard/>}/>
                     <Redirect to='/ladingPage'/> */}
 
-
-
+                
+                
             <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                     Settings
@@ -117,7 +117,7 @@ export default function Header(args) {
                         </DropdownItem>
 
 
-
+                        
                 </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>

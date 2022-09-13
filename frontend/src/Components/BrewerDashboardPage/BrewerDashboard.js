@@ -3,6 +3,7 @@ import {Row, Col } from "reactstrap";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./BrewerDashStyle.css";
+import {Link} from "react-router-dom";
 
 export default function BrewerDashboard() {
   return (
@@ -33,7 +34,7 @@ export default function BrewerDashboard() {
               size: 3,
             }}
           >
-            <img src={require('../assets/brewer-DashPic.png')} alt="" />
+            <img src={require('../assets/brewer-DashPic.png')} alt=""  />
             <h3>Brewery Information</h3>
             <p>
             Brewing Information  plans, schedules and tracks beer 
@@ -49,8 +50,10 @@ export default function BrewerDashboard() {
               size: 3,
             }}
           >
-            <img src={require('../assets/cheers-DashPic.png')} alt="" />
-            <h3>Beer </h3>
+            <Link className = "svgbrew" to="/beerDetails">
+            <img className ="svg" src={require('../assets/cheers-DashPic.png')} alt="" />
+            </Link>
+            <h3 className = "h3brew">Beer</h3>
             <p>
             Filter and search a list of all your beers – This contains the ‘master’ 
             assigned Ingredients, availability and much more.
