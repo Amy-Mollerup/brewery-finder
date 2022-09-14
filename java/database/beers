@@ -1,0 +1,52 @@
+-- Table: public.beers
+DROP TABLE IF EXISTS public.beers;
+
+CREATE TABLE IF NOT EXISTS public.beers
+(
+    id serial NOT NULL,
+    name character varying COLLATE pg_catalog."default",
+    abv double precision,
+    type character varying COLLATE pg_catalog."default",
+    description character varying COLLATE pg_catalog."default",
+    image character varying COLLATE pg_catalog."default",
+    brewery integer,
+    CONSTRAINT beers_pkey PRIMARY KEY (id),
+    CONSTRAINT brewery FOREIGN KEY (brewery)
+        REFERENCES public.breweries (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.beers
+    OWNER to postgres;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.beers TO final_capstone_appuser;
+
+GRANT ALL ON TABLE public.beers TO final_capstone_owner;
+
+GRANT ALL ON TABLE public.beers TO postgres;
+
+INSERT INTO public.beers(
+	id, name, abv, type, description, image, brewery)
+	VALUES (1, 'Budweiser',	5,	'Lager',	'Budweiser is a medium-bodied, flavorful, crisp American-style lager.', 	'https://us.budweiser.com/img/freedom/Patriotic-can.png',	14),
+(2, 'Bud Light',	4.2,	'Light Lager',	'a light version of budweiser',	'https://www.budlight.com/img/BL_Core_Can.png',	14),
+(3, 'Budweiser Supreme',	4.6,	'Lager',	'Budweiser Supreme, an American classic, reimagined.Triple filtered and brewed with American Honey Malt.', 	'https://us.budweiser.com/img/home/desktop/15_Supreme_12ozBottle_T_529x654.png',	14),
+(4, '16 STONE MOONLIGHT SUN', 	5.1,	'Wheat Beer',	'subtle sweetness and bright, citrus aroma',	'https://assets.untappd.com/photos/2021_07_18/8bc5e57b76c9ed19b90968800ec88a55_1280x1280.jpg',	1),
+(5, '16 Stone BIG POPPA Pump-kin Ale', 	5.8,	'Ale',	'It has a warm, complex sweetness but light enough to have a few pints!', 	'https://assets.untappd.com/photos/2021_11_24/da9bf01a4df9fa67d0b94b649dbd4b72_1280x1280.jpg',	1),
+(6, '16 STONE TRASH PANDA STOUT', 	5.6,	'Stout',	'Traditional Stout with a rich and dark flavor. Full bodied beer with a malty finish that all dark beer lovers will enjoy!', 	'https://assets.untappd.com/photos/2022_02_20/440b476c68c6c78e41a92c14a58d4d0c_1280x1280.jpg',	1),
+(7, '16 STONE GENTLEMEN''S CORNER PORTER', 	6.8,	'English Porter',	'Classic English porter, chocolate notes with toffee.', 	'https://assets.untappd.com/photos/2021_11_24/5f8c7094922bd36ab8e3d2a680e6c69f_1280x1280.jpg',	1),
+(8, 'Colonel Dandelion Golden Ale',	5,	'Golden Ale',	'Full bodied but also quaffable. We are tasting fresh baked bread, with a hint of sweetness.', 	'https://assets.untappd.com/photos/2022_08_28/b051aa983cd787affe3bb833c8f3e396_1280x1280.jpg',	8),
+(9, 'Setbreak Confession',	8,	'IPA',	'We are tasting notes of strawberry, ripe berries, with a dank weedy finish.', 'https://assets.untappd.com/photos/2022_08_19/6a0ba767eb4bf413ca4e493f8f7f35c6_1280x1280.jpg',	8),
+(10, 'Just Your Saaz',	4.6,	'Pale Ale',	'Easy drinking Pale Ale , blend of Pilsner malt and white wheat. Hopped with Saaz in the kettle and the fermenter.', 	'https://assets.untappd.com/photos/2022_08_28/c702d06ea448c291fd7c691ed03c65f7_1280x1280.jpg',	8),
+(11, 'Future Memory',	4.9,	'IPA',	'A ridiculously crushable session IPA packed with wheat and oats and hopped with Amarillo, citra and Comet hops - Tons of grapefruit, orange oil, and berry on the nose with light tropical fruit undertones.', 	'https://assets.untappd.com/photos/2022_07_03/ef15b30fdc5d57ba080859a5b364ba9e_1280x1280.jpg',	8),
+(12, '1940''s LAGER', 	4.7,	'Lager',	'Our take on an old school lager. An easy drinking beer', 	'https://assets.untappd.com/photos/2022_08_21/f3ebe284728b58ab1076ab1b6550be50_1280x1280.jpg',	2),
+(13, 'BOHEMIA BLONDE', 	6.6,	'Blonde ale',	'Light and crisp flavor finishes with smooth Apricot',	'https://assets.untappd.com/photos/2022_06_12/d6e661e0d7a63c4fde6bf266fd0f4016_1280x1280.jpg',	2),
+(14, 'Tea N It Up', 	5,	'Hard Tea',	'a peach tea',	'https://assets.untappd.com/photos/2022_08_14/4067aea6dd7ef77ba846fbab2603caa9_1280x1280.jpg',	2),
+(15, 'UTZ I Did It Again', 	6.5,	'Wheat Beer',	'a pretzel wheat beer',	'https://assets.untappd.com/photos/2021_05_09/8e9a62327400830a1b83837b6aa6a62f_1280x1280.jpg',	2),
+(16, 'IN BLOOM', 	7.9,	'IPA',	'This hazy juicy New England IPA features flavors of grapefruit and was brewed in collaboration with Long Island Band - Black Circle Project.', 	'https://assets.untappd.com/photos/2021_12_05/a910599ddb8a8361106f49c8fda04700_1280x1280.jpg',	2)
+;
+
+SELECT SETVAL
+((SELECT PG_GET_SERIAL_SEQUENCE('beers', 'id')), (SELECT (MAX(id) + 1) FROM beers), FALSE);

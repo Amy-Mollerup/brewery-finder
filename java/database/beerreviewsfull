@@ -1,0 +1,37 @@
+-- Table: public.beer_reviews
+
+DROP TABLE IF EXISTS public.beer_reviews;
+
+CREATE TABLE IF NOT EXISTS public.beer_reviews
+(
+    review_id serial NOT NULL,
+    beer_id integer NOT NULL,
+    review character varying COLLATE pg_catalog."default",
+    rating integer,
+    CONSTRAINT beer_reviews_pkey PRIMARY KEY (review_id),
+    CONSTRAINT beer_id FOREIGN KEY (beer_id)
+        REFERENCES public.beers (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.beer_reviews
+    OWNER to postgres;
+	
+	Delete from beer_reviews;
+
+Insert into public.beer_reviews (review_id, beer_id, review, rating)
+Values
+(1,	1,	'Its the classic beer its good but not great',	3),
+(2,	1,	'I don''t know why its so popular it taste like nothing!',	1),
+(3,	1,	'My favorite beer! Its the best I can drink 20 of them and be happy lol',	5),
+(4,	10,	'A great Pale ale! Very drinkable but missing a wow factor',	4),
+(5,	10,	'Its fine I like it enough to finish the glass but I wouldnt order it again',	3),
+(6,	9,	'Best IPA I''ve had, I don''t normally like them but I could actually drink and enjoy this',	4),
+(7,	6,	'Amazing dark and full of flavor! I loved it and would drink it again and again',	5),
+(8,	7,	'The kind of beer you could drink all night and enjoy every sip.',	5);
+
+SELECT SETVAL
+((SELECT PG_GET_SERIAL_SEQUENCE('beer_reviews', 'review_id')), (SELECT (MAX(review_id) + 1) FROM beer_reviews), FALSE);

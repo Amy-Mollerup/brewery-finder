@@ -1,0 +1,49 @@
+-- Table: public.brewery_hours
+
+DROP TABLE IF EXISTS public.brewery_hours;
+
+CREATE TABLE IF NOT EXISTS public.brewery_hours
+(
+    brewery_id integer NOT NULL,
+    day_id integer NOT NULL,
+    open character varying COLLATE pg_catalog."default",
+    close character varying COLLATE pg_catalog."default",
+    CONSTRAINT pk_brewery_day PRIMARY KEY (brewery_id, day_id),
+    CONSTRAINT brewery FOREIGN KEY (brewery_id)
+        REFERENCES public.breweries (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.brewery_hours
+    OWNER to postgres;
+	
+	INSERT INTO public.brewery_hours(
+	brewery_id, day_id, open, close)
+	VALUES 
+	(1,	0,	'1 PM',	'5 PM'),
+	(1,	1,	'Closed',	'Closed'),
+	(1,	2,	'Closed',	'Closed'),
+	(1,	3,	'2 PM',	'9 PM'),
+	(1,	4,	'2 PM',	'9 PM'),
+	(1,	5,	'2 PM',	'9 PM'),
+	(1, 6,	'2 PM',	'9 PM'),
+	(2,	0,	'1 PM',	'8 PM'),
+	(2,	1,	'4 PM',	'9 PM'),
+	(2,	2,	'4 PM',	'9 PM'),
+	(2,	3,	'3 PM',	'10 PM'),
+	(2,	4,	'3 PM',	'10 PM'),
+	(2,	5,	'3 PM',	'10 PM'),
+	(2,	6,	'12 PM',	'10 PM'),
+	(14,	0,	'11 AM',	'6 PM'),
+	(14,	1,	'Closed',	'Closed'),
+	(14,	2,	'Closed',	'Closed'),
+	(14,	3,	'11 AM',	'9 PM'),
+	(14,	4,	'11 AM',	'9 PM'),
+	(14,	5,	'11 AM',	'9 PM'),
+	(14,	6,	'11 AM',	'9 PM');
+	
+	
