@@ -18,7 +18,7 @@ import BeerReviewPage from '../BeerReviewPage/BeerReviewPage'
 import BrewerBeerList from '../BeerListComponent/BrewerBeerList'
 import BreweriesListPage from '../BreweriesListPage/BreweriesListPage'
 import BeerListModal from '../BeerListComponent/BeerListModal'
-import BeerLoverComponent from '../BeerLoverWelcomeComponent/BeerLoverComponent'
+import BrewerAccessReviewComp from '../BrewerAccessReviewComponent/BrewerAccessReviewComp'
 
 const mapStateToProps = state => {
     return {
@@ -45,20 +45,22 @@ class Main extends Component {
     render(){
         return(
             <div>
-            {/* <Hero /> */}
+           {/*  <Hero /> */}
             {/* <Login /> */}
             {/* <Register /> */}
             {/* <BrewerDashboard /> */}
             {/* <BreweryForm /> */}
-            {/* <BeerDetails /> */}
-            {/* <BrewerBeerList /> */}
+          {/*   <BeerDetails /> */}
+          {/*   <BrewerBeerList /> */}
             {/* <BeerReviewPage /> */}
             {/* <UserBeerList /> */}
             {/* <BeerReviewPage /> */}
            {/* <BreweriesListPage /> */}
-           {/*BrewerAccessReview*/}
+
+          {/*  <BrewerAccessReviewComp/> */}
            {/* <BeerListModal /> */}
-           {/* <BeerReviewPage/> */}
+
+            
                  
                 
                 <Switch>

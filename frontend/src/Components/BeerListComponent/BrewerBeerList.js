@@ -1,9 +1,16 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import axios from "axios";
+import Popup from "reactjs-popup";
 import product_card from "../BeerListComponent/data/product_data";
 import "./BeerListStyle.css";
-
+import BrewerAccessReviewComp from "../BrewerAccessReviewComponent/BrewerAccessReviewComp";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import BeerForm from "../BeerFormComponent/BeerForm"
 const BrewerBeerList = () => {
+  const reviewLists = <BrewerAccessReviewComp />
+  const editBeer = <BeerForm/>
   /* console.log(product_card); */
   const listItems = product_card.map((item) =>
         <div className="card" key={item.id}>
@@ -16,17 +23,39 @@ const BrewerBeerList = () => {
                 <p>{item.description}</p>
                 <p className="price">{item.type}<span>\ abv : {item.abv}%</span></p>
                 <div className="beer-btn">Edit</div>
-                <div className="beer-btn">Delete</div>
+                <div className="beer-btn" onClick={editBeer}>Delete</div>
+           
+                <Popup
+                  trigger={ <div className="beer-btn">Reviews</div>}
+                  position="center center"
+                  modal
+                  >
+                  {(close) => (
+                    <div>
+                      {reviewLists}
+                      <a className="close" onClick={close}>
+                    
+                        &times;
+                      </a>
+                    </div>
+                  )}
+                </Popup>
+
+
             </div>
         </div>
 
     );
 
     return (
+      <>
+      <Header/>
       <div className="main_content">
-          {/* <h3>Beer List</h3> */}
+           <h3>Yours Beer List <span> </span></h3> 
           {listItems}
       </div>
+      <Footer />
+      </>
   )
  
 };

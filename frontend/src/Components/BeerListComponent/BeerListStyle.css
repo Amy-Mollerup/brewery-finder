@@ -12,12 +12,13 @@
     -ms-flex-align: center;
     align-items: center;
     margin-top: -9rem;
+    text-shadow: none;
 }
 
 
 .main_content {
     position: relative;
-    width: 70%;
+    width: 100%;
     height: 80%;
     margin: 50px auto;
     padding: 50px 0 0;
@@ -39,7 +40,7 @@
 }
 
 .main_content .card {
-    width: 16rem;
+    width: 320px;
     height: 580px;
     border-radius: 15px;
     -webkit-box-orient: vertical;
@@ -51,7 +52,8 @@
     transform: scale(0.8);
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    margin-bottom: 55px;
+    margin-bottom: 5px;
+    margin-top: 0.2px;
 }
 
 .main_content .card .card_img {
@@ -77,7 +79,7 @@
 }
 
 .main_content .card .card_header p {
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
     color: rgba(67, 64, 64, 0.934);
     margin: 8px 0;
@@ -118,13 +120,14 @@
 }
 
 .beer-btn {
-    width: 130px;
+    
+    width: 180px;
     height: 35px;
     font-size: 16px;
     text-align: center;
     border-radius: 35px;
     background-color: #efeceb;
-    color: #fe8033;
+    text-shadow: none;
     cursor: pointer;
     position: relative;
     flex-direction: row-reverse;
@@ -134,6 +137,14 @@
     margin-bottom: 0.3rem;
     padding-top: 0.2rem;
   
+}
+
+.main_content .card_header .beer-btn:hover{
+    background-color: #ffffff92;
+    color: #2d343e;
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85);
+    cursor: pointer;
 }
 
 .close{

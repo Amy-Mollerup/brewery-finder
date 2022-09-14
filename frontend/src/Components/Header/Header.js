@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import {
   Collapse,
@@ -15,8 +16,6 @@ import {
   NavbarText,
 } from "reactstrap";
 import logo from "../assets/beer-bottle.png";
-import { Link } from "react-router-dom";
-import '../Header/HeaderStyle.css';
 
 export default function Header(args) {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +24,7 @@ export default function Header(args) {
   return (
     <div className="header">
       <Navbar {...args}>
-        <NavbarBrand href="/landingPage">
+        <NavbarBrand href="#">
             Brewery <img src={logo} alt="logo" className="logo" /> Finder
         </NavbarBrand>
 
@@ -33,27 +32,20 @@ export default function Header(args) {
         <Collapse isOpen={isOpen} navbar>
 
           <Nav className="justify-content-end" navbar>
-
                 <NavItem>
-                    <NavLink href="/home">
-                        Home
+                    <NavLink  href="/components/">
+                        Dashboard
                     </NavLink>
                 </NavItem>
-
+                
                 <NavItem>
-                    <NavLink href = "/beerDetails">
+                    <NavLink href="#">
                         Beers
                     </NavLink>
                 </NavItem>
                 
                 <NavItem>
-                    <NavLink href="/breweryDash">
-                        Dashboards
-                    </NavLink>
-                </NavItem>
-
-                <NavItem>
-                    <NavLink href="/">
+                    <NavLink href="#">
                         Contact
                     </NavLink>
                 </NavItem>
