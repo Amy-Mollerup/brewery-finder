@@ -1,74 +1,53 @@
-.signIn--text {
-    grid-area: singIn; 
-    margin-top: 2rem;
-}
-.form--container { 
-    grid-area: formDetail; 
-    margin-top: 9rem;
-    margin-left: 2.5rem;
-    margin-right: 2rem;
+.LoginForm--container {
+    /* margin: 4rem 2rem 2rem 2rem; */
+    color: white;
 }
 
-.signDetail {
-    grid-area: signDetail;
-    width: 458px;
-    font-size: medium;
-    font-style: normal;
-    margin-top:-3.9rem;
-    
+.LoginForm--container h1 {
+    margin: 5rem;
+    font-weight: 500;
+    font-size: 45px;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-areas:
-    'LeftPic singIn singIn formDetail formDetail RightPic'
-    'LeftPic signDetail signDetail formDetail formDetail RightPic'
-    'LeftPic signDetail signDetail formDetail formDetail RightPic';
-    margin-top: 20px;
-}
-/* 
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-} */
+.LoginForm--container p {
+    margin: -5rem 0 0 5rem;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: left;
+    line-height: 20px;
 
-.pic--right { grid-area: RightPic; 
-width: 150px;
-/* background-color: rgba(5, 0, 0, 0.8); */
-}
-.pic--left { grid-area: LeftPic; 
-width: 150px;
-/* background-color: rgba(10, 0, 0, 0.8); */
 }
 
+.LoginForm--container span {
+    font-size: 11px;
+    text-align: left;
+    font-style: italic;
+}
 
-.signIn--text > h1{
-    margin-left: 3rem;
+.LoginForm--form {
+    margin-right: 0;
     margin-top: 4rem;
-    color: #fbfbfb;
-    text-align: center;
-    font-size: 3rem;
+    padding: 50px;
 }
 
-Link{
-    margin-left: 3rem;
-    margin-top: 4rem;
-    color: #fbfbfb;
-    text-align: center;
-    font-size: 3rem;
+.LoginForm--form input {
+    width: 80%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    color: #fff;
 }
 
-
-.signDetail > p{
-text-align: left;
-font-size: 0.8rem;
+.LoginForm--form #linkLine{
+padding: 10px;
+color: coral;
+text-decoration: none;
 }
 
 .btn--signIn {
-    margin-top: 2rem;
-    margin-left: 1rem;
+    margin-top: 3rem;
+    margin-left: 4rem;
     font-weight: 200;
     color: dark;
     font-family: inherit;
@@ -93,32 +72,7 @@ font-size: 0.8rem;
   transition: 0.3s ease;
 }
 
-
-
-@media screen and (max-width: 768px) {
-    .grid-container {
-        display: grid;
-        grid-template-areas:
-        'singIn'
-        'signDetail '
-        'formDetail ';
-        margin-top: 20px;
-    }
-
-    .signDetail{
-        margin-top: 0.9rem;
-        margin-left: 4rem;
-    }
-
-    .form--container { 
-        margin-top: 0.1rem;
-        margin-left: 2rem;
-        margin-right: 2rem;
-    }
+.LoginForm--form , label{
+    margin-left: 4rem;
     
-
-    .btn--signIn {
-        margin-top: 2rem;
-        margin-left: 7rem;
-    }
-  }
+}

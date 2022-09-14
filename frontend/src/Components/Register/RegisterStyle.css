@@ -10,7 +10,7 @@
 }
 
 .Register--container p {
-    margin: -5rem 0 0 5rem;
+    margin: -5rem 1rem 0 5rem;
     font-weight: 300;
     font-size: 18px;
     text-align: left;
@@ -39,8 +39,10 @@
     color: #fff;
 }
 
-.Register--form #linkLine{
-padding: 2px;
+.Register--form #linkLine {
+    padding: 10px;
+    color: coral;
+    text-decoration: none;
 }
 
 .btn--signUp {
@@ -55,7 +57,7 @@ padding: 2px;
     line-height: 2;
     text-align: center;
     text-decoration: none;
-   /*  vertical-align: middle; */
+    /*  vertical-align: middle; */
     cursor: pointer;
     user-select: none;
     border: 1px solid transparent;
@@ -66,11 +68,12 @@ padding: 2px;
 }
 
 .btn--signUp:hover {
-  background: rgba(253, 253, 253, 0.5);
-  transition: 0.3s ease;
+    background: rgba(253, 253, 253, 0.5);
+    transition: 0.3s ease;
 }
 
-.Register--form , label{
+.Register--form,
+label {
     margin-left: 4rem;
-    
+
 }

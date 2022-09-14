@@ -1,11 +1,12 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import { Row, Col } from "reactstrap";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { addToken, addUser } from "../../Redux/actionCreators";
 import { baseUrl } from "../../Shared/baseUrl";
 import axios from "axios";
-import "./LoginStyle.css";
+import "./LoginStyle.css"
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
@@ -46,56 +47,58 @@ class Login extends Component {
   render() {
     return (
       <>
-      <Header />
-      <div className="LoginGrid-container">
-        <div className="pic--left"></div>
-
-        <div className="signIn--text">
-          <h1>Sign In </h1> 
-          <div className="Login--signDetail">
+        <Header />
+        <Row>
+          <Col className="LoginForm--container">
+            <h1>Sign In </h1>
             <p>
               Since beer is an international product with strong local
               traditions, people have traveled to discover new breweries around
               the world. Some explorers have gone off on their own to find new
-              locations{" "}
+              locations
             </p>
-          </div>
-        </div>
-        <div className="form--container">
-          <label className="sr-only">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            class="form-control"
-            placeholder="Username"
-            v-model="user.username"
-            onChange={this.handleInputChange}
-            required
-          />
-          <label className="sr-only">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            class="form-control"
-            placeholder="Password"
-            v-model="user.password"
-            onChange={this.handleInputChange}
-            required
-          />
-          <Link to="/register">Need an account?</Link>
-          <button
-            className="btn--signIn"
-            type="submit"
-            onClick={this.handleLogin}
+          </Col>
+
+          <Col
+            className="LoginForm--form"
+            l={{
+              offset: 1,
+              size: "auto",
+            }}
           >
-            Sign in
-          </button>
-        </div>
-        <div className="pic--right"></div>
-      </div>
-<Footer />
+            <label class="sr-only">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="form-control"
+              placeholder="Username"
+              v-model="user.username"
+              onChange={this.handleInputChange}
+              required
+            />
+            <label class="sr-only">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Password"
+              v-model="user.password"
+              onChange={this.handleInputChange}
+              required
+            />
+            <Link to="/LoginForm" id="linkLine">Need an account?</Link>
+            <button
+              className="btn--signIn"
+              type="submit"
+              onClick={this.handleLogin}
+            >
+              Sign in
+            </button>
+          </Col>
+        </Row>
+        <Footer />
       </>
     );
   }
