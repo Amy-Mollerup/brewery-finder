@@ -23,7 +23,7 @@ export default function Header(args) {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <div className="header">
       <Navbar {...args}>
         <NavbarBrand href="/landingPage">
             Brewery <img src={logo} alt="logo" className="logo" /> Finder

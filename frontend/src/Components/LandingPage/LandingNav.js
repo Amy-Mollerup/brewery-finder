@@ -17,7 +17,7 @@ function LandingNav(props) {
   const toggleNavbar = () => setCollapsed(!collapsed);
 
   return (
-    <div>
+    <div className='landing-nav'>
       <Navbar color="faded" light>
       <NavbarBrand href="/" className="me-auto">
         <h4 className="logocont">Brewery<img src={beerlogo} alt="logo" className="navlogo" /> Finder</h4>

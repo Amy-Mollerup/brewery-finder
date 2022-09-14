@@ -1,11 +1,11 @@
-button:focus:not(:focus-visible) {
+.landing-nav button:focus:not(:focus-visible) {
     outline: 0;
     outline-color: initial;
     outline-style: initial;
     outline-width: 3px;
 }
 
-.btncontainer{
+.landing-nav .btncontainer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,7 @@ button:focus:not(:focus-visible) {
     position: relative;
 }
 
-.navbar{
+.landing-nav .navbar{
     background-color: rgba(200, 34, 34, 0);
     padding: 0;
     margin: 0;
@@ -35,7 +35,7 @@ button:focus:not(:focus-visible) {
     flex-direction: row-reverse;
 }
 
-.nav-link, .nav-item{
+.landing-nav .nav-link, .nav-item{
     color: rgba(255, 255, 255, 0.373) !important;
     /* display: inline-flex; */
     /* padding-left: 35px; */
@@ -46,7 +46,7 @@ button:focus:not(:focus-visible) {
     justify-content: flex-end;
 }
 
-.navbar-collapse {
+.landing-nav .navbar-collapse {
     display: inline-block;
     flex-basis: 100%;
     flex-grow: 1;
@@ -57,14 +57,14 @@ button:focus:not(:focus-visible) {
     justify-content: space-evenly;
 }
 
-img.navlogo{
+.landing-nav img.navlogo{
     display: inline-block;
     height: 50px;
     border-radius: 50%;
     margin-right: 0.5rem;
 }
 
-.logocont{
+.landing-nav .logocont{
     display: flex;
     width: 246px;
     padding: -11px;
@@ -75,7 +75,7 @@ img.navlogo{
     align-items: center;
 }
 
-.navbar-brand{
+.landing-nav .navbar-brand{
     padding-top: 1rem;
     padding-bottom: 0.3125rem;
     margin-right: 1rem;
@@ -85,3 +85,4 @@ img.navlogo{
     left: 26px;
     align-items: center;
 }
+

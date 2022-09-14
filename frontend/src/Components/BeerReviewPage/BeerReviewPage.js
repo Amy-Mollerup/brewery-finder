@@ -21,7 +21,7 @@ export default function BeerReviewPage() {
 
 
   return (
-    <section id="container" className="">
+    <section id="container" className="beer-review">
       <div id="product-img">
         <img
           src="../assets/beer-bottle.png"

@@ -11,7 +11,7 @@
 }
 
 
-img {
+.businessCard--content img {
   height: auto;
   width: 100%;
   user-select: none;
