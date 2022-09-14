@@ -1,4 +1,3 @@
-import React from "react";
 import "./BeerListModalStyle.css";
 import "../BeerListComponent/data/product_data";
 import BeerPic from "../assets/Beer Can Stone.png";
