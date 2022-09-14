@@ -1,39 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap");
 
-* {
-  margin: 0;
+
+.landing--hero {
+  height: 100%;
   padding: 0;
-  /*   box-sizing: border-box; */
-}
-
-body {
-
-  /*  background: linear-gradient(90deg, #1c19e4, #b81edb);
-   
-     background: rgb(0, 0, 0);  */
-  /*   background: radial-gradient(
-    circle,
-    rgb(219, 105, 105) 21%,
-    rgb(88, 42, 32) 50%,
-    rgba(21, 21, 21, 1) 91%
-  );  */
+  margin: 0;
   font-family: "Poppins", sans-serif;
   text-shadow: 1px 1px 1px #333;
   overflow-wrap: break-word;
   background: linear-gradient(#141e30, #243b55);
 }
 
-a {
+.landing--hero a {
   position: absolute;
   text-decoration: none;
   list-style-type: none;
 }
 
-a:hover {
+.landing--hero a:hover {
   text-decoration: underline;
 }
 
-li {
+.landing--hero li {
   padding-right: 9rem;
   text-decoration: none;
   list-style-type: none;
@@ -41,7 +29,7 @@ li {
 }
 
 
-.logo {
+.landing--hero .logo {
   display: inline-block;
   height: 50px;
   border-radius: 50%;
@@ -49,14 +37,17 @@ li {
 
 }
 
-.btn {
-  display: block;
-  box-sizing: border-box;
-  align-content: space-between;
-  margin: 0.2rem;
-  margin-left: 15rem;
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.landing--hero .btn {
   font-weight: 200;
   color: dark;
+  margin: 0.2rem;
   font-family: inherit;
   background-color: #fbfbfb;
   border-color: #7952b3;
@@ -74,12 +65,12 @@ li {
   box-shadow: 2px 2px 7px 1px #666;
 }
 
-.btn:hover {
+.landing--hero .btn:hover {
   background: rgba(253, 253, 253, 0.5);
   transition: 0.3s ease;
 }
 
-.nav {
+.landing--hero .nav {
   font-size: 1.4rem;
   padding-top: 4rem;
   padding-left: 6rem;
@@ -89,12 +80,12 @@ li {
 
 }
 
-.nav a {
+.landing--hero .nav a {
   color: #fbfbfb;
   text-decoration: none;
 }
 
-.nav .nav-links {
+.landing--hero .nav .nav-links {
   position: relative;
   right: -400px;
   display: flex;
@@ -102,25 +93,25 @@ li {
   justify-content: center;
 }
 
-.nav .nav-links li {
+.landing--hero .nav .nav-links li {
   margin-left: 2rem;
 }
 
-.nav .nav-links li a:hover {
+.landing--hero .nav .nav-links li a:hover {
   opacity: 0.5;
 }
 
-.nav .nav-links .btn {
+.landing--hero .nav .nav-links .btn {
   margin-left: 2rem;
 }
 
-.nav .fa-bars,
-.nav .fa-times {
+.landing--hero .nav .fa-bars,
+.landing--hero .nav .fa-times {
   cursor: pointer;
   display: none;
 }
 
-.nav .nav-links.active {
+.landing--hero .nav .nav-links.active {
   position: absolute;
   left: 0;
   top: 0;
@@ -136,13 +127,13 @@ li {
 }
 
 /* the close class will hide the bars  */
-.nav .fa-bars.close {
+.landing--hero .nav .fa-bars.close {
   display: none;
 }
 
 /* the open class will show the X  */
 
-.nav .fa-times.open {
+.landing--hero .nav .fa-times.open {
   position: relative;
   /* width: 100%; */
   display: flex;
@@ -151,7 +142,7 @@ li {
   z-index: 2;
 }
 
-.container {
+.landing--hero {
  /*  position: absolute;
   width: calc(100% - 100px);
   height: 80vh;
@@ -163,39 +154,38 @@ li {
   animation: fadeIn 4s ease-out;
 }
 
-video {
+.landing--hero video {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-h2 {
+.landing--hero h2 {
   color: #fbfbfb;
   text-align: center;
   font-size: 2.5rem;
 }
 
-h5 {
+.landing--hero h5 {
   color: #fbfbfb;
   text-align: center;
   font-weight: 50;
   /*  font-size: 2.5rem; */
 }
 
-h4 {
+.landing--hero h4 {
   color: #fbfbfb;
   text-align: center;
   font-weight: 100;
   font-size: 2.8rem;
 }
 
-p {
+.landing--hero p {
   color: #fbfbfb;
   text-align: center;
-  margin: 4rem 0;
+  margin: 4rem auto;
   max-width: 50rem;
-  margin-left: calc(10rem - 0.1vh);
 
   /* color: #ddd; */
 }
@@ -210,41 +200,35 @@ p {
   100% {}
 }
 
-header,
-section {
+.landing--hero header {
   position: relative;
-  margin-top: 8rem;
-  margin-left: calc(2rem - 0.1vh);
-  margin-right: 2rem;
-  max-width: 1024px;
+  margin: 8rem auto;
 }
 
 
 
 
 @media screen and (max-width: 768px) {
-  .container {
+  .landing--hero {
     margin-left: calc(100%-1rem);
     margin-right: calc(100%-1rem);
   }
 
-  header,
-  section {
+  .landing--hero header {
     margin-top: 9rem;
     margin-left: 2rem;
   }
 
-  .btn {
-    margin: 1.2rem;
-    margin-left: 5rem;
+  .landing--hero .btn {
+    margin: auto;
   }
 
-  .btn:hover {
+  .landing--hero .btn:hover {
     background: rgba(253, 253, 253, 0.5);
     transition: 0.3s ease;
   }
 
-  .nav {
+  .landing--hero .nav {
     font-size: 1.4rem;
     padding-top: 4rem;
     padding-left: 6rem;
@@ -254,15 +238,15 @@ section {
 
   }
 
-  .nav {
+  .landing--hero .nav {
     padding-left: 2rem;
   }
 
-  .nav .nav-links {
+  .landing--hero .nav .nav-links {
     display: none;
   }
 
-  .nav .fa-bars {
+  .landing--hero .nav .fa-bars {
     position: relative;
     width: 100%;
     display: flex;
@@ -270,71 +254,31 @@ section {
     margin-right: 4rem;
   }
 
-  h2 {
+  .landing--hero h2 {
     font-size: 3rem;
   }
 
-  h4 {
+  .landing--hero h4 {
     font-size: 2rem;
   }
 
-  p {
-    margin: 2rem 0;
+  .landing--hero p {
+    margin: 2rem auto;
   }
 
-  label {
+  .landing--hero label {
     font-size: 0.9rem;
   }
 
-  input {
+  .landing--hero input {
     margin-bottom: 1.5rem;
   }
 }
 
-
-.sticker {
-  position: absolute;
-  width: 160px;
-  height: 70px;
-  float: left;
-  font-size: 1.5em;
-  font-weight: bold;
-  margin: -8.5rem 1rem 1rem -11rem;
-  background-color: #fcf59b;
-  border-radius: 0px 10px 250px / 0 200px 55px 250px;
-  -webkit-box-shadow: -3px 5px 12px 0 rgba(0,0,0,0.3);
-  -moz-box-shadow: -3px 5px 12px 0 rgba(0,0,0,0.3);
-  box-shadow: -3px 5px 12px 0 rgba(0,0,0,0.3);
-
-}
-
-/* Text on the sticker*/
-.text {
-  text-align: center;
-  display: block;
-  padding: 20px 20px 20px 0;
-  font-size: 80%;
-  font-family: 'Shadows Into Light', cursive;
-}
-
-/* Shadow under sticker */
-.sticker::before {
-  content: '';
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 90%;
-  height: 20px;
-  -webkit-box-shadow: 3px 17px 6px rgba(0,0,0,.3);
-  -moz-box-shadow: 3px 17px 6px rgba(0,0,0,.3);
-  box-shadow: 3px 17px 6px rgba(0,0,0,.3);
-  bottom: 15px;
-  right: 5px;
-  -ms-transform: skew(-10deg,2deg);
-  -webkit-transform: skew(-10deg,2deg);
-  transform: skew(-10deg,2deg);
-}
-
-footer{
+.landing--hero footer{
 margin-top: 10rem;
+}
+
+.landing--hero header a {
+  position: relative;
 }

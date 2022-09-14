@@ -15,10 +15,14 @@
     position: relative;
 }
 
+.landing-nav a {
+    position: absolute;
+    text-decoration: none;
+    list-style-type: none;
+  }
+
 .landing-nav .navbar{
     background-color: rgba(200, 34, 34, 0);
-    padding: 0;
-    margin: 0;
     border: 0;
     border-radius: 0;
     box-shadow: 0 0 0 0;

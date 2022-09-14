@@ -64,7 +64,7 @@
     padding-bottom: 29px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content:space-between;
 }
 
 .header .dropdown-item {
