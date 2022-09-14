@@ -6,6 +6,8 @@ import { addToken, addUser } from "../../Redux/actionCreators";
 import { baseUrl } from "../../Shared/baseUrl";
 import axios from "axios";
 import "./LoginStyle.css";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const mapDispatchToProps = (dispatch) => ({
   addToken: () => dispatch(addToken()),
@@ -43,17 +45,19 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="grid-container">
+      <>
+      <Header />
+      <div className="LoginGrid-container">
         <div className="pic--left"></div>
 
         <div className="signIn--text">
           <h1>Sign In </h1> 
-          <div className="signDetail">
+          <div className="Login--signDetail">
             <p>
               Since beer is an international product with strong local
               traditions, people have traveled to discover new breweries around
               the world. Some explorers have gone off on their own to find new
-              locations ...{" "}
+              locations{" "}
             </p>
           </div>
         </div>
@@ -91,6 +95,8 @@ class Login extends Component {
         </div>
         <div className="pic--right"></div>
       </div>
+<Footer />
+      </>
     );
   }
 }

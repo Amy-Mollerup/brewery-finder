@@ -1,8 +1,12 @@
 import axios from "axios";
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import { Row, Col } from "reactstrap";
 import { baseUrl } from "../../Shared/baseUrl";
-import "../Login/LoginStyle.css";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+import "./RegisterStyle.css"
+
 
 class Register extends Component {
   constructor(props) {
@@ -37,80 +41,82 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="grid-container">
-        <div className="pic--left"> </div>
-        <div className="signIn--text">
-          <h1>Create Account</h1>
-          <div className="signDetail">
+      <>
+      <Header />
+        <Row>
+        
+          <Col className="Register--container">
+            <h1>Create Account</h1>
             <p>
               A Brewery is a place where different kinds of beer are made for
               commercial use or enjoyment by consumers.
-              <span >Let's Join the club</span>
+              <br/>
+              <span>*Intended for adults 21 years or older. If you are not, please do not enter this site</span>
             </p>
-          </div>
-        </div>
+            {/* <div className="sticker">
+              <span class="text">Are You 21+?</span>
+            </div> */}
+          </Col>
+          <Col className="Register--form" l={{
+        offset: 1,
+        size: 'auto'
+      }}>
+            <label class="sr-only">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="form-control"
+              placeholder="Username"
+              v-model="user.username"
+              onChange={this.handleInputChange}
+              required
+            />
+            <label class="sr-only">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Password"
+              v-model="user.password"
+              onChange={this.handleInputChange}
+              required
+            />
+            <input
+              type="password"
+              id="password-confirm"
+              name="confirmPassword"
+              class="form-control"
+              placeholder="Confirm Password"
+              v-model="user.password"
+              onChange={this.handleInputChange}
+              required
+            />
 
-        <div className="form--container">
-          <label class="sr-only">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            class="form-control"
-            placeholder="Username"
-            v-model="user.username"
-            onChange={this.handleInputChange}
-            required
-          />
-          <label class="sr-only">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            class="form-control"
-            placeholder="Password"
-            v-model="user.password"
-            onChange={this.handleInputChange}
-            required
-          />
-          <input
-            type="password"
-            id="password-confirm"
-            name="confirmPassword"
-            class="form-control"
-            placeholder="Confirm Password"
-            v-model="user.password"
-            onChange={this.handleInputChange}
-            required
-          />
-
-          <input
-            type="date"
-            id="DOB"
-            name="DOB"
-            class="form-control"
-            placeholder="Date of Birth"
-            v-model="user.password"
-            onChange={this.handleInputChange}
-            required
-          />
-          <Link to="/login">Have an account?</Link>
-          <button
-            className="btn--signIn"
-            type="submit"
-            onClick={this.handleSubmit}
-          >
-            Sign Up
-          </button>
-
-          <div className="sticker">
-            <span class="text">Are You 21+?</span>
-            </div>
-
-        </div>
-       
-        <div className="pic--right"></div>
-      </div>
+            <input
+              type="date"
+              id="DOB"
+              name="DOB"
+              class="form-control"
+              placeholder="Date of Birth"
+              v-model="user.password"
+              onChange={this.handleInputChange}
+              required
+            />
+            
+            <Link to="/login" id="linkLine">Have an account?</Link>
+            <button
+              className="btn--signUp"
+              type="submit"
+              onClick={this.handleSubmit}
+            >
+              Sign Up
+            </button>
+          </Col>
+        </Row>
+        <Footer />
+      </>
     );
   }
 }

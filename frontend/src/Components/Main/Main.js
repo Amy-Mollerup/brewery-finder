@@ -49,19 +49,17 @@ class Main extends Component {
             {/* <Login /> */}
             {/* <Register /> */}
             {/* <BrewerDashboard /> */}
-            {/* <BreweryForm /> */}
-          {/*   <BeerDetails /> */}
-          {/*   <BrewerBeerList /> */}
+           {/*  <BreweryForm /> */}
+           {/*  <BeerDetails /> */}
+            {/* <BrewerBeerList /> */}
             {/* <BeerReviewPage /> */}
-            {/* <UserBeerList /> */}
+           {/*  <UserBeerList /> */}
             {/* <BeerReviewPage /> */}
            {/* <BreweriesListPage /> */}
 
           {/*  <BrewerAccessReviewComp/> */}
            {/* <BeerListModal /> */}
-
-            
-                 
+       
                 
                 <Switch>
                     <Route path='/landingPage'component={() => <Hero/>}/>
