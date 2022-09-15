@@ -1,3 +1,5 @@
+
+
 .shell {
   padding: 80px 0;
   text-shadow: none;
@@ -34,6 +36,8 @@
   width: 100%;
   transition: all 0.2s ease-in-out;
   border-radius: 16px;
+
+ 
 }
 
 .beerList-cp-product:hover .beerList-cp-img {
@@ -46,6 +50,7 @@
 
 .beerList-cp-text {
   padding-top: 100%;
+  
 }
 
 .beerList-cp-text .category {
@@ -94,45 +99,45 @@
 }
 
 .beerList-cp-text .title-product {
+  display: flex;
   text-align: center;
+  
 }
 
 .beerList-cp-text .title-product h3 {
   font-size: 20px;
   font-weight: 900;
-  margin: 15px auto;
-  overflow: hidden;
-  white-space: nowrap;
+  white-space: wrap;
   text-overflow: ellipsis;
   width: 100%;
-  
 }
 
 .beerList-cp-text .description-prod p {
-  margin: 0;
-  font-size: 14px;
-  text-align: center;
-
+  margin-top: 2px;
+  font-size: 12px;
   color: rgba(67, 64, 64, 0.934);
-  word-break: break-all;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-line-clamp: 3; 
   -webkit-box-orient: vertical;
-  max-width: 240px;
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 /* Truncate */
 .beerList-cp-text .description-prod {
-  text-align: center;
   width: 100%;
   height: 62px;
   overflow: hidden;
-  display: -webkit-box;
+  display: flex;
+
+  /* display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  margin-bottom: 15px;
+  margin-bottom: 15px; */
 }
 
 .card-footer {

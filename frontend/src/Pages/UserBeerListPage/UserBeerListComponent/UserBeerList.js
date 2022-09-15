@@ -1,65 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
-import Popup from "reactjs-popup";
-import { Link } from "react-router-dom";
 import { Row, Col, Button, Container } from "reactstrap";
-import product_card from "../../../Components/BeerListComponent/data/product_data";
 import "./UserBeerListStyle.css";
-import BeerReviewPage from "../../../Components/BLReviewModalComp/BeerReviewPage";
+import BeerListCard from "./BeerListCard";
 
 const UserBeerList = () => {
-  /* console.log(product_card); */
-  const reviewLiked = <BeerReviewPage />;
-  const listItems = product_card.map((item) => (
-    <div className="UserBeerList--container">
-      <Row>
-        <Col>
-          <div className="beerList-cp-product">
-            <div className="beerList-cp-img">
-              <img src={item.packagePic} alt="beerImage" />
-            </div>
 
-            <div className="beerList-cp-text">
-              <div className="category">
-                {/* https://react-popup.elazizi.com/react-modal */}
-                <Popup
-                  trigger={<span>{item.type}</span>}
-                  position="center center"
-                  modal
-                  >
-                  {(close) => (
-                    <div>
-                      {reviewLiked}
-                      <a className="close" onClick={close}>
-                        {" "}
-                        &times;
-                      </a>
-                    </div>
-                  )}
-                </Popup>
-              </div>
-              <div className="title-product">
-                <h3>{item.name}</h3>
-              </div>
-              <div className="description-prod">
-                <p>{item.description}</p>
-              </div>
-              <div className="card-footer">
-                <div className="beerList-left">
-                  <span class="price"> {item.abv} </span>{" "}
-                  <span>⭐⭐⭐⭐⭐</span>
-                </div>
-                <div className="beerList-right">
-                  <a href="#" class="review-btn">
-                    <i class="zmdi zmdi-shopping-basket"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Col>
-      </Row>
-    </div>
+  
+  /* console.log(product_card); */
+  const [beers, setBeers] = React.useState([]);
+  function getBeerList(){
+    axios.get("http://localhost:8081/beers",{})
+  .then(resp => {
+   console.log(resp.data)
+   setBeers(resp.data)
+  })
+  .catch(error => {
+    console.log(error)
+  })
+}
+
+  useEffect(() => getBeerList(),[])
+  const listItems = beers.map((beer) => (
+    <BeerListCard beer={beer} key={beer.beerName} />
   ));
 
   return (

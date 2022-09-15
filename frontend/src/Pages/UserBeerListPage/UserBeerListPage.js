@@ -5,21 +5,12 @@ import UserBeerList from './UserBeerListComponent/UserBeerList'
 
 export default function UserBeerListPage() {
   return (
-    <div>
-    <Header />
-    <div
-    className=""
-    fluid="lg"
-  >
-    
-  </div>
   <div
     className=""
     fluid="xl"
   >
    <UserBeerList />
   </div>
-    <Footer/>
-    </div>
+    
   )
 }

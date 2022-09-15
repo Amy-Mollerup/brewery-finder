@@ -8,6 +8,7 @@
   text-align: center;
   padding: 0;
   margin: 0;
+  width: 350px;
 }
 
 
@@ -30,8 +31,12 @@
 	color: #FAEAFF;
   font-size: 22px;
   font-weight: 600;
-  margin-left: 0.8rem;
+  width: 100%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
   margin-top:0.8rem ;
+ 
 }
 
 .user {
@@ -50,13 +55,23 @@ user-select: none;
   margin-top: -20px;
 }
 
+.info{
+  margin-top: 25%;
+}
+
+.info p{
+  margin: 0;
+}
+
+.website{
+  position: absolute;
+  margin-top: 5%;
+  width: 100%;
+
+}
 .info a{ 
   color:rgb(49, 49, 49);
-  font-size: 12px;
-  margin-left: -5rem;
-  margin-top: -1rem;
-  text-shadow: none;
-  font-weight: 500;
+  font-size: 25px;
 }
 
 .info li {
@@ -98,7 +113,7 @@ margin: 20px 0;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  margin: 65px 0 0 0;
+  margin: 30% 0 0 0;
 }
 
 .beerListFromId span {
