@@ -7,141 +7,14 @@
 }
 
 body {
-
-  /*  background: linear-gradient(90deg, #1c19e4, #b81edb);
-   
-     background: rgb(0, 0, 0);  */
-  /*   background: radial-gradient(
-    circle,
-    rgb(219, 105, 105) 21%,
-    rgb(88, 42, 32) 50%,
-    rgba(21, 21, 21, 1) 91%
-  );  */
   font-family: "Poppins", sans-serif;
   text-shadow: 1px 1px 1px #333;
   overflow-wrap: break-word;
   background: linear-gradient(#141e30, #243b55);
-  height: 100%;
+  color: #fbfbfb;
+  text-align: center;
 }
 
-#root {
+#root, body, .project-container {
   height: 100%
-}
-
-.project-container {
-  height: 100%;
-}
-
-
-
-h2 {
-  color: #fbfbfb;
-  text-align: center;
-  font-size: 2.5rem;
-}
-
-h5 {
-  color: #fbfbfb;
-  text-align: center;
-  font-weight: 50;
-  /*  font-size: 2.5rem; */
-}
-
-h4 {
-  color: #fbfbfb;
-  text-align: center;
-  font-weight: 100;
-  font-size: 2.8rem;
-}
-
-p {
-  color: #fbfbfb;
-  text-align: center;
-
-  /* color: #ddd; */
-}
-
-@keyframes fadeIn {
-  0% {
-    box-shadow: none;
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.1);
-  }
-
-  100% {}
-}
-
-
-
-@media screen and (max-width: 768px) {
-  .container {
-    margin-left: calc(100%-1rem);
-    margin-right: calc(100%-1rem);
-  }
-
-  header,
-  section {
-    margin-top: 9rem;
-    margin-left: 2rem;
-  }
-
-  .btn {
-    margin: 1.2rem;
-    margin-left: 5rem;
-  }
-
-  .btn:hover {
-    background: rgba(253, 253, 253, 0.5);
-    transition: 0.3s ease;
-  }
-
-  .nav {
-    font-size: 1.4rem;
-    padding-top: 4rem;
-    padding-left: 6rem;
-    color: #fbfbfb;
-    display: flex;
-    align-items: center;
-
-  }
-
-  .nav {
-    padding-left: 2rem;
-  }
-
-  .nav .nav-links {
-    display: none;
-  }
-
-  .nav .fa-bars {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 4rem;
-  }
-
-  h2 {
-    font-size: 3rem;
-  }
-
-  h4 {
-    font-size: 2rem;
-  }
-
-  p {
-    margin: 2rem 0;
-  }
-
-  label {
-    font-size: 0.9rem;
-  }
-
-  input {
-    margin-bottom: 1.5rem;
-  }
-}
-
-footer{
-margin-top: 10rem;
 }

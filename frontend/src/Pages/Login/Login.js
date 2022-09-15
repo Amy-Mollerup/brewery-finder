@@ -85,7 +85,7 @@ class Login extends Component {
               onChange={this.handleInputChange}
               required
             />
-            <Link to="/LoginForm" id="linkLine">Need an account?</Link>
+            <Link to="/register" id="linkLine">Need an account?</Link>
             <button
               className="btn--signIn"
               type="submit"

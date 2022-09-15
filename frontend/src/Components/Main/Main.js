@@ -5,6 +5,8 @@ import {connect} from 'react-redux'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 
+import AuthorizationWarning from '../../Pages/AuthorizationWarning/AuthorizationWarning'
+
 import BeerLoverWelcomePage from '../../Pages/BLWelcomePage/BeerLoverWelcomePage'
 import BrewerDashboard from '../../Pages/BrewerDashboardPage/BrewerDashboard'
 import BreweriesListPage from '../../Pages/BreweriesListPage/BreweriesListPage'
@@ -33,12 +35,14 @@ class Main extends Component {
         super(props);
     }
 
+
     handleLogout = () => {
         this.props.addToken("")
         this.props.deleteUser()
     }
 
     render(){
+        console.log(this.props.token)
         return(
             <div className='project-container'>
             <Header/>
@@ -63,10 +67,25 @@ class Main extends Component {
                     <Route path='/brewery' component={() => <BreweryForm />}/>
                     <Route path='/landingPage'component={() => <Hero/>}/>
                     <Route path='/login' component={() => <Login/>}/>
-                    <Route path='/register'component={() => <Register/>}/>\
+                    <Route path='/register'component={() => <Register/>}/>
                     <Route path='/beerList' component={() => <UserBeerList />}/>
                     <Redirect to='/landingPage'/>
                 </Switch>
+{/*  FOR AUTHENTICATION TESTING
+                <Switch>
+                    <Route path='/welcome'component={this.props.token !== undefined ? () => <BeerLoverWelcomePage/> : () => <AuthorizationWarning/>}/>
+                    <Route path='/brewerDash' component={this.props.token !== undefined ? () => <BrewerDashboard/> : () => <AuthorizationWarning/>}/>
+                    <Route path='/breweryList' component={this.props.token !== undefined ? () => <BreweriesListPage/> : () => <AuthorizationWarning/>}/>
+                    <Route path='/beerForm' component={this.props.token !== undefined ? () => <BeerDetail/> : () => <AuthorizationWarning/>}/>
+                    <Route path='/brewerBeerList' component={this.props.token !== undefined ? () => <BrewerBeerList/> : () => <AuthorizationWarning/>}/>
+                    <Route path='/brewery' component={this.props.token !== undefined ? () => <BreweryForm /> : () => <AuthorizationWarning/>}/>
+                    <Route path='/landingPage'component={() => <Hero/>}/>
+                    <Route path='/login' component={() => <Login/>}/>
+                    <Route path='/register'component={() => <Register/>}/>\
+                    <Route path='/beerList' component={this.props.token !== undefined ? () => <UserBeerList /> : <AuthorizationWarning/>}/>
+                    <Redirect to='/landingPage'/>
+                </Switch> */}
+
 
             {this.props.location.pathname != '/landingPage' && <Footer/>}
             </div>

@@ -4,19 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="added database files">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_5_2022_9_12_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_5_2022_9_12_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="debugged brewery controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/database/breweries" beforeDir="false" afterPath="$PROJECT_DIR$/java/database/breweries" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BeerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BeerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BreweryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BreweryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BeerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BeerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BreweryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBeerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBeerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/model/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/model/Brewery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/Main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/Main/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/LandingPage/Hero.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/LandingPage/Hero.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/LandingPage/HeroStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/LandingPage/HeroStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/LandingPage/LandingNav.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/LandingPage/LandingNav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/Login/Login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +45,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2E8yzY4E5pMw4BfwvCbgt9jpP18" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">

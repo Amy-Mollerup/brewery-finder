@@ -20,17 +20,9 @@ const Hero = () => {
           By using the Brewery Finder, you'll be able to understand and enjoy the many wonders of
           craft beer.
         </p>
-        {/*     <Switch>
-                    <Route path='/landingPage'component={() => <Hero/>}/>
-                    <Route path='/login' component={() => <Login/>}/>
-                    <Route path='/register'component={() => <Register/>}/>
-                  
-        </Switch> */}
         <div className='button-container'>
-          <Link to='/register'><button className=" btn " > Sign Up </button></Link>
-          <Link to='/login'><button className=" btn " >Login </button ></Link>
-        {/* <button className=" btn " > Sign Up </button>
-        <button className=" btn " >Login </button > */}
+          <Link to='/register'><button className="btn landing-page--btn" > Sign Up </button></Link>
+          <Link to='/login'><button className="btn landing-page--btn" >Login </button ></Link>
         </div>
       </body>
 
