@@ -13,6 +13,8 @@ public interface BreweryDao {
 
     Brewery getBreweryById(long breweryId);
 
+    List<Brewery> getBreweryByBrewer(long brewerId);
+
     Brewery getBreweryByName(String breweryName) throws Exception;
 
     boolean create(Brewery brewery);

@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS public.breweries
     brewer integer,
     image character varying COLLATE pg_catalog."default",
     description character varying COLLATE pg_catalog."default",
+    active boolean,
     CONSTRAINT breweries_pkey PRIMARY KEY (id),
     CONSTRAINT brewer FOREIGN KEY (brewer)
         REFERENCES public.users (user_id) MATCH SIMPLE

@@ -22,6 +22,11 @@ public class BreweryController {
         return breweries;
     }
 
+    @GetMapping(value = "/brewer/{id}")
+    public List<Brewery> getBreweriesByBrewer(@PathVariable long id) {
+        return breweryDao.getBreweryByBrewer(id);
+    }
+
     @GetMapping(value = "/breweries/{id}")
     public Brewery getBreweryById(@PathVariable long id) {
         Brewery brewery = breweryDao.getBreweryById(id);

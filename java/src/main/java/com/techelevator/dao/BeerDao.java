@@ -7,7 +7,11 @@ import java.util.List;
 
 public interface BeerDao {
 
+    List<Beer> getAllBeers();
+
     List<Beer> listBeerByBrewery(Long BreweryId);
+
+    Beer getBeerById(long id);
 
     Beer getBeerByName(String beerName);
 

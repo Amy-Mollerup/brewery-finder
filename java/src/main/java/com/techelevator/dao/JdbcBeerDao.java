@@ -19,9 +19,22 @@ public class JdbcBeerDao implements BeerDao{
     }
 
     @Override
+    public List<Beer> getAllBeers() {
+        String sql = "select * from beers";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+        List<Beer> beers = new ArrayList<>();
+        while (results.next()){
+            Beer beer = mapRowToBeer(results);
+            beer.setReviews(getReviews(beer.getBeerId()));
+            beers.add(beer);
+        }
+        return beers;
+    }
+
+    @Override
     public List<Beer> listBeerByBrewery(Long BreweryId) {
         List<Beer> beers = new ArrayList<>();
-        String sql = "select * from beer where brewery = ?";
+        String sql = "select * from beers where brewery = ?";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, BreweryId);
 
@@ -32,6 +45,20 @@ public class JdbcBeerDao implements BeerDao{
         }
 
         return beers;
+    }
+
+    @Override
+    public Beer getBeerById(long id) {
+        String sql = "select * from beers where id = ?";
+        Beer beer = new Beer();
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, id);
+        while (results.next()){
+            beer = mapRowToBeer(results);
+            beer.setReviews(getReviews(beer.getBeerId()));
+        }
+
+        return beer;
     }
 
     @Override
@@ -135,6 +162,7 @@ public class JdbcBeerDao implements BeerDao{
         beer.setBeerDescription(rs.getString("description"));
         beer.setBeerType(rs.getString("type"));
         beer.setBeerImage(rs.getString("image"));
+        beer.setBrewery(rs.getLong("brewery"));
 
         return beer;
     }

@@ -4,18 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="debugged brewery controller">
-      <change beforePath="$PROJECT_DIR$/java/database/beer.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/database/beer_reviews.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/database/breweries.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/database/breweries.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/database/breweries_data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/database/brewery_hours.sql" beforeDir="false" />
+    <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="added database files">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_5_2022_9_12_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_5_2022_9_12_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/database/breweries" beforeDir="false" afterPath="$PROJECT_DIR$/java/database/breweries" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BeerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BeerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BreweryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BreweryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BeerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BeerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BreweryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBeerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBeerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/model/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/model/Brewery.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,10 +60,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/java/database" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Natha\Desktop\meritamerica\final-capstone\java\database" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -149,8 +163,18 @@
       <option name="project" value="LOCAL" />
       <updated>1662426820087</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added database files">
+      <created>1663129711190</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663129711190</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.sql" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -165,10 +189,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added database files" />
     <MESSAGE value="adjusted database and brewery model added jdbc for creating brewery and updating, getting, and setting hours" />
     <MESSAGE value="added BreweryController and CrossOrigin annotation" />
     <MESSAGE value="debugged brewery controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="debugged brewery controller" />
+    <MESSAGE value="added database files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added database files" />
   </component>
 </project>

@@ -16,12 +16,13 @@ public class Brewery {
     private Long brewer;
     private String description;
     private String image;
+    private boolean isActive;
 
     public Brewery() {
 
     }
 
-    public Brewery(long breweryId, String breweryName, String breweryStreet, String breweryCity, String breweryState, String breweryPostCode, String phoneNumber, String website, List<Beer> beerList, Map<Integer, String[]> breweryHours, Long brewer, String description, String image) {
+    public Brewery(long breweryId, String breweryName, String breweryStreet, String breweryCity, String breweryState, String breweryPostCode, String phoneNumber, String website, List<Beer> beerList, Map<Integer, String[]> breweryHours, Long brewer, String description, String image, boolean isActive) {
         this.breweryId = breweryId;
         this.breweryName = breweryName;
         this.breweryStreet = breweryStreet;
@@ -35,6 +36,7 @@ public class Brewery {
         this.brewer = brewer;
         this.description = description;
         this.image = image;
+        this.isActive = isActive;
     }
 
     public long getBreweryId() {
@@ -125,4 +127,7 @@ public class Brewery {
 
     public void setImage(String image) {this.image = image;}
 
+    public boolean isActive() {return isActive;}
+
+    public void setActive(boolean active) {isActive = active;}
 }

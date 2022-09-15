@@ -18,15 +18,20 @@ public class BeerController {
         this.beerDao = beerDao;
     }
 
+    @GetMapping(value = "/beers")
+    public List<Beer> getAllBeers(){
+        return beerDao.getAllBeers();
+    }
+
     @GetMapping(value = "/{breweryId}/beers")
     public List<Beer> getBeerByBrewery(@PathVariable long breweryId) {
         List<Beer> beers = beerDao.listBeerByBrewery(breweryId);
         return beers;
     }
 
-    @GetMapping(value = "/beer/{name}")
-    public Beer getBeer(@PathVariable String name){
-        Beer beer = beerDao.getBeerByName(name);
+    @GetMapping(value = "/beer/{id}")
+    public Beer getBeer(@PathVariable Long id){
+        Beer beer = beerDao.getBeerById(id);
         return beer;
     }
 
