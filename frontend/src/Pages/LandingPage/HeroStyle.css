@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap");
+
+
+.landing--hero {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 1px 1px 1px #333;
+  overflow-wrap: break-word;
+}
+
+.landing--hero header {
+  height: 100%;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.landing--hero .btn {
+  font-weight: 200;
+  color: dark;
+  margin: 0.2rem;
+  font-family: inherit;
+  background-color: #fbfbfb;
+  display: inline-block;
+  line-height: 2;
+  text-align: center;
+  text-decoration: none;
+  /*  vertical-align: middle; */
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 1.02rem;
+  border-radius: 0.25rem;
+  transition: 0.3s ease;
+  box-shadow: 2px 2px 7px 1px #666;
+}
+
+.landing--hero .btn:hover {
+  background: rgba(253, 253, 253, 0.5);
+  transition: 0.3s ease;
+}
+
+
+.landing--hero {
+  /*  position: absolute;
+   width: calc(100% - 100px);
+   height: 80vh;
+   margin: auto;
+   margin-top: 10vh;
+   border-radius: 10px; */
+   /*  background: rgba(255, 255, 255, 0.1); */
+   box-shadow: 10px 10px 25px 5px #111;
+   animation: fadeIn 4s ease-out;
+ }
+ 
+
+
+
+.landing--hero video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.landing--hero h2 {
+  color: #fbfbfb;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.landing--hero h5 {
+  color: #fbfbfb;
+  text-align: center;
+  font-weight: 50;
+  /*  font-size: 2.5rem; */
+}
+
+.landing--hero h4 {
+  color: #fbfbfb;
+  text-align: center;
+  font-weight: 100;
+  font-size: 2.8rem;
+}
+
+.landing--hero p {
+  color: #fbfbfb;
+  text-align: center;
+  margin: 4rem auto;
+  max-width: 50rem;
+
+  /* color: #ddd; */
+}
+
+.hero--body {
+  background-color: rgba(0, 0, 0, 0);
+  background-image: none;
+  padding: 8rem 2rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.1);
+  }
+
+  100% {}
+}

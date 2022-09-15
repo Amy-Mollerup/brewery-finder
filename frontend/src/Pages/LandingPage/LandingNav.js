@@ -8,16 +8,16 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
-import './HeaderStyle.css'
+import './LandingNav.css'
 import logo from "../../Components/assets/beer-bottle.png";
 
-function Header() {
+function LandingNav(props) {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleNavbar = () => setCollapsed(!collapsed);
 
   return (
-    <div className='header'>
+    <div className='landing-nav'>
       <Navbar>
       <NavbarBrand href="/">
           Brewery <img src={logo} alt="logo" className="logo" /> Finder
@@ -45,6 +45,9 @@ function Header() {
               <NavLink href="/brewery">Brewery</NavLink>
             </NavItem>
             <NavItem>
+              <NavLink href="/home">Home</NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink href="/login">Login</NavLink>
             </NavItem>
             <NavItem>
@@ -60,4 +63,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default LandingNav;

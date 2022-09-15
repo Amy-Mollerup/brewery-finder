@@ -21,6 +21,15 @@ body {
   text-shadow: 1px 1px 1px #333;
   overflow-wrap: break-word;
   background: linear-gradient(#141e30, #243b55);
+  height: 100%;
+}
+
+#root {
+  height: 100%
+}
+
+.project-container {
+  height: 100%;
 }
 
 

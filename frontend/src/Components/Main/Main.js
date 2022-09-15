@@ -1,24 +1,20 @@
 import {Component} from 'react'
-import {Switch, Route, Redirect, Link} from 'react-router-dom'
-import Login from '../Login/Login'
-import Register from '../Register/Register'
-import Home from '../Home/Home'
+import { Switch, Route, Redirect, Link, withRouter } from 'react-router-dom'
 import {addToken, deleteUser} from '../../Redux/actionCreators'
 import {connect} from 'react-redux'
-import {withRouter} from 'react-router-dom'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
-import Hero from '../LandingPage/Hero'
-import BrewerDashboard from '../BrewerDashboardPage/BrewerDashboard'
-import BreweryForm from '../BreweryFormPage/BreweryForm'
-import BeerDetails from '../BeerDetailPage/BeerDetail'
-import BeerLoverWelcomePage from '../BeerLoverWelcomePage/BeerLoverWelcomePage'
-import BeerList from "../BreweryBeerListPage/BeerList"
-import UserBeerList from '../UserBeerListPage/UserBeerListPage'
-import BeerReviewPage from '../BeerReviewPage/BeerReviewPage'
-import BrewerBeerList from '../BeerListComponent/BrewerBeerList'
-import BreweriesListPage from '../BreweriesListPage/BreweriesListPage'
-import BeerListModal from '../BeerListComponent/BeerListModal'
-import BrewerAccessReviewComp from '../BrewerAccessReviewComponent/BrewerAccessReviewComp'
+import BeerLoverWelcomePage from '../../Pages/BLWelcomePage/BeerLoverWelcomePage'
+import BrewerDashboard from '../../Pages/BrewerDashboardPage/BrewerDashboard'
+import BreweriesListPage from '../../Pages/BreweriesListPage/BreweriesListPage'
+import BeerDetail from '../../Pages/BreweryBeerFormPage/BeerDetail'
+import BrewerBeerList from '../../Pages/BreweryBeerListPage/BreweryBeerListComponent/BrewerBeerList'
+import BreweryForm from '../../Pages/BreweryFormPage/BreweryForm'
+import Hero from '../../Pages/LandingPage/Hero'
+import Login from '../../Pages/Login/Login'
+import Register from '../../Pages/Register/Register'
+import UserBeerList from '../../Pages/UserBeerListPage/UserBeerListPage'
 
 const mapStateToProps = state => {
     return {
@@ -44,34 +40,35 @@ class Main extends Component {
 
     render(){
         return(
-            <div>
-           {/*  <Hero /> */}
-            {/* <Login /> */}
-            {/* <Register /> */}
-            {/* <BrewerDashboard /> */}
-           {/*  <BreweryForm /> */}
-           {/*  <BeerDetails /> */}
-            {/* <BrewerBeerList /> */}
-            {/* <BeerReviewPage /> */}
-            {/* <UserBeerList /> */}
-            {/* <BeerReviewPage /> */}
-           {/* <BreweriesListPage /> */}
-
-           {/* <BrewerAccessReviewComp/> */}
-           {/* <BeerListModal /> */}
-       
+            <div className='project-container'>
+            <Header/>
+            {/* <BeerLoverWelcomePage/> */}
+            {/* <BrewerDashboard/> */}
+            {/* <BreweriesListPage/> */}
+            {/* <BeerDetail/> */}
+            {/* <BrewerBeerList/> */}
+            {/* <BreweryForm/> */}
+            {/* <Home/> */}
+            {/* <Hero/> */}
+            {/* <Login/> */}
+            {/* <Register/> */}
+            {/* <UserBeerList/> */}
                 
                 <Switch>
+                    <Route path='/welcome'component={() => <BeerLoverWelcomePage/>}/>
+                    <Route path='/brewerDash' component={() => <BrewerDashboard/>}/>
+                    <Route path='/breweryList' component={() => <BreweriesListPage/>}/>
+                    <Route path='/beerForm' component={() => <BeerDetail/>}/>
+                    <Route path='/brewerBeerList' component={() => <BrewerBeerList/>}/>
+                    <Route path='/brewery' component={() => <BreweryForm />}/>
                     <Route path='/landingPage'component={() => <Hero/>}/>
                     <Route path='/login' component={() => <Login/>}/>
                     <Route path='/register'component={() => <Register/>}/>\
-                    <Route path='/home' component={this.props.token.token !== undefined ? () => <Home/> : null}/>
-                    <Route path='/beerDetails' component={() => <BeerDetails/>}/>
-                    <Route path='/brewery' component={() => <BreweryForm />}/>
-                    <Route path='/beerList' component={() => <BeerList />}/>
-                    <Route path='/breweryDash' component={() => <BrewerDashboard/>}/>
+                    <Route path='/beerList' component={() => <UserBeerList />}/>
                     <Redirect to='/landingPage'/>
                 </Switch>
+
+            {this.props.location.pathname != '/landingPage' && <Footer/>}
             </div>
         )
     }
