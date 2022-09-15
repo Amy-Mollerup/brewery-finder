@@ -53,11 +53,11 @@ class Main extends Component {
            {/*  <BeerDetails /> */}
             {/* <BrewerBeerList /> */}
             {/* <BeerReviewPage /> */}
-           {/*  <UserBeerList /> */}
+            {/* <UserBeerList /> */}
             {/* <BeerReviewPage /> */}
            {/* <BreweriesListPage /> */}
 
-          {/*  <BrewerAccessReviewComp/> */}
+           {/* <BrewerAccessReviewComp/> */}
            {/* <BeerListModal /> */}
        
                 

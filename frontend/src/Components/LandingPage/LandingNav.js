@@ -9,7 +9,7 @@ import {
   NavLink,
 } from 'reactstrap';
 import './LandingNav.css'
-import beerlogo from "../assets/beer-bottle.png";
+import logo from "../assets/beer-bottle.png";
 
 function LandingNav(props) {
   const [collapsed, setCollapsed] = useState(true);
@@ -18,11 +18,11 @@ function LandingNav(props) {
 
   return (
     <div className='landing-nav'>
-      <Navbar color="faded" light>
-      <NavbarBrand href="/" className="me-auto">
-        <h4 className="logocont">Brewery<img src={beerlogo} alt="logo" className="navlogo" /> Finder</h4>
+      <Navbar>
+      <NavbarBrand href="/">
+          Brewery <img src={logo} alt="logo" className="logo" /> Finder
       </NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} className="me-2" />
+        <NavbarToggler onClick={toggleNavbar}/>
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>

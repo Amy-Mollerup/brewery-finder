@@ -1,88 +1,55 @@
-.header .navbar-brand {
-    padding-top: 1rem;
-    padding-bottom: -0.6875rem;
-    margin-right: 1rem;
-    font-size: 1.25rem;
-    text-decoration: none;
-    white-space: nowrap;
-    width: 16rem;
-    left: 4px;
-    display: flex;
+.header .logo {
+    display: inline-block;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+
 }
 
-.header .navbar {
-    background-color: rgb(200 34 34 / 0%);
-    margin: 0;
-    border: 0;
-    border-radius: 0;
-    box-shadow: 0 0 0 0;
+.header a:hover {
+    text-decoration: underline;
+}
+
+.header .nav-item a:hover {
+    color: rgb(168, 168, 168);
+}
+
+
+.header {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     letter-spacing: .1rem;
     text-transform: uppercase;
     font-weight: 700;
-    position: inherit;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    display: flex;
-    flex-direction: row-reverse;
-    height:65px;
-    padding: 14px;
+    height: 80px;
+    padding: 0 14px 14px 14px;
 }
 
 .header .navbar-toggler {
-    padding: 0.25rem 0.75rem;
-    font-size: 1.25rem;
-    line-height: 1;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    transition: box-shadow 0.15s ease-in-out;
-}
-
-.header .navbar-toggler {
-    padding: 0.25rem 0.75rem;
-    font-size: 1.25rem;
-    line-height: 1px;
-    background-color: #73ff0000;
     border: 4px solid #000000cf;
     border-radius: -6.75rem;
-    transition: box-shadow 0.15s cubic-bezier(0, 1.83, 0.81, -1.33);
-    transition-property: box-shadow;
-    transition-duration: 0.15s;
-    transition-timing-function: cubic-bezier(0, 1.83, 0.81, -1.33);
-    transition-delay: 0s;
-    z-index: 1000;
 }
 
-.header .nav-link, .nav-item {
-    color: rgb(255 255 255) !important;
-    display: inline-flex;
-    padding-left: 3px;
-    padding: 1px;
-    padding-bottom: 29px;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
+.header .nav-link,
+.header .nav-item {
+    color: rgb(255 255 255);
 }
 
-.header .dropdown-item {
-    display: list-item;
-    width: 100%;
-    padding: 5px 22px;
-    clear: both;
-    font-weight: 400;
-    color: #212529;
-    text-align: inherit;
-    text-decoration: none;
-    white-space: nowrap;
-    background-color: var(--bs-white);
-    border: 0;
-    padding: 0.25rem 1rem;
+.header .nav-link {
+    width: 15rem;
+    text-align: right;
+    padding: .2rem 2rem .2rem 0 !important;
 }
 
-.header .dropdown-menu.show {
-    display: block;
-    padding: inherit;
+.header .nav-item {
+    margin-left: auto;
+    background-color: #141e3096;
+}
+
+.header .dropdown-menu {
+    background-color: #29457a96;
+}
+
+.header .navbar {
+    box-shadow: none !important;
 }

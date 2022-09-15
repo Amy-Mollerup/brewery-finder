@@ -49,7 +49,6 @@ const BrewerBeerList = () => {
 
     return (
       <>
-      <Header/>
       <div className="main_content">
            <h3>Yours Beer List <span> </span></h3> 
           {listItems}

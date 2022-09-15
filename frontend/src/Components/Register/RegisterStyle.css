@@ -77,3 +77,47 @@ label {
     margin-left: 4rem;
 
 }
+
+.Register--container .sticker {
+    position: absolute;
+    width: 160px;
+    height: 70px;
+    float: left;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: -8.5rem 1rem 1rem -11rem;
+    background-color: #fcf59b;
+    border-radius: 0px 10px 250px / 0 200px 55px 250px;
+    -webkit-box-shadow: -3px 5px 12px 0 rgba(0,0,0,0.3);
+    -moz-box-shadow: -3px 5px 12px 0 rgba(0,0,0,0.3);
+    box-shadow: -3px 5px 12px 0 rgba(0,0,0,0.3);
+  
+  }
+  
+  /* Text on the sticker*/
+  .Register--container .text {
+    text-align: center;
+    display: block;
+    padding: 20px 20px 20px 0;
+    font-size: 80%;
+    font-family: 'Shadows Into Light', cursive;
+  }
+  
+  /* Shadow under sticker */
+  r.Register--container .sticker::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 90%;
+    height: 20px;
+    -webkit-box-shadow: 3px 17px 6px rgba(0,0,0,.3);
+    -moz-box-shadow: 3px 17px 6px rgba(0,0,0,.3);
+    box-shadow: 3px 17px 6px rgba(0,0,0,.3);
+    bottom: 15px;
+    right: 5px;
+    -ms-transform: skew(-10deg,2deg);
+    -webkit-transform: skew(-10deg,2deg);
+    transform: skew(-10deg,2deg);
+  }
+  

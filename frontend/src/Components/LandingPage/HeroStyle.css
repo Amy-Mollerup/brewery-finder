@@ -11,21 +11,14 @@
   background: linear-gradient(#141e30, #243b55);
 }
 
-.landing--hero a {
+.landing--hero header a {
   position: absolute;
   text-decoration: none;
   list-style-type: none;
 }
 
-.landing--hero a:hover {
+.landing--hero header a:hover {
   text-decoration: underline;
-}
-
-.landing--hero li {
-  padding-right: 9rem;
-  text-decoration: none;
-  list-style-type: none;
-
 }
 
 
@@ -281,4 +274,11 @@ margin-top: 10rem;
 
 .landing--hero header a {
   position: relative;
+}
+
+.landing--hero .navbar-brand {
+  color: #fbfbfb;
+  text-align: center;
+  font-weight: 100;
+  font-size: 2.8rem;
 }

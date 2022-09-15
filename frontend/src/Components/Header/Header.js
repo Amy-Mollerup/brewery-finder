@@ -15,6 +15,7 @@ import {
   DropdownItem,
   NavbarText,
 } from "reactstrap";
+import './HeaderStyle.css'
 import logo from "../assets/beer-bottle.png";
 
 export default function Header(args) {
@@ -31,7 +32,7 @@ export default function Header(args) {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
 
-          <Nav className="justify-content-end" navbar>
+          <Nav navbar>
                 <NavItem>
                     <NavLink  href="/components/">
                         Dashboard
