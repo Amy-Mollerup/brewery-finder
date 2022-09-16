@@ -13,6 +13,7 @@ class Register extends Component {
       username: "",
       password: "",
       confirmPassword: "",
+      DOB: ""
     };
   }
 
@@ -23,6 +24,17 @@ class Register extends Component {
     });
   };
 
+  getAge = (dateString) => {
+    const today = new Date();
+    const birthDate = new Date(dateString);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+
   handleSubmit = () => {
     const data = {
       username: this.state.username,
@@ -30,9 +42,33 @@ class Register extends Component {
       confirmPassword: this.state.confirmPassword,
       role: "USER",
     };
-    if (this.state.password === this.state.confirmPassword) {
-      axios.post(baseUrl + "/register", data);
-    } else {
+    
+    const age = this.getAge(this.state.DOB)
+    const passwordMatch = this.state.password === this.state.confirmPassword
+    const passwordLength = this.state.password.length >= 8
+    const nameLength = this.state.username.length >= 4
+
+    if (passwordMatch && age >= 21 && passwordLength && nameLength) {
+      axios.post(baseUrl + "/register", data)
+        .then((response) => {
+          let status = response.status
+          if(status == 201) {
+            alert("Your account has been created!")
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+          alert("This user already exists")
+        })
+      
+      
+    } else if (!age >= 21 || !age) {
+        alert("You must be over 21 to enter this site");
+    } else if (!nameLength) {
+      alert("Your username must be at least 4 characters long")
+    } else if (!passwordLength) {
+      alert("Your password must be at least 8 characters long")
+    } else if (passwordMatch) {
       alert("Password and Confirm Password must match!!!");
     }
   };

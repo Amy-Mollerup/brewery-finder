@@ -29,10 +29,22 @@ class Login extends Component {
       password: this.state.password,
     };
 
-    const userWithToken = await axios.post(baseUrl + "/login", data);
+    const userWithToken = await axios.post(baseUrl + "/login", data).catch(err => {
+      console.error(err);
+      alert("Incorrect username or password")
+    })
+
+    this.state.auth = JSON.stringify(userWithToken.data.user.authorities[0]?.name)?.replace(/['"]+/g, '')
 
     await this.props.dispatch(addToken(userWithToken.data.token));
     await this.props.dispatch(addUser(userWithToken.data.user));
+
+    if(this.state.auth === "ROLE_USER") {
+      this.props.history.push('/welcome')
+    } else if (this.state.auth === "ROLE_ADMIN") {
+      this.props.history.push('/brewerDash')
+    }
+    
   };
 
   handleInputChange = (event) => {

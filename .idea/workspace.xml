@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="fixed database hopefully for the last time">
-      <change afterPath="$PROJECT_DIR$/frontend/src/Components/BeerListComponent/BeerListModalComponent/BeerListCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BreweryBeerListComponent/BreweryBeerListCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BLReviewModalComp/BeerReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BLReviewModalComp/BeerReviewPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BeerListComponent/BeerListModalComponent/BeerListModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BeerListComponent/BeerListModalComponent/BeerListModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweryListCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweryListCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/BeerListCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/BeerListCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/UserBeerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/UserBeerList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/Main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/Main/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/Register/Register.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

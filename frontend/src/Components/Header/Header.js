@@ -19,21 +19,30 @@ function Header(props) {
   return (
     <div className='header'>
       <Navbar>
-      <NavbarBrand href="/">
+        <NavbarBrand href={props.loggedIn ? props.homePage : '/landingPage'}>
           Brewery <img src={logo} alt="logo" className="logo" /> Finder
-      </NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar}/>
+        </NavbarBrand>
+        <NavbarToggler onClick={toggleNavbar} />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             {/* Change me when site is finished! */}
+            {props.authorities == "ROLE_USER" &&
+            <>
             <NavItem>
               <NavLink href="/welcome">BL Welcome</NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink href="/brewerDash">Brewer Dashboard</NavLink>
+                        <NavItem>
+              <NavLink href="/breweryList">Brewery List</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/breweryList">Brewery List</NavLink>
+              <NavLink href="/beerList">Beer List</NavLink>
+            </NavItem>
+            </>
+            }
+            {props.authorities == "ROLE_ADMIN" &&
+            <>
+            <NavItem>
+              <NavLink href="/brewerDash">Brewer Dashboard</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/beerForm">Beer Form</NavLink>
@@ -44,18 +53,26 @@ function Header(props) {
             <NavItem>
               <NavLink href="/brewery">Brewery</NavLink>
             </NavItem>
+            </>
+            }
+            {props.loggedIn &&
+              <NavItem>
+                <NavLink onClick={props.handleLogout} href="/landingPage">Logout</NavLink>
+              </NavItem>
+            }
+            {!props.loggedIn &&
+            <>
+            <NavItem>
+              <NavLink href="/landingPage">Landing Page</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/register">Sign Up</NavLink>
+            </NavItem>
             <NavItem>
               <NavLink href="/login">Login</NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink href="/register">Register</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/beerList">Beer List</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink onClick={props.handleLogout} href="/landingPage">Logout</NavLink>
-            </NavItem>
+            </>
+            }
           </Nav>
         </Collapse>
       </Navbar>
