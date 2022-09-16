@@ -125,7 +125,7 @@ export default function BrewerInformation(props) {
           id="exampleText"
           name="text"
           type="textarea"
-          class="ta10em"
+          className="ta10em"
           placeholder="Brewery History and Details"
           autoComplete="off"
         />

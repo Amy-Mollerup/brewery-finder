@@ -51,30 +51,30 @@ class Register extends Component {
               <span>*Intended for adults 21 years or older. If you are not, please do not enter this site</span>
             </p>
             {/* <div className="sticker">
-              <span class="text">Are You 21+?</span>
+              <span className="text">Are You 21+?</span>
             </div> */}
           </Col>
           <Col className="Register--form" l={{
         offset: 1,
         size: 'auto'
       }}>
-            <label class="sr-only">Username</label>
+            <label className="sr-only">Username</label>
             <input
               type="text"
               id="username"
               name="username"
-              class="form-control"
+              className="form-control"
               placeholder="Username"
               v-model="user.username"
               onChange={this.handleInputChange}
               required
             />
-            <label class="sr-only">Password</label>
+            <label className="sr-only">Password</label>
             <input
               type="password"
               id="password"
               name="password"
-              class="form-control"
+              className="form-control"
               placeholder="Password"
               v-model="user.password"
               onChange={this.handleInputChange}
@@ -84,7 +84,7 @@ class Register extends Component {
               type="password"
               id="password-confirm"
               name="confirmPassword"
-              class="form-control"
+              className="form-control"
               placeholder="Confirm Password"
               v-model="user.password"
               onChange={this.handleInputChange}
@@ -95,7 +95,7 @@ class Register extends Component {
               type="date"
               id="DOB"
               name="DOB"
-              class="form-control"
+              className="form-control"
               placeholder="Date of Birth"
               v-model="user.password"
               onChange={this.handleInputChange}

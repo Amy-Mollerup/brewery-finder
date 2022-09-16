@@ -96,9 +96,9 @@ export default function BeerReviewPage() {
 }
 
 {
-  /* <div id="product-options" class="clearfix-auto">
-<div id="color" class="beer-wrapper">
-  <h4 class="">ABV</h4>
+  /* <div id="product-options" className="clearfix-auto">
+<div id="color" className="beer-wrapper">
+  <h4 className="">ABV</h4>
   <label> 4.4%–6.1% </label>
 </div>
 

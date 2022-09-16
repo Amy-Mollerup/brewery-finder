@@ -29,7 +29,7 @@ export default function BeerListModal() {
                   </div>
                   <div className="card--footer">
                     <div className="beerList--left">
-                      <span class="price"> {item.abv} </span>{" "}
+                      <span className="price"> {item.abv} </span>{" "}
                       <span>⭐⭐⭐⭐⭐</span>
                     </div>
                     

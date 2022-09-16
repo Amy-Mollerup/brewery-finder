@@ -18,7 +18,7 @@ class Login extends Component {
     super(props);
     this.state = {
       username: "",
-      password: "",
+      password: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -63,23 +63,23 @@ class Login extends Component {
               size: "auto",
             }}
           >
-            <label class="sr-only">Username</label>
+            <label className="sr-only">Username</label>
             <input
               type="text"
               id="username"
               name="username"
-              class="form-control"
+              className="form-control"
               placeholder="Username"
               v-model="user.username"
               onChange={this.handleInputChange}
               required
             />
-            <label class="sr-only">Password</label>
+            <label className="sr-only">Password</label>
             <input
               type="password"
               id="password"
               name="password"
-              class="form-control"
+              className="form-control"
               placeholder="Password"
               v-model="user.password"
               onChange={this.handleInputChange}

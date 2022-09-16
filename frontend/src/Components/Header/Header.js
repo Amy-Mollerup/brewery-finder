@@ -11,7 +11,7 @@ import {
 import './HeaderStyle.css'
 import logo from "../../Components/assets/beer-bottle.png";
 
-function Header() {
+function Header(props) {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleNavbar = () => setCollapsed(!collapsed);
@@ -52,6 +52,9 @@ function Header() {
             </NavItem>
             <NavItem>
               <NavLink href="/beerList">Beer List</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink onClick={props.handleLogout} href="/landingPage">Logout</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

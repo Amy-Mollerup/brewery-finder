@@ -9,7 +9,7 @@ const Hero = () => {
     <div className="landing--hero">
 
       <video src={videoBg} autoPlay loop muted />
-      <body text-align="center"  className='hero--body'>
+      <header text-align="center"  className='hero--body'>
         <h4>FINDING A BREWERY FINDER! </h4>
         <h2>easy way to discover </h2>
         <h5> Simply join the journey and then receive a list of local breweries. </h5>
@@ -24,7 +24,7 @@ const Hero = () => {
           <Link to='/register'><button className="btn landing-page--btn" > Sign Up </button></Link>
           <Link to='/login'><button className="btn landing-page--btn" >Login </button ></Link>
         </div>
-      </body>
+      </header>
 
     </div>
 

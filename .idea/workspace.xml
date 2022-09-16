@@ -5,18 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="added active boolean to brewery, added get brewery by id, added get brewery by brewer, changed getBeerByName to Id.">
-      <change afterPath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/BeerListCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_15_2022_1_25_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_15_2022_1_25_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BLReviewModalComp/BeerReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BLReviewModalComp/BeerReviewPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BeerFormComponent/BeerForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BeerFormComponent/BeerForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BeerListComponent/BeerListModalComponent/BeerListModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BeerListComponent/BeerListModalComponent/BeerListModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/Main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/Main/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BLWelcomePage/BeerLoverWelcomeComponent/BeerLoverComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BLWelcomePage/BeerLoverWelcomeComponent/BeerLoverComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweriesListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweriesListPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweriesListStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweriesListStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/UserBeerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/UserBeerList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/UserBeerListStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/UserBeerListStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BrewerInformationComponent/BrewerInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BrewerInformationComponent/BrewerInformation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/LandingPage/Hero.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/LandingPage/Hero.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/Register/Register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BeerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BeerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BreweryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BreweryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Redux/configureStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Redux/configureStore.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

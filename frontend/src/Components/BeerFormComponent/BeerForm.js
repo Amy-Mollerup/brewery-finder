@@ -31,7 +31,7 @@ export default function BeerForm() {
           id="exampleText"
           name="text"
           type="textarea"
-          class="ta10em"
+          className="ta10em"
           placeholder="Exactly how do breweries come up with good beer names? Brewers face many choices when choosing a name for a new brew. Factors such as the type of beer matter greatly.."
           autoComplete="off"
         />
