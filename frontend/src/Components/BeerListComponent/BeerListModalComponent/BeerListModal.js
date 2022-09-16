@@ -1,46 +1,25 @@
 import "./BeerListModalStyle.css";
 import "../data/product_data";
-import BeerPic from "../../assets/Beer Can Stone.png";
-import Reviewer from "../../ReviewerComponent/Reviewer";
-import reviewData from "../../ReviewerComponent/data/ReviewData";
 import { Row, Col, Button, Container } from "reactstrap";
-import product_card from "../data/product_data";
+import axios from "axios";
+import React, { useEffect } from "react";
+import BeerListCard from "./BeerListCard";
 
-export default function BeerListModal() {
+export default function BeerListModal(props) {
+    const [beers, setBeers] = React.useState([]);
 
-    const listItems = product_card.map((item) => (
-        <div className="UserBeerList--container">
-          <Row>
-            <Col>
-              <div className="beerList--product">
-                <div className="beerList--img">
-                  <img src={item.packagePic} alt="beerImage" />
-                </div>
-    
-                <div className="beerList--text">
-                  <div className="category">
-                    
-                  </div>
-                  <div className="title--product">
-                    <h3>{item.name}</h3>
-                  </div>
-                  <div className="description--prod">
-                    <p>{item.description}</p>
-                  </div>
-                  <div className="card--footer">
-                    <div className="beerList--left">
-                      <span class="price"> {item.abv} </span>{" "}
-                      <span>⭐⭐⭐⭐⭐</span>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      ));
-    
+    function getBeers(){
+      axios.get('http://localhost:8081/' + props.brewery.breweryId + '/beers',[])
+      .then(resp => {
+        setBeers(resp.data)
+        console.log(resp.data)
+      })
+    }
+
+    useEffect(() => getBeers(),[])
+
+    const listItems = beers.map((item) => <BeerListCard beer={item} />);
+     
 
    
   return (

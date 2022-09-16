@@ -4,7 +4,7 @@ import BeerListModal from "../../Components/BeerListComponent/BeerListModalCompo
 
 const BreweryListCard = (props) => {
 
-    const beerList = <BeerListModal  />
+    const beerList = <BeerListModal brewery={props.brewery}  />
 
   return (
     <div className="businessCard--content">
