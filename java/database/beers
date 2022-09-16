@@ -30,9 +30,9 @@ GRANT ALL ON TABLE public.beers TO postgres;
 
 INSERT INTO public.beers(
 	id, name, abv, type, description, image, brewery)
-	VALUES (1, 'Budweiser',	5,	'Lager',	'Budweiser is a medium-bodied, flavorful, crisp American-style lager.', 	'https://us.budweiser.com/img/freedom/Patriotic-can.png',	14),
-(2, 'Bud Light',	4.2,	'Light Lager',	'a light version of budweiser',	'https://www.budlight.com/img/BL_Core_Can.png',	14),
-(3, 'Budweiser Supreme',	4.6,	'Lager',	'Budweiser Supreme, an American classic, reimagined.Triple filtered and brewed with American Honey Malt.', 	'https://us.budweiser.com/img/home/desktop/15_Supreme_12ozBottle_T_529x654.png',	14),
+	VALUES (1, 'Budweiser',	5,	'Lager',	'Budweiser is a medium-bodied, flavorful, crisp American-style lager.', 	'https://us.budweiser.com/img/freedom/Patriotic-can.png',	13),
+(2, 'Bud Light',	4.2,	'Light Lager',	'a light version of budweiser',	'https://www.budlight.com/img/BL_Core_Can.png',	13),
+(3, 'Budweiser Supreme',	4.6,	'Lager',	'Budweiser Supreme, an American classic, reimagined.Triple filtered and brewed with American Honey Malt.', 	'https://us.budweiser.com/img/home/desktop/15_Supreme_12ozBottle_T_529x654.png',	13),
 (4, '16 STONE MOONLIGHT SUN', 	5.1,	'Wheat Beer',	'subtle sweetness and bright, citrus aroma',	'https://assets.untappd.com/photos/2021_07_18/8bc5e57b76c9ed19b90968800ec88a55_1280x1280.jpg',	1),
 (5, '16 Stone BIG POPPA Pump-kin Ale', 	5.8,	'Ale',	'It has a warm, complex sweetness but light enough to have a few pints!', 	'https://assets.untappd.com/photos/2021_11_24/da9bf01a4df9fa67d0b94b649dbd4b72_1280x1280.jpg',	1),
 (6, '16 STONE TRASH PANDA STOUT', 	5.6,	'Stout',	'Traditional Stout with a rich and dark flavor. Full bodied beer with a malty finish that all dark beer lovers will enjoy!', 	'https://assets.untappd.com/photos/2022_02_20/440b476c68c6c78e41a92c14a58d4d0c_1280x1280.jpg',	1),
