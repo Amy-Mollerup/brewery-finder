@@ -38,12 +38,12 @@ ALTER TABLE IF EXISTS public.brewery_hours
 	(2,	4,	'3 PM',	'10 PM'),
 	(2,	5,	'3 PM',	'10 PM'),
 	(2,	6,	'12 PM',	'10 PM'),
-	(14,	0,	'11 AM',	'6 PM'),
-	(14,	1,	'Closed',	'Closed'),
-	(14,	2,	'Closed',	'Closed'),
-	(14,	3,	'11 AM',	'9 PM'),
-	(14,	4,	'11 AM',	'9 PM'),
-	(14,	5,	'11 AM',	'9 PM'),
-	(14,	6,	'11 AM',	'9 PM');
+	(13,	0,	'11 AM',	'6 PM'),
+	(13,	1,	'Closed',	'Closed'),
+	(13,	2,	'Closed',	'Closed'),
+	(13,	3,	'11 AM',	'9 PM'),
+	(13,	4,	'11 AM',	'9 PM'),
+	(13,	5,	'11 AM',	'9 PM'),
+	(13,	6,	'11 AM',	'9 PM');
 	
 	

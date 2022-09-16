@@ -83,7 +83,7 @@ class Main extends Component {
                     <Route path='/login' component={() => <Login/>}/>
                     <Route path='/register'component={() => <Register/>}/>\
                     <Route path='/beerList' component={this.props.token.token !== undefined ? () => <UserBeerList /> : () => <AuthorizationWarning/>}/>
-                    
+                    <Redirect to='/landingPage' />
                 </Switch>
 
 
