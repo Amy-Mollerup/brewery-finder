@@ -88,7 +88,7 @@ class Main extends Component {
                     <Route path='/beerList' component={loggedIn ? () => <UserBeerList /> : () => <AuthorizationWarning/>}/>
                     {/* For Brewers */}
                     <Route path='/brewerDash' component={loggedIn && isAdmin ? () => <BrewerDashboard/> : () => <AuthorizationWarning/>}/>
-                    <Route path='/beerForm' component={loggedIn ? () => <BeerDetail/> : () => <AuthorizationWarning/>}/>
+                    <Route path='/beerForm' component={loggedIn && isAdmin ? () => <BeerDetail/> : () => <AuthorizationWarning/>}/>
                     <Route path='/brewerBeerList' component={loggedIn && isAdmin ? () => <BrewerBeerList/> : () => <AuthorizationWarning/>}/>
                     <Route path='/brewery' component={loggedIn && isAdmin ? () => <BreweryForm /> : () => <AuthorizationWarning/>}/>
                     {/* Landing and Login */}
