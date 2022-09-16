@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="fixed missing brewery list card">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_15_2022_1_25_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_15_2022_1_25_AM__Changes_.xml" afterDir="false" />
+    <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="fixed database hopefully for the last time">
+      <change afterPath="$PROJECT_DIR$/frontend/src/Components/BeerListComponent/BeerListModalComponent/BeerListCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BreweryBeerListComponent/BreweryBeerListCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BLReviewModalComp/BeerReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BLReviewModalComp/BeerReviewPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BeerListComponent/BeerListModalComponent/BeerListModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BeerListComponent/BeerListModalComponent/BeerListModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweryListCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweryListCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/BeerListCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/BeerListCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/UserBeerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListComponent/UserBeerList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663288225403</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fixed database hopefully for the last time">
+      <created>1663291264637</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1663291264637</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -207,6 +221,7 @@
     <MESSAGE value="added active boolean to brewery, added get brewery by id, added get brewery by brewer, changed getBeerByName to Id." />
     <MESSAGE value="added api and adjusted styling to UserBeerList.js and BreweriesListPage.js created card components to increase readability" />
     <MESSAGE value="fixed missing brewery list card" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed missing brewery list card" />
+    <MESSAGE value="fixed database hopefully for the last time" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed database hopefully for the last time" />
   </component>
 </project>

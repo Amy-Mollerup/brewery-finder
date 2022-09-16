@@ -6,7 +6,7 @@ import BeerReviewPage from "../../../Components/BLReviewModalComp/BeerReviewPage
 
 const BeerListCard = (props) => {
   
-    const reviewLiked = <BeerReviewPage />;
+    const reviewLiked = <BeerReviewPage beerId={props.beer.beerId} beer={props.beer}/>;
     
     return (
         <div className="UserBeerList--container">

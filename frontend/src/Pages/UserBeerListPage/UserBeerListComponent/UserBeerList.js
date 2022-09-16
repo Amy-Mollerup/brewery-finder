@@ -9,6 +9,7 @@ const UserBeerList = () => {
   
   /* console.log(product_card); */
   const [beers, setBeers] = React.useState([]);
+  
   function getBeerList(){
     axios.get("http://localhost:8081/beers",{})
   .then(resp => {

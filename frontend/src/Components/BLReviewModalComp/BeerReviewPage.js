@@ -1,17 +1,45 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./BeerReviewPageStyle.css";
 import "../BeerListComponent/data/product_data";
 import BeerPic from "../assets/Beer Can Stone.png";
 import Reviewer from "../ReviewerComponent/Reviewer";
 import reviewData from "../ReviewerComponent/data/ReviewData";
+import axios from "axios";
 
-export default function BeerReviewPage() {
+export default function BeerReviewPage(props) {
 
-    const reviewLists = reviewData.map((item) =>
-    <div className="reviewRating--card" key={item.beerId}>  
+  const [reviews, setReviews] = React.useState([])
+  const [brewery, setBrewery] = React.useState('')
+
+
+    function getReviews(){
+      const url = 'http://localhost:8081/beer/' + props.beerId + '/reviews'
+      axios.get(url, [])
+      .then(resp => {
+          setReviews(resp.data)
+          console.log(resp.data);
+      })
+    }
+
+    function getBrewery(){
+      const url = 'http://localhost:8081/breweries/' + props.beer.brewery
+      axios.get(url, [])
+      .then(resp => {
+        setBrewery(resp.data.breweryName)
+        console.log(resp.data)
+        console.log(brewery)
+      })
+    }
+    
+    useEffect(() => {getReviews()
+       getBrewery()}, [])
+
+
+    const reviewLists = reviews.map((item) =>
+    <div className="reviewRating--card" key={item.id}>  
         <div className="card_header">
-            <p>{item.comments}</p>
-            <h4>{item.username}</h4>
+            <p>{item.review}</p>
+            {/* <h4>{item.username}</h4> */}
             <p className="reviewRating--display">{item.rating}</p>
             
         </div>
@@ -24,14 +52,14 @@ export default function BeerReviewPage() {
     <section id="container" className="beer-review">
       <div id="product-img">
         <img
-          src="../assets/beer-bottle.png"
+          src={props.beer.beerImage}
           alt=""
           title="BeerLover"
           className="beer-logo"
         />
 
         <img
-          src={BeerPic}
+          src={props.beer.beerImage}
           alt=""
           title="beer-pic"
           className="beer fade-in one"
@@ -40,12 +68,11 @@ export default function BeerReviewPage() {
 
       <div id="product-info" className="clearfix-auto">
         <div id="product-spec" className="beer-wrapper">
-          {/*  Beer Tile from API call */}
-          <h1>Stone</h1>
-          {/* Beer Type from API Call */}
+          
+          <h1>{props.beer.beerName}</h1>
 
           {/* <h3 className="rrp">No Achol</h3> */}
-          <h3 className="beer--type">IPA Dark</h3>
+          <h3 className="beer--type">{props.beer.beerType}</h3>
         </div>
 
         <div id="ratings">
@@ -56,22 +83,19 @@ export default function BeerReviewPage() {
 
         <h4 className="clearfix"></h4>
         <p>
-          This beer hybrid is crafted using both ale and lager brewing
-          techniques. The result is light, refreshing and easy to drink.
-          Technically, a true Kolsch has to come from Cologne, Germany, but
-          you’ll find Kolsch-style beers at craft breweries all over America.{" "}
+        {props.beer.beerDescription}{" "}
         </p>
 
         <div id="product-options" className="clearfix-auto">
           <div id="color1" className="beer-wrapper">
             {" "}
             <h3>
-              Brewer<label>Jane Brewer Co</label>{" "}
+              Brewer<label>{brewery}</label>{" "}
             </h3>
           </div>
           <div>
             <h3 id="color2">
-              ABV <label>4.5% - 6 %</label>{" "}
+              ABV <label>{props.beer.beerABV}%</label>{" "}
             </h3>
           </div>
         </div>
