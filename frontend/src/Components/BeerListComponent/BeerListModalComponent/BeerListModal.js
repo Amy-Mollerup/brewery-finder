@@ -2,6 +2,10 @@ import "./BeerListModalStyle.css";
 import "../data/product_data";
 import { Row, Col, Button, Container } from "reactstrap";
 import product_card from "../data/product_data";
+import React from 'react';
+import axios from "axios";
+import { useEffect } from "react";
+import BeerListCard from './BeerListCard';
 
 export default function BeerListModal(props) {
     const [beers, setBeers] = React.useState([]);
