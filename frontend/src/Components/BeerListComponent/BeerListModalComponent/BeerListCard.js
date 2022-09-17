@@ -1,15 +1,20 @@
 import React from 'react'
-import { Row, Col, Button, Container } from "reactstrap";
+import { Row, Col } from "reactstrap";
+
+
+
+/* CSS is link to Pages>UserBeerList>Component>UserBeerListStyle.css */
+
 
 
 const BeerListCard = (props) => {
   return (
-    <div className="UserBeerList--container">
+    <div className="beerList--container">
           <Row>
             <Col>
               <div className="beerList--product">
                 <div className="beerList--img">
-                  <img src={props.beer.beerImage} alt="beerImage" />
+                  <img src={props.beer.beerImage} alt="beerImage"  />
                 </div>
     
                 <div className="beerList--text">

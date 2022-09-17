@@ -1,5 +1,5 @@
 
-#beer--container {
+#beerList--container {
   background:rgba(255, 255, 255, 0.507);
   margin:10% auto;
   display:block;
@@ -43,6 +43,7 @@
     -o-transform: translate(-50%);
     -khtml-transform: translate(-50%);
     width: 100%;
+    height: 10%;
     padding: 25px;
     transition: all 0.2s ease-in-out;
     
