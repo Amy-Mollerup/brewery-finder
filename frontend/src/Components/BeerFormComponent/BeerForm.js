@@ -1,8 +1,39 @@
+import axios from "axios";
 import React from "react";
 import { Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
-export default function BeerForm() {
+export default function BeerForm(props) {
+
+  const [formData, setFormData] = React.useState({
+    'beerId': props.beer.beerId,
+    'beerName': props.beer.beerName,
+    'beerDescription': props.beer.beerDescription,
+    'beerABV': props.beer.beerABV,
+    'beerType': props.beer.beerType,
+    'beerImage': props.beer.beerImage,
+    "brewery": props.beer.brewery
+
+  })
+
+  function handleChange(event) {
+    setFormData(prevFormData => {
+        return {
+            ...prevFormData,
+            [event.target.name]: event.target.value
+        }
+    })
+    console.log(formData);
+}
+
+function handleSubmit(event){
+  event.preventDefault()
+  console.log(formData);
+  console.log(props.beer.beerId);
+  axios.put('http://localhost:8081/beer/' + props.beer.beerId, formData)
+  // .then(window.location.reload())
+}
+  
   return (
-    <Form className="breweryInfo--container">
+    <Form className="breweryInfo--container" onSubmit={handleSubmit}>
       <Col>
         <img src={require("../assets/cheers-DashPic.png")} alt="Avatar" />{" "}
         <span> Beer Details </span>
@@ -13,8 +44,10 @@ export default function BeerForm() {
             <Label for="brewerName">Beer Name</Label>
             <Input
               id="brewerId"
-              name="brewer"
+              name="beerName"
               placeholder="Cool Beer Name"
+              value={formData.beerName}
+              onChange={handleChange}
               type="text"
               autoComplete="off"
               className="form-control-plaintext"
@@ -25,13 +58,15 @@ export default function BeerForm() {
 
         <FormGroup>
         <Label for="exampleText">
-          Brewery Description
+          Beer Description
         </Label>
         <Input
           id="exampleText"
-          name="text"
+          name="beerDescription"
           type="textarea"
           className="ta10em"
+          value={formData.beerDescription}
+          onChange={handleChange}
           placeholder="Exactly how do breweries come up with good beer names? Brewers face many choices when choosing a name for a new brew. Factors such as the type of beer matter greatly.."
           autoComplete="off"
         />
@@ -43,9 +78,12 @@ export default function BeerForm() {
           <FormGroup>
             <Label for="exampleABV">Alcohol by volume</Label>
             <Input
+            type="text"
               id="abvId"
-              name="abv"
+              name="beerABV"
               placeholder="4% - 6%"
+              value={formData.beerABV}
+              onChange={handleChange}
               autoComplete="off"
               className="form-control-plaintext"
               required
@@ -56,9 +94,12 @@ export default function BeerForm() {
           <FormGroup>
             <Label for="exampleBeerType">Beer Type</Label>
             <Input
+            type="text"
               id="exampleBeerId"
-              name="beer_detail"
+              name="beerType"
               autoComplete="off"
+              value={formData.beerType}
+              onChange={handleChange}
               className="form-control-plaintext"
               required
             />
@@ -66,7 +107,7 @@ export default function BeerForm() {
         </Col>
       </Row>
 
-      <Label for="examplePhone">Is product on production?</Label>
+      {/* <Label for="examplePhone">Is product on production?</Label>
       <Row>
         <Col md={3}>
           <FormGroup check>
@@ -89,7 +130,11 @@ export default function BeerForm() {
             </Label>
           </FormGroup>
         </Col>
-      </Row>
+      </Row> */}
+
+      <button>
+        Submit
+      </button>
     </Form>
   );
 }

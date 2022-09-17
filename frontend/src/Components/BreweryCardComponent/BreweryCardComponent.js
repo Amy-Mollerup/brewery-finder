@@ -22,9 +22,9 @@ const BreweryCardComponent = (props) => {
   }
 
 // Will implement deleting functionality later
-  // function deleteBrewery() {
-  //   axios.delete(API_BASE)
-  // }
+  function deleteBrewery() {
+    axios.delete(API_BASE + props.brewery.breweryId)
+  }
   
   return (
   <>
@@ -79,7 +79,7 @@ const BreweryCardComponent = (props) => {
         <div className="BrewBody-more">
         <ButtonGroup >
           <Button id="editDelete--button" size="sm" onClick={editBrewery}> Edit </Button>
-          {/* <Popup
+          <Popup
             trigger={<Button id="editDelete--button" size="sm"> Delete </Button>}
             position="center center"
             modal
@@ -90,7 +90,7 @@ const BreweryCardComponent = (props) => {
               <button onClick={close}>No</button>
               </div>
             )}
-            </Popup> */}
+            </Popup>
         </ButtonGroup></div>
       </div>
      

@@ -57,4 +57,9 @@ public class BreweryController {
 
     }
 
+    @DeleteMapping(value = "/breweries/{id}")
+    public void deleteBrewery(@PathVariable long id){
+        breweryDao.delete(id);
+    }
+
 }

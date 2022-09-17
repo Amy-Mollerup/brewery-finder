@@ -23,10 +23,10 @@ ALTER TABLE IF EXISTS public.users
 	VALUES 
 	(1,	'user',	'$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC',	'ROLE_USER'),
 	(2,	'admin',	'$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC',	'ROLE_ADMIN'),
-	(3,	'ABrewer23',	'$2a$10$zP4OXJ6mnJhSWsrCuMuL6eV/yx.p50aakzzwNzrPcBeNOdn/OiJXy',	'ROLE_USER'),
-	(4,	'AlCohall',	'$2a$10$xQWXlPeRqZLV5v2JUIavru0K0vHqm8u/76UgHKBGNxYIS4O9686pG',	'ROLE_USER'),
-	(5,	'markmarkson',	'$2a$10$ZBP0NlnVTw6Fw9g52Wh40OFs3av/p1qt2bCvmfNgnRFD7/t5b8efa',	'ROLE_USER'),
-	(6,	'kylekyler',	'$2a$10$RsB1.UNTNQHLla89dVBrS.z3V0D3Yo7RoHVDD4gWdBsqIWS./Jgve',	'ROLE_USER');
+	(3,	'ABrewer23',	'$2a$10$zP4OXJ6mnJhSWsrCuMuL6eV/yx.p50aakzzwNzrPcBeNOdn/OiJXy',	'ROLE_BREWER'),
+	(4,	'AlCohall',	'$2a$10$xQWXlPeRqZLV5v2JUIavru0K0vHqm8u/76UgHKBGNxYIS4O9686pG',	'ROLE_BREWER'),
+	(5,	'markmarkson',	'$2a$10$ZBP0NlnVTw6Fw9g52Wh40OFs3av/p1qt2bCvmfNgnRFD7/t5b8efa',	'ROLE_BREWER'),
+	(6,	'kylekyler',	'$2a$10$RsB1.UNTNQHLla89dVBrS.z3V0D3Yo7RoHVDD4gWdBsqIWS./Jgve',	'ROLE_BREWER');
 	
 	SELECT SETVAL
 ((SELECT PG_GET_SERIAL_SEQUENCE('users', 'user_id')), (SELECT (MAX(user_id) + 1) FROM users), FALSE);

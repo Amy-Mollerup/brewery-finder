@@ -27,6 +27,8 @@ public interface BreweryDao {
 
     boolean updateBrewery(Brewery brewery);
 
+    void delete(long id);
+
 
 
 }

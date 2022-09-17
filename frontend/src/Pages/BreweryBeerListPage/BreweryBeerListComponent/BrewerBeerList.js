@@ -28,6 +28,11 @@ const BrewerBeerList = (props) => {
         })
     }
   }
+
+  function deleteBeer(beerId){
+    axios.delete(API_BASE + '/beer/' + beerId)
+  }
+
   useEffect(() => getBeerList(), [])
   console.log(props)
 
@@ -50,7 +55,7 @@ const BrewerBeerList = (props) => {
         >
           {(close) => (
             <div>
-              {editBeer}
+              <BeerForm beer={item} />
               <a className="close" onClick={close}>
 
                 &times;
@@ -59,7 +64,7 @@ const BrewerBeerList = (props) => {
           )}
         </Popup>
 
-        <div className="beer-btn" onClick={editBeer}>Delete</div>
+        <button className="beer-btn" onClick={() => deleteBeer(item.beerId)}>Delete</button>
 
         <Popup
           trigger={<div className="beer-btn">Reviews</div>}
@@ -68,7 +73,7 @@ const BrewerBeerList = (props) => {
         >
           {(close) => (
             <div>
-              {reviewLists}
+              <BrewerAccessReviewComp beerId={item.beerId}/>
               <a className="close" onClick={close}>
 
                 &times;
