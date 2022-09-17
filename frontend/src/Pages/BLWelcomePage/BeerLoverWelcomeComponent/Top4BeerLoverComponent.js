@@ -3,12 +3,12 @@ import Card from './CardComp';
 
 export default function Top4BeerLoverComponent() {
   const [images, setImages] = useState([
-    {url: "http://source.unsplash.com/random/1" },
-    {url: "http://source.unsplash.com/random/2" },
-    {url: "http://source.unsplash.com/random/3" },    
-    {url: "http://source.unsplash.com/random/4" },
-    {url: "http://source.unsplash.com/random/5" },
-    {url: "http://source.unsplash.com/random/6" },
+    {url: "http://source.unsplash.com/random/?beer" },
+    {url: "http://source.unsplash.com/random/?brewery" },
+    {url: "http://source.unsplash.com/random/?pub" },    
+    {url: "http://source.unsplash.com/random/?beer-bar" },
+    {url: "http://source.unsplash.com/random/?beer-barrel" },
+    {url: "http://source.unsplash.com/random/?beer-fest" },
   ]);
 
 

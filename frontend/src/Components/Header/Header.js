@@ -19,12 +19,12 @@ function Header(props) {
   return (
     <div className='header'>
       <Navbar>
-        <NavbarBrand href={props.loggedIn ? props.homePage : '/landingPage'}>
+        <NavbarBrand id="logo--place" href={props.loggedIn ? props.homePage : '/landingPage'}>
           Brewery <img src={logo} alt="logo" className="logo" /> Finder
         </NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} />
+        <NavbarToggler id="navbar-toggler" onClick={toggleNavbar} />
         <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
+          <Nav navbar >
             {/* Change me when site is finished! */}
             {props.authorities == "ROLE_USER" &&
             <>

@@ -2,6 +2,8 @@
 max-width: 400px;
 margin-top: 7rem;
 margin-bottom: 2rem;
+color: #FFF;
+margin-left: 60px;
 }
 
 .beerLover--container h2{
@@ -31,6 +33,7 @@ color:coral ;
   width: 395px;
   text-align: left;
   line-height: 1.2;
+ 
 }
 
 .beerLover--container button {
