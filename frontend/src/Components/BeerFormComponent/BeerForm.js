@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
+import "./BeerForm.css"
 export default function BeerForm(props) {
 
   const [formData, setFormData] = React.useState({
@@ -33,7 +34,7 @@ function handleSubmit(event){
 }
   
   return (
-    <Form className="breweryInfo--container" onSubmit={handleSubmit}>
+    <Form className="beerInfo--container" onSubmit={handleSubmit}>
       <Col>
         <img src={require("../assets/cheers-DashPic.png")} alt="Avatar" />{" "}
         <span> Beer Details </span>
@@ -64,7 +65,7 @@ function handleSubmit(event){
           id="exampleText"
           name="beerDescription"
           type="textarea"
-          className="ta10em"
+          className="form-control-plaintext"
           value={formData.beerDescription}
           onChange={handleChange}
           placeholder="Exactly how do breweries come up with good beer names? Brewers face many choices when choosing a name for a new brew. Factors such as the type of beer matter greatly.."
@@ -76,7 +77,7 @@ function handleSubmit(event){
       <Row>
         <Col md={5}>
           <FormGroup>
-            <Label for="exampleABV">Alcohol by volume</Label>
+            <Label for="exampleABV">Alcohol by vol.</Label>
             <Input
             type="text"
               id="abvId"

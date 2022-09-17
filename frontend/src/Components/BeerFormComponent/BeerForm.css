@@ -1,0 +1,55 @@
+.beerInfo--container {
+    color: coral;
+    margin-left: 2.2rem;
+    background-color: rgba(0, 0, 0, 0.974);
+    border-top-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    width: 624px;
+    
+}
+
+
+textarea {
+    height: 11em;
+   
+}
+
+
+.beerInfo--container img {
+    height: 50px;
+    width: 50px;
+    /* border-radius: 50%; */
+    display: inline-block;
+    margin-bottom: 1.2rem;
+ /*    border: solid; */
+}
+
+.beerInfo--container span {
+   margin-left: 0.8rem;
+   font-size: 18px;
+    
+ /*    border: solid; */
+}
+
+.beerInfo--container .form-control-plaintext{
+    padding: 8px;
+color: #050404;
+font-weight: 200;
+background-color: rgba(240, 255, 255, 0.867);
+}
+
+.beerInfo--container button{
+    margin: 1rem 1rem 1rem 8rem;
+    width: 150px;
+    height: 35px;
+    border-radius: 25px;
+    color: rgb(248, 247, 247);
+    background-color: coral;
+
+}
+
+.beerInfo--container button:hover{
+    color: coral;
+    background-color: white;
+
+}
