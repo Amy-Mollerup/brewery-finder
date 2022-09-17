@@ -7,7 +7,7 @@
     position: relative;
     top: 50px;
     background-color: rgba(25, 40, 90, 0.658);
-   
+    text-align: center;
 }
 
 .footer--head1 {
@@ -35,11 +35,12 @@
     margin-top: 1.75rem;
 }
 
-
-
 .footer-card-content img{
 margin: 1.5rem;
 
+}
 
+.footer-details{
+color: rgb(151, 150, 150);
 }
 

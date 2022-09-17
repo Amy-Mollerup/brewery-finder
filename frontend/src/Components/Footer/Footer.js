@@ -19,7 +19,7 @@ export default function Footer() {
         <Col
           className=""
           md={{
-            offset: 3,
+            offset: 2,
             size: 9,
           }}
           sm="12"
@@ -62,12 +62,12 @@ export default function Footer() {
         <Col
           className=""
           md={{
-            offset: 0
+            offset: 2
           }}
-          sm="12"
+          sm="9"
         >
           <p>
-            <small className="follow-text">
+            <small className="footer-details">
             To find a local brewery, start by looking it up online. Using Brewery Finder is an easy way 
             to learn about different types of beers and locate nearby breweries. It also works as a tool for 
             finding new beers or rating your favorites on a scale of 1 to 10+. Be sure to check out these 
@@ -84,7 +84,7 @@ export default function Footer() {
         <Col
           className=""
           md={{
-            offset: 1,
+            offset: 3,
             size: 7,
           }}
           sm="12"
