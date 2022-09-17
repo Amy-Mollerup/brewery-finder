@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import {Row, Col} from "reactstrap";
 import "./BeerReviewPageStyle.css";
 import "../BeerListComponent/data/product_data";
 import BeerPic from "../assets/Beer Can Stone.png";
@@ -38,9 +39,10 @@ export default function BeerReviewPage(props) {
     const reviewLists = reviews.map((item) =>
     <div className="reviewRating--card" key={item.id}>  
         <div className="card_header">
-            <p>{item.review}</p>
+             <p>{item.review}</p>
             {/* <h4>{item.username}</h4> */}
             <p className="reviewRating--display">{item.rating}</p>
+            
             
         </div>
     </div>
@@ -49,48 +51,35 @@ export default function BeerReviewPage(props) {
 
 
   return (
-    <section id="container" className="beer-review">
-      <div id="product-img">
-        <img
-          src={props.beer.beerImage}
-          alt=""
-          title="BeerLover"
-          className="beer-logo"
-        />
-
-        <img
+    <div id="container" className="beer-review">
+    <Row  xs="2">
+      <Col id="product-img">
+         <img
           src={props.beer.beerImage}
           alt=""
           title="beer-pic"
           className="beer fade-in one"
+          height={250}
         />
-      </div>
+      </Col>
 
-      <div id="product-info" className="clearfix-auto">
-        <div id="product-spec" className="beer-wrapper">
-          
+      <Col id="product-info" className="clearfix-auto">
+      <div id="product-spec" className="beer-wrapper">
           <h1>{props.beer.beerName}</h1>
-
           {/* <h3 className="rrp">No Achol</h3> */}
           <h3 className="beer--type">{props.beer.beerType}</h3>
         </div>
-
-        <div id="ratings">
-          <span className="review-rating">
-            <span className="user-review ninety"></span>
-          </span>
-        </div>
-
-        <h4 className="clearfix"></h4>
+    
+        <h4 className="clearfix"> </h4>
         <p>
         {props.beer.beerDescription}{" "}
         </p>
 
-        <div id="product-options" className="clearfix-auto">
+         <div id="product-options" className="clearfix-auto">
           <div id="color1" className="beer-wrapper">
             {" "}
-            <h3>
-              Brewer<label>{brewery}</label>{" "}
+            <h3 id="color3">
+              Brewer<label>{props.beer.breweryName}</label>{" "}
             </h3>
           </div>
           <div>
@@ -99,43 +88,20 @@ export default function BeerReviewPage(props) {
             </h3>
           </div>
         </div>
+      </Col>
 
-        {/*  <a href="#" title="Add to cart" className="button clearfix-auto" >
-      <img src='https://www.dropbox.com/s/s8c7kezjjdqey6e/shopping%20cart.svg?raw=1' className="shopping-cart"/>
-      Add to cart</a>
-    
-    <a href="#" />
-      <img src='https://www.dropbox.com/s/9ojob3v6oae6rp5/sharing-interface.svg?raw=1' className="share" alt="Share this"/> */}
-      
-      <div className="review-card">
-            {reviewLists}
-        </div>
-        
-        <div className="reviewPost--contain">
-          <Reviewer />
-        </div>
-      </div>
-    </section>
+      <Col className="review-card" xs="5">
+            {reviewLists} 
+            
+        </Col>
+
+        <Col className="reviewPost--contain" xs="6">
+        <Reviewer />  
+        </Col>
+
+    </Row>
+
+    </div>
   );
 }
 
-{
-  /* <div id="product-options" className="clearfix-auto">
-<div id="color" className="beer-wrapper">
-  <h4 className="">ABV</h4>
-  <label> 4.4%–6.1% </label>
-</div>
-
-<div id="size" className="beer-wrapper">
-  <h4>ABV</h4>
-
-  <span className="arr"></span>
-  <label> 4.5%</label>
-</div>
-<div>
-  <h4>Brewery</h4>
-  <span className="arr"></span>
-  <label> 5.5%</label>
-</div>
-</div> */
-}

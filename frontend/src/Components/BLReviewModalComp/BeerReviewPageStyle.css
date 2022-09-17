@@ -3,43 +3,11 @@
 @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
 @import url(https://fonts.googleapis.com/css?family=News+Cycle);
 
-/* Reset ----------------------- */
-/* 
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, ol, ul, li, form, label, legend, caption, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { 
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 100%;
-	font-family: inherit;
-	vertical-align: baseline;
-  text-shadow: none;
-} */
-
-.beer-review ol, .beer-review ul {
-	list-style: none;
-}
-
-.beer-review a img {
-	border: none
-}
-
-.beer-review a, .beer-review a:hover  {
-	text-decoration: none;
-}
-
-.beer-review aside, .beer-review details, .beer-review figcaption, .beer-review figure, .beer-review footer, .beer-review header, 
-.beer-review hgroup, .beer-review menu, .beer-review nav, .beer-review section {
-	display: block
-}
-
-
 /* Styling  ----------------------- */
 
 .beer-review body {
   background-color: #f5f5f5;
+
 }
 
 .beer-review {
@@ -58,15 +26,18 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, ol, ul, li, form, label, legen
   -moz-box-shadow:0px 5px 80px #d8d8d8;
   -o-box-shadow:0px 5px 80px #d8d8d8;
   box-shadow:0px 5px 80px #d8d8d8;
-text-shadow: none;
+  text-shadow: none;
+  overflow-x: hidden; 
 }
 
 .beer-review #product-img{
   float:left;
   text-align:center;
-  width:35%;
+  width:25%;
   height:88%;
-  padding:1% 0;
+  padding:8% 0;
+  margin-top: -100px;
+  margin-left: 4rem;
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6bfec8), to(#41c8ca));
   background: -webkit-linear-gradient(top, #6bfec8, #41c8ca);
   background: -moz-linear-gradient(top, #6bfec8, #41c8ca);
@@ -157,13 +128,6 @@ text-shadow: none;
   margin-top:100px;
 }
 
-.beer-logo{
-  width:20%;
-  display:block;
-  position:absolute;
-  top:30px;
-  left:40%;
-}
 
 #product-spec{
   width:70%;
@@ -260,9 +224,14 @@ text-shadow: none;
 }
 #color2{
   margin-left: 2rem;
+  color: #ff7f50;
   
 }
 
+#color3{
+   color: #5079ff;
+  
+}
 #color ul li{
   list-style-type:none;
   display:inline-block;
@@ -327,23 +296,16 @@ text-shadow: none;
   justify-content: space-around;
 }
 
-.share{
-  width:33px;
-  height:33px;
-  float:right;
-  padding:20px 0;
-}
-
 #ratings{
   float:right;
-  padding:6px 0;
+  padding:1px 0;
 }
 
 .review-rating{
     display: inline-block;
     vertical-align: top;
-    width: 120px;
-    height: 26px;
+    width: 10px;
+    height: 10px;
     background: url('https://www.dropbox.com/s/9i40vq8v0h2m5i6/stars_flat_less_space.png?raw=1') 0 -26px no-repeat;
 }
 
@@ -395,7 +357,7 @@ text-shadow: none;
 .beer-review .reviewRating--card{
 display:flex ;
 align-items: flex-start;
-margin-left: -20rem;
+margin-left: 5px;
 width: 300px;
 }
 
@@ -408,6 +370,11 @@ content: "-";
 }
 
 .reviewPost--contain{
-margin-top: -50rem;
-margin-left: 10rem;
+  
 }
+
+.review-card{
+text-align: left;
+margin-left: 40px;
+}
+

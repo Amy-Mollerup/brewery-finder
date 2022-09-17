@@ -159,7 +159,7 @@ function Reviewer(props) {
                 <div>
                 <form noValidate autoComplete="off" onSubmit={submitReview}>
                   <div style={{display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}> 
-                    <div style={{margin: '10px'}}>
+                    <div style={{margin: '2px'}}>
                         <StarRating value={starValue} onChange={handleStarChange} />
                     </div>
 
@@ -186,7 +186,7 @@ function Reviewer(props) {
                         <button type="submit" style={{
                             borderRadius: 15, 
                             border:'none', 
-                            backgroundColor: '#fe6067', 
+                            backgroundColor:'#ff7f50', 
                             color:'white',
                             textAlign: 'center',
                             padding: '10px',
@@ -201,7 +201,12 @@ function Reviewer(props) {
                 </form>
                 </div>
             ) : (
-                <p>Thanks for Sharing your value review. We take our feedback system very seriously.</p>
+                <p style={{margin:'10px',
+                            color:'#ff7f50', 
+                            fontSize:'25px',
+                            fontWeight:'900',
+                            textAlign:'center'
+                            }} >Thanks for Sharing your value review. We take our feedback system very seriously.</p>
             )}
         </div>
     )
@@ -217,13 +222,16 @@ function StarRating(props){
             display: 'flex',
             flexDirection: 'row',
             flexGrow: 1,
+        h: "24px",
             }}>
             <div className="star-rating"
             style={{
             display: 'flex',
             flexDirection: 'row',
             flexGrow: 1,
+            
             }}
+            
             >
                 {[1,2,3,4,5].map((n, i) => (
                 <Star
@@ -238,9 +246,9 @@ function StarRating(props){
 }
 
 const Star = ({ selected = false, onClick = f => f }) => (
-    <div style={{margin:'4px'}}>
-        {selected ? (<FaStar onClick={onClick} style={{color: 'orange', cursor: "pointer", fontSize:'25px'}} />):
-            (<FaStar onClick={onClick} style={{color: 'grey', cursor:'pointer', fontSize:'21px'}} />)}
+    <div style={{margin:'0.1px'}}>
+        {selected ? (<FaStar onClick={onClick} style={{color: 'orange', cursor: "pointer", fontSize:'12px'}} />):
+            (<FaStar onClick={onClick} style={{color: 'grey', cursor:'pointer', fontSize:'8px'}} />)}
     </div>
   );
 

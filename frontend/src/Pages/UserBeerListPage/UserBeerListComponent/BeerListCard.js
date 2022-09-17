@@ -52,7 +52,7 @@ const BeerListCard = (props) => {
                   {/*More Info direct to beer details */}
                  {/*  <div className="beerList-right">
                     <a href="#" className="review-btn">
-                      <i className="zmdi zmdi-shopping-basket"></i>
+                      <i className="zmdi zmdi-shopping-basket-review-link"></i>
                     </a>
                   </div> */}
                 </div>
