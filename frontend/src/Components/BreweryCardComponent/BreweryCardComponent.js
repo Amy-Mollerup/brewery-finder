@@ -1,44 +1,49 @@
 import React, { useState, useEffect } from "react";
 import { Button, ButtonGroup } from "reactstrap";
 import "./BreweryCardStyle.css";
-import BreweryInfo from "./data/Breweries_list";
+import BreweryForm from '../../Pages/BreweryFormPage/BreweryForm'
+import Popup from "reactjs-popup";
 import axios from "axios";
 
-const BreweryCardComponent = () => {
-  const profilePic = "https://source.unsplash.com/random/?beer";
-  const cardBackGround = "https://source.unsplash.com/random/?blurry";
 
-  /* const [breweries, setBreweries] = React.useState([]);
-  
-  function getBreweryList() {
-    axios.get('http://localhost:8081/breweries')
-    .then(resp => {
-      setBreweries(resp.data);
-    })
+const BreweryCardComponent = (props) => {
+  const cardBackGround = "https://source.unsplash.com/random/?blurry";
+  const brewery = props.brewery;
+
+  const API_BASE = 'http://localhost:8081/breweries/'
+
+
+  const editBrewery = () => {
+    props.openBreweryForm(brewery.breweryId)
   }
 
-  useEffect(() => getBreweryList(), [])
+  const viewBreweryBeers = () => {
+    props.viewBeers(brewery.breweryId)
+  }
 
-  const breweriesList = breweries.map((item) =>
-    <BreweryListCard brewery={item} key={item.breweryId} />
-  );
- */
-  const breweryList = BreweryInfo.map((item) => (
-    <div className="BreweryCard">
+// Will implement deleting functionality later
+  // function deleteBrewery() {
+  //   axios.delete(API_BASE)
+  // }
+  
+  return (
+  <>
+  
+  <div className="BreweryCard">
       <div className="BcHeader-BreweryCard">
         <img src={cardBackGround} alt= "" className="BcHeader-image" />
         <div className="BcHeader">
-          <h1 className="main-heading"> {item.name} </h1>
+          <h1 className="main-heading"> {brewery.breweryName} </h1>
           <span className="tag">Brewery</span>
           <div className="stats">
             <span className="stat-module">
-              <span className="stat-address">{item.street} ,</span>
-              <span className="stat-address">{item.city} </span>
-              <span className="stat-address">{item.state} </span>
-              <span className="stat-address">{item.post_code}</span>
+              <span className="stat-address">{brewery.breweryStreet} ,</span>
+              <span className="stat-address">{brewery.breweryCity} </span>
+              <span className="stat-address">{brewery.breweryState} </span>
+              <span className="stat-address">{brewery.breweryPostCode}</span>
               <br></br>
-              <span className="stat-address">Phone: {item.phone}</span>
-              <span className="stat-address">{item.website}</span>
+              <span className="stat-address">Phone: {brewery.phoneNumber}</span>
+              <span className="stat-address">{brewery.website}</span>
             </span>
                    
           </div>
@@ -50,15 +55,15 @@ const BreweryCardComponent = () => {
       <div className="overlay-BcHeader" />
       <div className="BrewBody">
         {/* onClick needs link to beerlist page - filter by Brewery ID */}
-        <div class="BrewBody-action-button u-flex-center" onClick={"#0"}>
+        <div class="BrewBody-action-button u-flex-center" onClick={viewBreweryBeers}>
           <img
             src="https://img.icons8.com/ios/50/000000/beer-bottle-cap.png"
             alt=" More Beers"
           />
         </div>
         <img
-          src={profilePic}
-          alt="Brewery Name"
+          src={brewery.image}
+          alt="No Brewery Icon Given"
           className="BrewBody-image"
           height={95}
           width={95}
@@ -68,22 +73,28 @@ const BreweryCardComponent = () => {
 
         <div className="u-clearfix" />
         <div className="BrewBody-info">
-          <p>{item.description}</p>
+          <p>{brewery.description}</p>
         </div>
         
         <div className="BrewBody-more">
         <ButtonGroup >
-          <Button id="editDelete--button"  size="sm" onClick={"#0"}> Edit </Button> 
-          <Button  id="editDelete--button" size="sm"onClick={"#0"}> Delete </Button>
+          <Button id="editDelete--button" size="sm" onClick={editBrewery}> Edit </Button>
+          {/* <Popup
+            trigger={<Button id="editDelete--button" size="sm"> Delete </Button>}
+            position="center center"
+            modal
+            >{(close) => (
+              <div>
+              <p>Really delete?</p>
+              <button onClick={deleteBrewery}>Yes</button>
+              <button onClick={close}>No</button>
+              </div>
+            )}
+            </Popup> */}
         </ButtonGroup></div>
       </div>
      
     </div>
-  ));
-
-  return (
-  <>
-  {breweryList}
   </>
   );
 };

@@ -29,11 +29,16 @@
   
   .BreweryCard {
     box-shadow: 0 0 50px rgba(0,0,0,.3);
-    margin: 0 0 20px  10px;
+    margin: 30px;
     overflow: hidden;
     text-shadow: none;
     
 
+  }
+
+  .dash--container .BreweryCard--DemoPage {
+    display: flex;
+    justify-content: center;
   }
   
   .BcHeader-BreweryCard {
@@ -162,6 +167,7 @@
     margin: -90px 0 20px;
     position: relative;
     z-index: 2;
+    object-fit: contain;
   }
   
   .BrewBody-action-button {
@@ -297,9 +303,4 @@ margin:1px;
   margin:1px;
   color: black;
   }
- 
 
-  .BreweryCard--DemoPage{
-  padding:48px;
-  margin-left: -560px;
-  }

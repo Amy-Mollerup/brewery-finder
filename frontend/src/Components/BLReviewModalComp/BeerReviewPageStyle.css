@@ -210,7 +210,7 @@ text-shadow: none;
   background:#fff;
 }
 
-.button{
+.beer-review .button{
   font-size:23px; 
   line-height:70px;
   height:70px;
@@ -236,7 +236,7 @@ text-shadow: none;
   display:inline-block;
 }
 
-.button:hover{
+.beer-review .button:hover{
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff876a), to(#db3652));
   background: -webkit-linear-gradient(top, #ff876a, #db3652);
   background: -moz-linear-gradient(top, #ff876a, #db3652);

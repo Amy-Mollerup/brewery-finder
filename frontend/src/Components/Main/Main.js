@@ -17,6 +17,8 @@ import Hero from '../../Pages/LandingPage/Hero'
 import Login from '../../Pages/Login/Login'
 import Register from '../../Pages/Register/Register'
 import UserBeerList from '../../Pages/UserBeerListPage/UserBeerListPage'
+import BreweryCardDemoPage from '../BreweryCardComponent/BreweryCardDemoPage'
+import BeerReviewPage from '../BLReviewModalComp/BeerReviewPage'
 
 const mapStateToProps = state => {
     return {
@@ -40,6 +42,24 @@ class Main extends Component {
     handleLogout = () => {
         this.props.addToken("")
         this.props.deleteUser()
+    }
+
+    editBrewery = (id) => {
+        this.setState(() => {
+            return {
+                breweryId : id
+            }
+        })
+        this.props.history.push('/brewery')
+    }
+
+    viewBreweryBeers = (id) => {
+        this.setState(() => {
+            return {
+                breweryId : id
+            }
+        })
+        this.props.history.push('/brewerBeerList')
     }
 
     
@@ -67,6 +87,7 @@ class Main extends Component {
             {/* <Login/> */}
             {/* <Register/> */}
             {/* <UserBeerList/> */}
+            {/* <BreweryCardDemoPage/> */}
 {/*                 
                 <Switch>
                     <Route path='/welcome'component={() => <BeerLoverWelcomePage/>}/>
@@ -87,10 +108,10 @@ class Main extends Component {
                     <Route path='/breweryList' component={loggedIn ? () => <BreweriesListPage/> : () => <AuthorizationWarning/>}/>
                     <Route path='/beerList' component={loggedIn ? () => <UserBeerList /> : () => <AuthorizationWarning/>}/>
                     {/* For Brewers */}
-                    <Route path='/brewerDash' component={loggedIn && isAdmin ? () => <BrewerDashboard/> : () => <AuthorizationWarning/>}/>
+                    <Route path='/brewerDash' component={loggedIn && isAdmin ? () => <BrewerDashboard user={this.props.user} openBreweryForm={this.editBrewery} viewBeers={this.viewBreweryBeers} /> : () => <AuthorizationWarning/>}/>
                     <Route path='/beerForm' component={loggedIn && isAdmin ? () => <BeerDetail/> : () => <AuthorizationWarning/>}/>
-                    <Route path='/brewerBeerList' component={loggedIn && isAdmin ? () => <BrewerBeerList/> : () => <AuthorizationWarning/>}/>
-                    <Route path='/brewery' component={loggedIn && isAdmin ? () => <BreweryForm /> : () => <AuthorizationWarning/>}/>
+                    <Route path='/brewerBeerList' component={loggedIn && isAdmin ? () => <BrewerBeerList breweryId={this.state?.breweryId}/> : () => <AuthorizationWarning/>}/>
+                    <Route path='/brewery' component={loggedIn && isAdmin ? () => <BreweryForm breweryId={this.state?.breweryId} /> : () => <AuthorizationWarning/>}/>
                     {/* Landing and Login */}
                     <Route path='/landingPage'component={() => <Hero/>}/>
                     <Route path='/login' component={() => <Login/>}/>

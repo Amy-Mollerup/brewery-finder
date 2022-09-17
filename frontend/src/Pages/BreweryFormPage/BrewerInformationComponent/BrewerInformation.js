@@ -123,10 +123,12 @@ export default function BrewerInformation(props) {
         </Label>
         <Input
           id="exampleText"
-          name="text"
+          name="description"
           type="textarea"
           className="ta10em"
           placeholder="Brewery History and Details"
+          value={props.description}
+          onChange={props.handleChange}
           autoComplete="off"
         />
       </FormGroup>
@@ -135,7 +137,13 @@ export default function BrewerInformation(props) {
       <Row>
         <Col md={3}>
           <FormGroup check>
-            <Input id="exampleCheck" name="check" type="radio" />
+            <Input 
+              id="exampleCheck" 
+              name="active" 
+              type="radio"
+              value={true}
+              onChange={props.handleChange}
+              />
             <Label check for="exampleCheck">
               Active
             </Label>
@@ -145,9 +153,10 @@ export default function BrewerInformation(props) {
           <FormGroup check>
             <Input
               id="exampleCheck"
-              name="check"
+              name="active"
               type="radio"
-              autoComplete="off"
+              value={false}
+              onChange={props.handleChange}
             />
             <Label check for="exampleCheck">
               Inactive
