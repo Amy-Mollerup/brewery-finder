@@ -165,7 +165,18 @@ export default function BeerForm(props) {
         </Col>
       </Row> */}
         <Row>
-          <FileUploader image={formData.beerImage} handleChange={handleChange} />
+          <Label for="image">Image Link</Label>
+          <Input
+                type="text"
+                id="beerImage"
+                name="beerImage"
+                autoComplete="off"
+                value={formData.beerImage}
+                placeholder='http://www.example.example'
+                onChange={handleChange}
+                className="form-control-plaintext"
+                required
+              />
           <Button onClick={handleSubmit}> Submit </Button>
           {!props.preview && <Link to={'/beerForm/' + props.beerId}><Button>Go To Preview</Button></Link>}
         </Row>

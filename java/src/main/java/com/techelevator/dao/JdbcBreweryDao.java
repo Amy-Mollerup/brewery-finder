@@ -201,8 +201,12 @@ public class JdbcBreweryDao implements BreweryDao{
 
     @Override
     public void delete(long id) {
-        String sql = "Delete from breweries Where id = ?; Delete from brewery_hours where brewery_id =?";
-        jdbcTemplate.update(sql, id, id);
+        String sql =
+                "Delete from brewery_hours where brewery_id =?; " +
+                "Delete from beer_reviews where beer_id in (Select id from beers where brewery = ?); " +
+                "Delete from beers where brewery = ?; " +
+                "Delete from breweries Where id = ?;";
+        jdbcTemplate.update(sql, id, id, id, id);
 
     }
 

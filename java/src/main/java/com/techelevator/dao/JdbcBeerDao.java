@@ -121,8 +121,8 @@ public class JdbcBeerDao implements BeerDao{
 
     @Override
     public void deleteBeer(Long beerId) {
-        String sql = "delete from beers where id = ?";
-        jdbcTemplate.update(sql, beerId);
+        String sql = "delete from beer_reviews where beer_id =?; delete from beers where id = ?";
+        jdbcTemplate.update(sql, beerId, beerId);
 
     }
 

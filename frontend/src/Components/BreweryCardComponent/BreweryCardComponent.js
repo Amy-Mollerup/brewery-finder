@@ -10,9 +10,9 @@ const BreweryCardComponent = (props) => {
   const cardBackGround = "https://source.unsplash.com/random/?blurry";
   const brewery = props.brewery;
 
-  // function deleteBrewery() {
-  //   props.deleteBrewery(props.brewery.breweryId)
-  // }
+  function deleteBrewery() {
+    props.deleteBrewery(props.brewery.breweryId)
+  }
 
 
  
@@ -74,7 +74,7 @@ const BreweryCardComponent = (props) => {
         <div className="BrewBody-more">
         <ButtonGroup >
           <Button id="editDelete--button" size="sm"><Link to={`/brewery/${brewery.breweryId}`}>Edit</Link></Button>
-          {/* <Popup
+          <Popup
             trigger={<Button id="editDelete--button" size="sm"> Delete </Button>}
             position="center center"
             modal
@@ -85,7 +85,7 @@ const BreweryCardComponent = (props) => {
               <button onClick={close}>No</button>
               </div>
             )}
-            </Popup> */}
+            </Popup>
         </ButtonGroup></div>
       </div>
      

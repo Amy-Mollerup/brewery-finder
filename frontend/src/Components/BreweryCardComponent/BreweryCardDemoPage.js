@@ -19,26 +19,26 @@ export default function BreweryCardDemoPage(props) {
     })
   }
 
-  // function deleteBrewery(breweryId) {
-  //   axios.delete(`${API_BASE}/breweries/${breweryId}`)
-  //   .then(resp => {
-  //     if(resp.status === 200) {
-  //       alert("Brewery Deleted")
-  //     } else {
-  //       alert("An error has occured")
-  //     }
-  //   })
-  //   .catch(err => {
-  //     console.err(err)
-  //     alert("An error has occured")
-  //   })
-  // }
+  function deleteBrewery(breweryId) {
+    axios.delete(`${API_BASE}/breweries/${breweryId}`)
+    .then(resp => {
+      if(resp.status === 200) {
+        alert("Brewery Deleted")
+      } else {
+        alert("An error has occured")
+      }
+    })
+    .catch(err => {
+      console.err(err)
+      alert("An error has occured")
+    })
+  }
 
   useEffect(() => getBreweryList(), [])
 
   const breweryList = breweries.length > 1 ? 
-        breweries.map((item) => <BreweryCardComponent brewery={item}/>) : 
-        <BreweryCardComponent brewery={breweries}/>
+        breweries.map((item) => <BreweryCardComponent brewery={item} deleteBrewery={deleteBrewery}/>) : 
+        <BreweryCardComponent brewery={breweries} deleteBrewery={deleteBrewery}/>
   return (
     
     <Row className="BreweryCard--DemoPage" sm="4" fluid="md">
