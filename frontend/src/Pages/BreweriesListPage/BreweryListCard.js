@@ -24,7 +24,6 @@ const BreweryListCard = (props) => {
        
         
         <div className="beerListFromId">
-        
           <Popup
                   trigger={<span> Beer List</span>}
                   position="center center"

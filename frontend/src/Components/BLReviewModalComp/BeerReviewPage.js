@@ -18,7 +18,6 @@ export default function BeerReviewPage(props) {
       axios.get(url, [])
       .then(resp => {
           setReviews(resp.data)
-          console.log(resp.data);
       })
     }
 
@@ -27,8 +26,6 @@ export default function BeerReviewPage(props) {
       axios.get(url, [])
       .then(resp => {
         setBrewery(resp.data.breweryName)
-        console.log(resp.data)
-        console.log(brewery)
       })
     }
     

@@ -14,7 +14,6 @@ const BrewerAccessReviewComp = (props) => {
     axios.get(url, [])
     .then(resp => {
         setReviews(resp.data)
-        console.log(resp.data);
     })
   }
 

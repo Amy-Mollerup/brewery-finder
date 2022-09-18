@@ -1,16 +1,16 @@
+.brewery-form .uploadPic--section {
+  margin-top: 6rem;
+  background-color: rgba(240, 248, 255, 0.151);
+  box-shadow: 13px;
+  box-sizing: content-box;
+}
 
-.uploadPic--section{
-    margin-top: 6rem;
-    background-color: rgba(240, 248, 255, 0.151);
-    box-shadow: 13px;
-    box-sizing: content-box;
-    }
-    
-    .uploadPic--section, h3 h5{
-      color: antiquewhite;
-      
-        }
-    
-    .uploadDetail--section p{
-    text-align: justify;
-    }
+.brewery-form .uploadPic--section,
+h3 h5 {
+  color: antiquewhite;
+
+}
+
+.brewery-form .uploadDetail--section p {
+  text-align: justify;
+}

@@ -14,7 +14,6 @@ export default function BeerListModal(props) {
       axios.get('http://localhost:8081/' + props.brewery.breweryId + '/beers',[])
       .then(resp => {
         setBeers(resp.data)
-        console.log(resp.data)
       })
     }
 

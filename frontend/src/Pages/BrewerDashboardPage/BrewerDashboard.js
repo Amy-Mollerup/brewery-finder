@@ -27,7 +27,7 @@ export default function BrewerDashboard(props) {
              </Col>
         </Row>
 
-        <BreweryCardDemoPage openBreweryForm={props.openBreweryForm} viewBeers={props.viewBeers} brewer={props.user.id}/>
+        <BreweryCardDemoPage brewer={props.user.id}/>
       </div>
     </>
   );

@@ -23,7 +23,7 @@ export default function BeerList() {
             size: "auto",
           }}
         >
-          <  />
+          
         </Col>
       </Row>
     </>

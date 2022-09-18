@@ -10,7 +10,7 @@ export default function FileUploader(props) {
 
     return (
       <div className="uploadPic--section">
-        <Label for="image">Link an image of your brewery</Label>
+        <Label for="image">Link an image for your entry</Label>
         <Input
           id="image-link"
           type="text"

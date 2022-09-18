@@ -16,6 +16,7 @@
   height: auto;
   width: 100%;
   user-select: none;
+  object-fit: contain;
 }
 
 #busicard {

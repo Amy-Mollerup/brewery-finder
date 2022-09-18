@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button } from "reactstrap";
+import { Row, Col, Button, Form } from "reactstrap";
 import "./BreweryFormStyle.css";
 
 import BusinessHours from "./BusinessHoursComponent/BusinessHours";
@@ -68,7 +68,6 @@ export default function BreweryForm(props) {
         breweryHours: obj
       }
     })
-    console.log(brewerInformation)
   }
 
 
@@ -78,7 +77,6 @@ export default function BreweryForm(props) {
       axios.put(API_BASE + props.breweryId, brewerInformation)
       .then((response) => {
         let status = response.status
-        console.log(status)
         if (status == 200) {
           alert("Saved!")
         }
@@ -103,7 +101,7 @@ export default function BreweryForm(props) {
   }
 
   return (
-    <>
+    <Form className="brewery-form">
       <Row xs="3">
         <Col xs="2">
           <BreweryProfileDetail />
@@ -132,6 +130,6 @@ export default function BreweryForm(props) {
           <Button onClick={handleSubmit}>Submit</Button>
         </Col>
       </Row>
-    </>
+    </Form>
   );
 }

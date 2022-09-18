@@ -34,7 +34,6 @@ const BrewerBeerList = (props) => {
   }
 
   useEffect(() => getBeerList(), [])
-  console.log(props)
 
   /* console.log(product_card); */
   const listItems = beers.map((item) =>
@@ -55,7 +54,7 @@ const BrewerBeerList = (props) => {
         >
           {(close) => (
             <div>
-              <BeerForm beer={item} />
+              <BeerForm beerId={item.beerId} />
               <a className="close" onClick={close}>
 
                 &times;
@@ -84,6 +83,7 @@ const BrewerBeerList = (props) => {
 
 
       </div>
+      
     </div>
 
   );

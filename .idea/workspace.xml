@@ -4,16 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="fixed database hopefully for the last time">
+    <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="Created persistence for Redux information, did more work on authentication and redirects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Components/BeerFormComponent/BeerForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BeerFormComponent/BeerForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Components/BreweryCardComponent/BreweryCardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BreweryCardComponent/BreweryCardComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BrewerAccessReviewComponent/BrewerAccessReviewComp.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BrewerAccessReviewComponent/BrewerAccessReviewComp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BreweryCardComponent/BreweryCardDemoPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BreweryCardComponent/BreweryCardDemoPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BreweryCardComponent/BreweryCardStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BreweryCardComponent/BreweryCardStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/FileUploaderComponent/FIleUploader.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/FileUploaderComponent/FIleUploader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/FileUploaderComponent/FileUploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/FileUploaderComponent/FileUploader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/Main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/Main/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BrewerDashboardPage/BrewerDashStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BrewerDashboardPage/BrewerDashStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BrewerDashboardPage/BrewerDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BrewerDashboardPage/BrewerDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweriesListStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweriesListStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerFormPage/BeerDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerFormPage/BeerDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BeerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BeerList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BreweryBeerListComponent/BrewerBeerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BreweryBeerListComponent/BrewerBeerList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BreweryForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BreweryForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/database/fulldb" beforeDir="false" afterPath="$PROJECT_DIR$/java/database/fulldb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BreweryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BreweryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BreweryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBeerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBeerDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +66,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/java/database" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">

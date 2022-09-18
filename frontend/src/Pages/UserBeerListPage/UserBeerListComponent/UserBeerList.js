@@ -13,11 +13,10 @@ const UserBeerList = () => {
   function getBeerList(){
     axios.get("http://localhost:8081/beers",{})
   .then(resp => {
-   console.log(resp.data)
    setBeers(resp.data)
   })
   .catch(error => {
-    console.log(error)
+    console.err(error)
   })
 }
 
