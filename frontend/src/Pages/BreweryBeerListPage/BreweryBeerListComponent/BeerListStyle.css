@@ -57,12 +57,13 @@
 }
 
 .main_content .card .card_img {
-    margin-top: -5vw;
+    margin-top: 0vw;
 }
 
 .main_content .card .card_img img {
-    width: 200px;
-    height: 260px;
+    width: 160px;
+    height: 175px;
+    object-fit: contain;
 }
 .main_content .card .card_header {
     -webkit-box-orient: vertical;

@@ -29,6 +29,7 @@
     position: relative;
     margin-top: 1rem;
     
+    
   
   }
   
@@ -46,13 +47,14 @@
     height: 10%;
     padding: 25px;
     transition: all 0.2s ease-in-out;
-    
+    object-fit: cover;
   }
   
   .beerList--img img {
     width: 100%;
     transition: all 0.2s ease-in-out;
     border-radius: 16px;
+    
   }
   
   .beerList--product:hover .beerList-cp-img {
@@ -213,7 +215,7 @@
   
   @media screen and (max-width: 991px) {
     .beerList--product {
-      margin: 40px auto;
+      margin: -18px auto;
     }
   
     .beerList--product .beerList--img {

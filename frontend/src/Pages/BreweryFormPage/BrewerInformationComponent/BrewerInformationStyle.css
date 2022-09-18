@@ -1,6 +1,14 @@
 .breweryInfo--container {
+    padding-top: 35px;
+    background: #80808059;
     color: aliceblue;
+    display: flex;
     margin-left: 2.2rem;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
     
 }
 

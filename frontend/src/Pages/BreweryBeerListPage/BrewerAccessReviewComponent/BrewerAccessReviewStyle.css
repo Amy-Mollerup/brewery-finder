@@ -2,7 +2,7 @@
     background: rgb(243, 240, 240);
     margin: 10% auto;
     
-    max-width: 800px;
+    max-width: 500px;
     height: 600px;
     width: 100%;
     overflow-y: auto;
@@ -12,10 +12,10 @@
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -o-border-radius: 15px;
-    -webkit-box-shadow:0px 5px 80px #d8d8d8;
-    -moz-box-shadow:0px 5px 80px #d8d8d8;
-    -o-box-shadow:0px 5px 80px #d8d8d8;
-    box-shadow:0px 5px 80px #d8d8d8;
+    -webkit-box-shadow:0px 5px 80px #cdcccc;
+    -moz-box-shadow:0px 5px 80px #b7b6b6;
+    -o-box-shadow:0px 5px 80px #8a8a8a;
+    box-shadow:0px 5px 80px #373636;
       text-shadow: none;  
 }
 

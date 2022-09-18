@@ -1,11 +1,15 @@
 .beerInfo--container {
+    display: flex;
     color: coral;
     margin-left: 2.2rem;
     background-color: rgba(0, 0, 0, 0.974);
     border-top-left-radius: 5%;
     border-bottom-right-radius: 5%;
     width: 624px;
-    
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 
 

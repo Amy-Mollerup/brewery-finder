@@ -55,7 +55,7 @@ const BrewerAccessReviewComp = (props) => {
         </h2>
       </Col>
 
-      <Row md="2"> {reviewLists} </Row>
+      <Row className="reviewlist" md="1"> {reviewLists} </Row>
     </div>
   );
 };

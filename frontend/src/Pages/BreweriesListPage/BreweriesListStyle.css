@@ -13,7 +13,7 @@
 
 
 .businessCard--content img {
-  height: auto;
+  height: 60%;
   width: 100%;
   user-select: none;
   object-fit: contain;
