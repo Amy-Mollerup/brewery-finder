@@ -13,10 +13,14 @@
 
 
 .businessCard--content img {
+  
   height: 60%;
   width: 100%;
   user-select: none;
   object-fit: contain;
+ 
+  
+ 
 }
 
 #busicard {
@@ -54,6 +58,8 @@ user-select: none;
   height: 200px;
   border: 4px solid #FAEAFF;
   margin-top: -20px;
+  background: url ("./data/NoImageFound.png");
+ 
 }
 
 .info{
@@ -114,10 +120,31 @@ margin: 20px 0;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  margin: 30% 0 0 0;
+  margin: 3rem 0 0 0;
 }
 
 .beerListFromId span {
+  position: absolute;
+  box-shadow: 0 0 15px 1px #000;
+  color: #FAEAFF;
+  background-color: #2F4858;
+  border-radius: 30px;
+  padding: 7px 49px;
+  transition: 350ms;
+    -webkit-transition: all .3s;
+}
+
+.beerListFromId span:hover {
+  font-weight: bold;
+  color: #2F4858;
+  background-color: #FAEAFF;
+  padding: 8px 56px;
+  transition: 350ms;
+    -webkit-transition: all .3s;
+    
+}
+
+.beerListFromId a {
   position: absolute;
   box-shadow: 0 0 15px 1px #000;
   color: #FAEAFF;

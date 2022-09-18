@@ -19,7 +19,8 @@ import Register from '../../Pages/Register/Register'
 import UserBeerList from '../../Pages/UserBeerListPage/UserBeerListPage'
 import BreweryCardDemoPage from '../BreweryCardComponent/BreweryCardDemoPage'
 import BeerReviewPage from '../BLReviewModalComp/BeerReviewPage'
-import BreweryInfomationModal from '../BreweryInformationModalComp.js/BreweryInfomationModal'
+import BreweryInformationModal from '../BreweryInformationModalComp/BreweryInformationModal'
+
 
 const mapStateToProps = state => {
     return {
@@ -84,7 +85,7 @@ class Main extends Component {
             {/* <Register/> */}
             {/* <UserBeerList/> */}
             {/* <BreweryCardDemoPage/> */}
-           {/*  <BreweryInfomationModal/> */}
+        {/*  <BreweryInformationModal /> */}
 {/*                 
                 <Switch>
                     <Route path='/welcome'component={() => <BeerLoverWelcomePage/>}/>

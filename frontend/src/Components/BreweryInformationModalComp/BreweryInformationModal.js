@@ -3,8 +3,8 @@ import { Row, Col, Card } from "reactstrap";
 import "./BreweryInfomationStyle.css";
 import dummyData from "./data/BreweryInfo-Dummy";
 
-export default function BreweryInfomationModal() {
-  const BreweryInfomationModal = dummyData.map((item) => (
+export default function BreweryInformationModal() {
+  const BreweryInformationModal = dummyData.map((item) => (
     <Card key={item.id} className="brewerInfo---Container">
       <Row>
         <Col
@@ -48,7 +48,7 @@ export default function BreweryInfomationModal() {
               <div className="one-line">
               <h2>Website</h2>
               <h3 className="highlighted">
-              {item.website}</h3>
+              {item.website} </h3>
             </div>
           </Col>
          
@@ -77,5 +77,5 @@ export default function BreweryInfomationModal() {
     </Card>
   ));
 
-  return <>{BreweryInfomationModal}</>;
+  return <>{BreweryInformationModal}</>;
 }
