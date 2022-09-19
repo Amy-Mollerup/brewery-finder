@@ -1,6 +1,6 @@
 .dash--container {
     margin-top: 1rem;
-    background-color: rgba(240, 248, 255, 0.349);
+   /*  background-color: rgba(240, 248, 255, 0.349); */
 
 }
 
@@ -162,7 +162,7 @@ svg {
     position: absolute;
     left: 350px;
     top: 104px;
-    color: #6a606040;
+    color: #86808095;
     font-size: 4.3vw;
     font-weight: 900;
 }
