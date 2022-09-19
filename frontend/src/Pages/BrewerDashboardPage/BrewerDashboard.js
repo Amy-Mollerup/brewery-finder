@@ -21,7 +21,12 @@ export default function BrewerDashboard(props) {
             alt="Avatar"
           />
           <span> Jane Brewer Co.</span>
+          <div className="AddBrwer--Btn"> Add New Brewery</div>
+          
+          {/* Link should applied in add-button blue only */}
+          <div class='add-button blue'>+</div>      
         </Col>
+
         <Col
           className=""
           sm={{
