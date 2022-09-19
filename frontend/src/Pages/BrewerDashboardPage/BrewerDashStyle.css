@@ -17,9 +17,7 @@
 .dash--profile {
     display: flex;
     align-items: flex-start;
-    margin-top: 2rem;
-    margin-left: 1rem;
-    height: 80px;
+     height: 95px;
     /*  border: solid; */
 }
 
@@ -33,6 +31,7 @@
 }
 
 .dash--profile>img {
+    margin-top:10px;
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -159,3 +158,11 @@ svg {
     transition: all .2s ease-out;
   }
   
+  .dash--profile h3 {
+    position: absolute;
+    left: 350px;
+    top: 104px;
+    color: #6a606040;
+    font-size: 4.3vw;
+    font-weight: 900;
+}

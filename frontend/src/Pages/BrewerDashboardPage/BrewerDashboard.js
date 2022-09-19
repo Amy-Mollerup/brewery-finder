@@ -21,6 +21,9 @@ export default function BrewerDashboard(props) {
             alt="Avatar"
           />
           <span> Jane Brewer Co.</span>
+
+          <h3> Your Breweries</h3>
+          
           <div className="AddBrwer--Btn"> Add New Brewery</div>
           
           {/* Link should applied in add-button blue only */}
@@ -28,14 +31,17 @@ export default function BrewerDashboard(props) {
         </Col>
 
         <Col
-          className=""
+          className="yourBreweries---title"
           sm={{
             offset: 0,
             order: 1,
             size: 19,
           }}
         >
-          <BreweryCardDemoPage brewer={props.user.id} />
+         <BreweryCardDemoPage brewer={props.user.id} />
+
+          
+
         </Col>
       </Row>
     </>
