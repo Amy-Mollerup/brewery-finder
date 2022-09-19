@@ -100,6 +100,10 @@ const BrewerBeerList = (props) => {
     <>
       <div className="main_content">
         <h3>Brewer Beers</h3>
+        <div className="AddBrwerBeer--Btn"> Add New Beer</div>
+
+        {/*add beer link*/}
+        <div class='addbeer-button blue'><Link to='/brewery'>+</Link></div>             
         {listItems}
       </div>
     </>
