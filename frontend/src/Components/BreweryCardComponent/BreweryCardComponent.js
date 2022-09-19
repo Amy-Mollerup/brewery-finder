@@ -7,7 +7,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const BreweryCardComponent = (props) => {
-  const cardBackGround = "https://source.unsplash.com/random/?blurry";
+  const cardBackGround = "https://source.unsplash.com/random/color/?red";
   const brewery = props.brewery;
 
   function deleteBrewery() {

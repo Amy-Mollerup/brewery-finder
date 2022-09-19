@@ -26,50 +26,47 @@ export default function BreweryInformationModal() {
           }}
         >
           <Col>
+            <br />
             <div className="one-line">
               <h2>Name</h2>
-              <h3 className="highlighted">
-              {item.name}</h3>
+              <h3 className="highlighted">{item.name}</h3>
             </div>
             <div className="one-line">
               <h2>Address</h2>
               <h3 className="highlighted">
-                {item.street}   <br />
-                {item.city}  <br />
-                {item.state}  <br />
+                {item.street} <br />
+                {item.city} <br />
+                {item.state} <br />
                 {item.post_code}
               </h3>
             </div>
             <div className="one-line">
               <h2>Phone</h2>
-              <h3 className="highlighted">
-              {item.phone}</h3>
+              <h3 className="highlighted">{item.phone}</h3>
             </div>
-              <div className="one-line">
+            <div className="one-line">
               <h2>Website</h2>
-              <h3 className="highlighted">
-              {item.website} </h3>
+              <h3 className="highlighted">{item.website} </h3>
             </div>
           </Col>
-         
-         {/*  <Col>
-            <div className="two-line">
-              <h2>Phone</h2>
-              <h2>Website</h2>
-            </div>
-            <div className="two-line">
-              <h3 className="highlighted">{item.phone}</h3>
-              <h3 className="highlighted">{item.website}</h3>
-            </div>
-          </Col> */}
+
           <Col>
             <div className="one-line-bio">
               <h2>Who we are?</h2>
-            
+
               <p className="highlighted">{item.description}</p>
             </div>
             <Col>
-              <button id="beerPath-link">Beer List</button>
+              <button id="beerPath-link">
+                {/* do not delete span tags */}
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                {/*    <Link to={`/brewerBeerList/${brewery.breweryId}`}> </Link> */}
+                Beer List
+              </button>
+          
             </Col>
           </Col>
         </Col>
