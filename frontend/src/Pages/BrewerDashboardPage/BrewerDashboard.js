@@ -27,7 +27,7 @@ export default function BrewerDashboard(props) {
           <div className="AddBrwer--Btn"> Add New Brewery</div>
           
           {/* Link should applied in add-button blue only */}
-          <div class='add-button blue'><Link to='/brewery'>+</Link></div>      
+          <div className='add-button blue'><Link to='/brewery'>+</Link></div>      
         </Col>
 
         <Col

@@ -29,7 +29,7 @@ const BeerListCard = (props) => {
                   </div>
                   <div className="card----footer">
                     <div className="beerList----left">
-                      <span class="price">ABV {props.beer.beerABV}% </span>{" "}
+                      <span className="price">ABV {props.beer.beerABV}% </span>{" "}
                       <span>⭐⭐⭐⭐⭐</span>
                     </div>
                     

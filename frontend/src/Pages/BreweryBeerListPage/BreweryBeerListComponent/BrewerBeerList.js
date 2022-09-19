@@ -114,7 +114,7 @@ const BrewerBeerList = (props) => {
         <div className="AddBrwerBeer--Btn"> Add New Beer</div>
 
         {/*add beer link*/}
-        <div class='addbeer-button blue'><Link to='/brewery'>+</Link></div>             
+        <div className='addbeer-button blue'><Link to={'/beerForm/brewery/' + props.breweryId}>+</Link></div>             
         {listItems}
       </div>
     </>
