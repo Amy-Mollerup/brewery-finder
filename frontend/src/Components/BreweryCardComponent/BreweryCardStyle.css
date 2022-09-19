@@ -317,3 +317,36 @@
  .BreweryCard .inactive {
   display: hide;
  }
+
+
+ .DeletePopUp--container{
+ 
+  width:400px;
+  height: 200px;
+  background: rgba(242, 237, 237, 0.36);;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.6px);
+  -webkit-backdrop-filter: blur(8.6px);
+  border: 1px solid rgba(19, 18, 18, 0.41);
+}
+.DeletePopUp--container p{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  text-shadow: none;
+}
+
+.DeletePopUp--container #Option--YesNo{
+align-content: center;
+margin: 10px 0 10px 82px;
+width: 70px;
+height: 40px;
+border-radius: 55px;
+border: 0;
+}
+
+.DeletePopUp--container #Option--YesNo:hover{
+   background-color: coral;
+  }

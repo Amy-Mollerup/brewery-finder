@@ -81,10 +81,10 @@ const BreweryCardComponent = (props) => {
             position="center center"
             modal
             >{(close) => (
-              <div>
+              <div className="DeletePopUp--container">
               <p>Really delete?</p>
-              <button onClick={deleteBrewery}>Yes</button>
-              <button onClick={close}>No</button>
+              <button id="Option--YesNo" onClick={deleteBrewery}>Yes</button>
+              <button id="Option--YesNo" onClick={close}>No</button>
               </div>
             )}
             </Popup>
