@@ -47,7 +47,7 @@
     text-transform: uppercase;
 }
 
-button {
+#beerPath-link {
     margin-top: 150px;
     width: 200px;
     height: 50px;
@@ -62,7 +62,7 @@ button {
   
 }
 
-button:hover{
+#beerPath-link:hover{
     background-color: rgb(60, 57, 57);
     color: coral;
     text-transform: lowercase;

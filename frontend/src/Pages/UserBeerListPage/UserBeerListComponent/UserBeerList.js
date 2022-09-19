@@ -26,8 +26,8 @@ const UserBeerList = () => {
   ));
 
   return (
-    <div className="shell">
-      {/* <h3>Beer List</h3> */}
+    <div className="shell" id="title---style">
+      <h3>Beer List</h3>
       <Row md="4"> {listItems} </Row>
     </div>
   );

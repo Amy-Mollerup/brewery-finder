@@ -1,5 +1,6 @@
 .beerLover--container{
 max-width: 400px;
+min-width: 600px;
 margin-top: 7rem;
 margin-bottom: 2rem;
 color: #FFF;

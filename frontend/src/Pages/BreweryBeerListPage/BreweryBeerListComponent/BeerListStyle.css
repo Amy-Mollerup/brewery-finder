@@ -33,11 +33,14 @@
 
 .main_content h3 {
     position: absolute;
-    left: 0;
+    left: 190px;
     top: 0;
-    color: #2d343e;
-    font-size: 10.5vw;
+    color: #f8f9f975;
+    font-size: 5.5vw;
+    font-weight: 900;
 }
+
+
 
 .main_content .card {
     width: 320px;
@@ -148,11 +151,12 @@
     cursor: pointer;
 }
 
-.close{
- 
-/*     font-size: 25px;
-    text-align: center;
-    margin-top: -705px;
-    margin-left: 12px;
- */
+
+#title---style>h3{
+    position: absolute;
+    left: 190px;
+    top: 90px;
+    color: #f8f9f975;
+    font-size: 5.5vw;
+    font-weight: 900;
 }

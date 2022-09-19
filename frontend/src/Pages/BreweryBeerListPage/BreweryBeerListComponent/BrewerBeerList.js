@@ -91,7 +91,7 @@ const BrewerBeerList = (props) => {
   return (
     <>
       <div className="main_content">
-        <h3>Yours Beer List <span> </span></h3>
+        <h3>Brewer Beers</h3>
         {listItems}
       </div>
     </>

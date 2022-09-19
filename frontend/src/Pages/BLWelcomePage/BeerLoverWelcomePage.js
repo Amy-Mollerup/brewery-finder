@@ -12,15 +12,21 @@ export default function BeerLoverWelcomePage() {
       <Row>
         <Col
           className=""
-          sm="5"
-          fluid="sm"
+          sm={{
+        offset: 1,
+        order: 0,
+        size: 2
+      }}
         >
           <BeerLoverComponent />
         </Col>
         <Col
           className=""
-          sm="7"
-          fluid="sm"
+          md={{
+        offset: 2,
+        order: 1,
+        size: 5
+      }}
         >
           <Top4BeerLoverComponent />
         </Col>

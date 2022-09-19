@@ -69,7 +69,7 @@ export default function BreweryInformationModal() {
               <p className="highlighted">{item.description}</p>
             </div>
             <Col>
-              <button>Beer List</button>
+              <button id="beerPath-link">Beer List</button>
             </Col>
           </Col>
         </Col>

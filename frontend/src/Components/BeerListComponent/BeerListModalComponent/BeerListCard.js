@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col } from "reactstrap";
-
+import "./BeerListModalStyle.css"
 
 
 /* CSS is link to Pages>UserBeerList>Component>UserBeerListStyle.css */
@@ -9,26 +9,26 @@ import { Row, Col } from "reactstrap";
 
 const BeerListCard = (props) => {
   return (
-    <div className="beerList--container">
+    <div className="beerList----container">
           <Row>
             <Col>
-              <div className="beerList--product">
-                <div className="beerList--img">
+              <div className="beerList----product">
+                <div className="beerList----img">
                   <img src={props.beer.beerImage} alt="beerImage"  />
                 </div>
     
-                <div className="beerList--text">
+                <div className="beerList----text">
                   <div className="category">
                     
                   </div>
-                  <div className="title--product">
+                  <div className="title----product">
                     <h3>{props.beer.beerName}</h3>
                   </div>
-                  <div className="description--prod">
+                  <div className="description----prod">
                     <p>{props.beer.beerDescription}</p>
                   </div>
-                  <div className="card--footer">
-                    <div className="beerList--left">
+                  <div className="card----footer">
+                    <div className="beerList----left">
                       <span class="price">ABV {props.beer.beerABV}% </span>{" "}
                       <span>⭐⭐⭐⭐⭐</span>
                     </div>
