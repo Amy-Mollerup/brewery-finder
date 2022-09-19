@@ -21,7 +21,10 @@ export default function BeerForm(props) {
 
   const API_BASE = 'http://localhost:8081/beer/'
 
-  useEffect(() => fetchBeerData(), [])
+  const [brewery, setBrewery] = React.useState('')
+
+  useEffect(() => fetchBeerData(),
+  getBrewery(), [])
 
   function fetchBeerData() {
     if (props.beerId || props.beerId === 0) {
@@ -30,6 +33,14 @@ export default function BeerForm(props) {
           setFormData(response.data)
         })
     }
+  }
+
+  function getBrewery() {
+    const url = 'http://localhost:8081/breweries/' + formData.brewery
+    axios.get(url, [])
+      .then(resp => {
+        setBrewery(resp.data.breweryName)
+      })
   }
 
   function handleChange(event) {
@@ -46,17 +57,18 @@ export default function BeerForm(props) {
     event.preventDefault()
     if (props.beerId) {
       axios.put(API_BASE + props.beerId, formData)
-      .then(resp => {
-        if (resp.status === 200) {
-          alert("Beer edited!")
-          window.location.reload()
-        }
-      })
+        .then(resp => {
+          if (resp.status === 200) {
+            alert("Beer edited!")
+            window.location.reload()
+          }
+        })
     } else {
       axios.post(API_BASE, formData)
         .then(resp => {
           if (resp.status === 200) {
             alert("Beer created!")
+            window.location.reload()
           }
         })
     }
@@ -65,82 +77,95 @@ export default function BeerForm(props) {
 
   return (
     <>
-    <Col md="5">
-      <Form className="beerInfo--container" onSubmit={handleSubmit}>
-        <Col>
-          <img src={require("../assets/cheers-DashPic.png")} alt="Avatar" />{" "}
-          <span> Beer Details </span>
-        </Col>
-        <Row>
+      <Col md="5">
+        <Form className="beerInfo--container" onSubmit={handleSubmit}>
           <Col>
-            <FormGroup>
-              <Label for="brewerName">Beer Name</Label>
+            <img src={require("../assets/cheers-DashPic.png")} alt="Avatar" />{" "}
+            <span> Beer Details </span>
+          </Col>
+          <Row>
+            <Col>
+              <Label for="breweryName">Brewery</Label>
               <Input
-                id="brewerId"
-                name="beerName"
-                placeholder="Cool Beer Name"
-                value={formData.beerName}
-                onChange={handleChange}
+                id="breweryName"
+                name="breweryName"
+                value={brewery}
                 type="text"
-                autoComplete="off"
                 className="form-control-plaintext"
-                required
+                readOnly
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <FormGroup>
+                <Label for="brewerName">Beer Name</Label>
+                <Input
+                  id="brewerId"
+                  name="beerName"
+                  placeholder="Cool Beer Name"
+                  value={formData.beerName}
+                  onChange={handleChange}
+                  type="text"
+                  autoComplete="off"
+                  className="form-control-plaintext"
+                  required
+                />
+              </FormGroup>
+            </Col>
+
+            <FormGroup>
+              <Label for="exampleText">
+                Beer Description
+              </Label>
+              <Input
+                id="exampleText"
+                name="beerDescription"
+                type="textarea"
+                className="form-control-plaintext"
+                value={formData.beerDescription}
+                onChange={handleChange}
+                placeholder="Exactly how do breweries come up with good beer names? Brewers face many choices when choosing a name for a new brew. Factors such as the type of beer matter greatly.."
+                autoComplete="off"
               />
             </FormGroup>
-          </Col>
 
-          <FormGroup>
-            <Label for="exampleText">
-              Beer Description
-            </Label>
-            <Input
-              id="exampleText"
-              name="beerDescription"
-              type="textarea"
-              className="form-control-plaintext"
-              value={formData.beerDescription}
-              onChange={handleChange}
-              placeholder="Exactly how do breweries come up with good beer names? Brewers face many choices when choosing a name for a new brew. Factors such as the type of beer matter greatly.."
-              autoComplete="off"
-            />
-          </FormGroup>
+          </Row>
+          <Row>
+            <Col md={5}>
+              <FormGroup>
+                <Label for="exampleABV">Alcohol by vol.</Label>
+                <Input
+                  type="text"
+                  id="abvId"
+                  name="beerABV"
+                  placeholder="4% - 6%"
+                  value={formData.beerABV}
+                  onChange={handleChange}
+                  autoComplete="off"
+                  className="form-control-plaintext"
+                  required
+                />
+              </FormGroup>
+            </Col>
+            <Col md={6}>
+              <FormGroup>
+                <Label for="exampleBeerType">Beer Type</Label>
+                <Input
+                  type="text"
+                  id="exampleBeerId"
+                  name="beerType"
+                  autoComplete="off"
+                  value={formData.beerType}
+                  onChange={handleChange}
+                  className="form-control-plaintext"
+                  required
+                />
+              </FormGroup>
+            </Col>
+          </Row>
 
-        </Row>
-        <Row>
-          <Col md={5}>
-            <FormGroup>
-              <Label for="exampleABV">Alcohol by vol.</Label>
-              <Input
-                type="text"
-                id="abvId"
-                name="beerABV"
-                placeholder="4% - 6%"
-                value={formData.beerABV}
-                onChange={handleChange}
-                autoComplete="off"
-                className="form-control-plaintext"
-                required
-              />
-            </FormGroup>
-          </Col>
-          <Col md={6}>
-            <FormGroup>
-              <Label for="exampleBeerType">Beer Type</Label>
-              <Input
-                type="text"
-                id="exampleBeerId"
-                name="beerType"
-                autoComplete="off"
-                value={formData.beerType}
-                onChange={handleChange}
-                className="form-control-plaintext"
-                required
-              />
-            </FormGroup>
-          </Col>
-        </Row>
-
-        {/* <Label for="examplePhone">Is product on production?</Label>
+          {/* <Label for="examplePhone">Is product on production?</Label>
       <Row>
         <Col md={3}>
           <FormGroup check>
@@ -164,23 +189,23 @@ export default function BeerForm(props) {
           </FormGroup>
         </Col>
       </Row> */}
-        <Row>
-          <Label for="image">Image Link</Label>
-          <Input
-                type="text"
-                id="beerImage"
-                name="beerImage"
-                autoComplete="off"
-                value={formData.beerImage}
-                placeholder='http://www.example.example'
-                onChange={handleChange}
-                className="form-control-plaintext"
-                required
-              />
-          <Button onClick={handleSubmit}> Submit </Button>
-          {!props.preview && <Link to={'/beerForm/' + props.beerId}><Button>Go To Preview</Button></Link>}
-        </Row>
-      </Form>
+          <Row>
+            <Label for="image">Image Link</Label>
+            <Input
+              type="text"
+              id="beerImage"
+              name="beerImage"
+              autoComplete="off"
+              value={formData.beerImage}
+              placeholder='http://www.example.example'
+              onChange={handleChange}
+              className="form-control-plaintext"
+              required
+            />
+            <Button onClick={handleSubmit}> Submit </Button>
+            {!props.preview && <Link to={'/beerForm/' + props.beerId}><Button>Go To Preview</Button></Link>}
+          </Row>
+        </Form>
       </Col>
       {props.preview && <Col md="5">
         <h5> Beer Client Preview </h5>

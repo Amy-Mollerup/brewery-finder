@@ -76,7 +76,7 @@ export default function BeerReviewPage(props) {
           <div id="color1" className="beer-wrapper">
             {" "}
             <h3 id="color3">
-              Brewer<label>{props.beer.breweryName}</label>{" "}
+              Brewer<label>{brewery}</label>{" "}
             </h3>
           </div>
           <div>

@@ -30,7 +30,15 @@ const BrewerBeerList = (props) => {
   }
 
   function deleteBeer(beerId){
-    axios.delete(API_BASE + '/beer/' + beerId)
+    axios.delete(API_BASE + 'beer/' + beerId)
+    .then(resp => {
+      if(resp.status === 200) {
+        alert("Beer deleted")
+        window.location.reload()
+      } else {
+        alert("Something went wrong!")
+      }
+    })
   }
 
   useEffect(() => getBeerList(), [])
@@ -54,7 +62,7 @@ const BrewerBeerList = (props) => {
         >
           {(close) => (
             <div>
-              <BeerForm beerId={item.beerId} />
+              <BeerForm beerId={item.beerId} breweryId={props.breweryId} />
               <a className="close" onClick={close}>
 
                 &times;

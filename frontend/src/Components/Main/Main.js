@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 
-import AuthorizationWarning from '../../Pages/AuthorizationWarning/AuthorizationWarning'
+import AuthorizationWarning from '../AuthorizationWarning/AuthorizationWarning'
 
 import BeerLoverWelcomePage from '../../Pages/BLWelcomePage/BeerLoverWelcomePage'
 import BrewerDashboard from '../../Pages/BrewerDashboardPage/BrewerDashboard'
@@ -62,7 +62,7 @@ class Main extends Component {
         }
 
         const BeerFormWithId = ({match}) => {
-            return loggedIn && isAdmin ? <BeerDetail beerId={match.params.id}/> : <AuthorizationWarning/>
+            return loggedIn && isAdmin ? <BeerDetail breweryId={match.params.breweryId} beerId={match.params.id}/> : <AuthorizationWarning/>
         }
         
         return(
@@ -108,6 +108,7 @@ class Main extends Component {
                     {/* For Brewers */}
                     <Route path='/brewerDash' component={loggedIn && isAdmin ? () => <BrewerDashboard user={this.props.user}/> : () => <AuthorizationWarning/>}/>
                     <Route path='/beerForm/:id?' component={BeerFormWithId}/>
+                    <Route path='/beerForm/brewery/:breweryId/:id?' component={BeerFormWithId}/>
                     <Route path='/brewerBeerList/:id?' component={BrewerBeerListWithId}/>
                     <Route path='/brewery/:id?' component={BreweryFormWithId}/>
                     {/* Landing and Login */}

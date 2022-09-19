@@ -16,7 +16,7 @@ export default function BeerDetails(props) {
         </Col>
       </Row>
       <Row xs="3">
-        <BeerForm beerId={props.beerId} preview={true} />
+        <BeerForm breweryId={props.breweryId} beerId={props.beerId} preview={true} />
       </Row>
     </>
   );

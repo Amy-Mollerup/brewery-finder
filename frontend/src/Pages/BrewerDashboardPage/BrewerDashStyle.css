@@ -83,7 +83,7 @@ svg {
 }
 
 .h3brew {
-    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .dash--container img.svg {
@@ -96,9 +96,9 @@ svg {
 
 .AddBrwer--Btn {
     padding-left: 19px;
+    padding-right: 50px;
     top:92px;
     height: 41px;
-    width: 250px;
     background: #e2916c;
     border-radius: 20px;
     position: absolute;

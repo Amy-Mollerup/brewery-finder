@@ -22,12 +22,12 @@ export default function BrewerDashboard(props) {
           />
           <span> Jane Brewer Co.</span>
 
-          <h3> Your Breweries</h3>
+          <h3 className="h3brew"> Your Breweries</h3>
           
           <div className="AddBrwer--Btn"> Add New Brewery</div>
           
           {/* Link should applied in add-button blue only */}
-          <div class='add-button blue'>+</div>      
+          <div class='add-button blue'><Link to='/brewery'>+</Link></div>      
         </Col>
 
         <Col
