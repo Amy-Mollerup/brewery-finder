@@ -21,7 +21,7 @@ const BreweryCardComponent = (props) => {
   <>
   
 
-  <div className="BreweryCard" style={{opacity: brewery.active ? "1" : "0.5"}}>
+  <div className="BreweryCard col-md-2 col-md-2" style={{opacity: brewery.active ? "1" : "0.5"}}>
       <div className="BcHeader-BreweryCard">
         <img src={cardBackGround} alt= "" className="BcHeader-image" />
         <div className="BcHeader">
@@ -58,7 +58,7 @@ const BreweryCardComponent = (props) => {
         </div>
         <img
           src={brewery.image}
-          alt="No Brewery Icon Given"
+          alt=""
           className="BrewBody-image"
           height={95}
           width={95}
@@ -73,7 +73,9 @@ const BreweryCardComponent = (props) => {
         
         <div className="BrewBody-more">
         <ButtonGroup >
-          <Button id="editDelete--button" size="sm"><Link to={`/brewery/${brewery.breweryId}`}>Edit</Link></Button>
+            <Button id="editDelete--button" size="sm">
+              <Link to={`/brewery/${brewery.breweryId}`}>Edit</Link>
+            </Button>
           <Popup
             trigger={<Button id="editDelete--button" size="sm"> Delete </Button>}
             position="center center"

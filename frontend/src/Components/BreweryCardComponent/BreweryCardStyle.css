@@ -26,14 +26,25 @@
    *zoom: 1;
  }
 
+ .BrewBody-info {
+  clear: left;
+  position: relative;
+ 
+  height:86px;
+  overflow: hidden;
+  transition: all 900ms ease-out;
+  font-size: 12px;
+  text-shadow: none;
+}
+
  .BreweryCard {
    box-shadow: 0 0 50px rgba(0, 0, 0, .3);
-   margin: 30px;
-   overflow: hidden;
-   text-shadow: none;
-
-
- }
+    padding: 0 0 2px 2px;
+    margin: 0 0 8px 8px;
+    overflow: hidden;
+    min-width: 410px;
+    max-width: 100%;
+}
 
  .dash--container .BreweryCard--DemoPage {
    display: flex;
@@ -207,14 +218,7 @@
 
  }
 
- .BrewBody-info {
-   clear: left;
-   position: relative;
-   max-height: 100px;
-   overflow: hidden;
-   transition: all 600ms ease-out;
-   font-size: 12px;
- }
+
 
  .BrewBody-more {
    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(238, 238, 238, 1) 100%);
@@ -223,7 +227,7 @@
    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#eeeeee', GradientType=0);
    cursor: pointer;
    margin: -30px auto 0px;
-   padding: 20px 0 20px;
+   padding: 10px 0 20px;
    position: relative;
    text-align: center;
  }
