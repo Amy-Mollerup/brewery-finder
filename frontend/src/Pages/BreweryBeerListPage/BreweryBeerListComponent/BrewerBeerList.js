@@ -71,7 +71,18 @@ const BrewerBeerList = (props) => {
           )}
         </Popup>
 
-        <button className="beer-btn" onClick={() => deleteBeer(item.beerId)}>Delete</button>
+        <Popup
+            trigger={<button className="beer-btn">Delete</button>}
+            position="center center"
+            modal
+            >{(close) => (
+              <div className="DeletePopUp--container">
+              <p>Really delete?</p>
+              <button id="Option--YesNo" onClick={() => deleteBeer(item.beerId)}>Yes</button>
+              <button id="Option--YesNo" onClick={close}>No</button>
+              </div>
+            )}
+            </Popup>
 
         <Popup
           trigger={<div className="beer-btn">Reviews</div>}
