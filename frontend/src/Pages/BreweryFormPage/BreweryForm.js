@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button, Form } from "reactstrap";
+import { Row, Col, Button, Form, Container } from "reactstrap";
 import "./BreweryFormStyle.css";
 
 import BusinessHours from "./BusinessHoursComponent/BusinessHours";
 import BrewerInformation from "./BrewerInformationComponent/BrewerInformation";
-import FileUploader from "../../Components/FileUploaderComponent/FileUploader"
+import FileUploader from "../../Components/FileUploaderComponent/FileUploader";
 import BreweryProfileDetail from "../../Components/BreweryProfileDetailComponent/BreweryProfileDetail";
 import axios from "axios";
 
 export default function BreweryForm(props) {
-
-  const API_BASE = 'http://localhost:8081/breweries/'
+  const API_BASE = "http://localhost:8081/breweries/";
 
   const [brewerInformation, setBrewerInformation] = useState({
     breweryName: "",
@@ -23,92 +22,109 @@ export default function BreweryForm(props) {
     image: "",
     description: "",
     active: false,
-    breweryHours: {}
-  })
+    breweryHours: {},
+  });
 
-
-  useEffect(() => fetchBreweryData(), [])
+  useEffect(() => fetchBreweryData(), [props.breweryId]);
 
   function fetchBreweryData() {
-    if (props.breweryId){
-    axios.get(API_BASE + props.breweryId)
-      .then(response => {
-        setBrewerInformation(response.data)
-      })
+    if (props.breweryId || props.breweryId === 0) {
+      axios.get(API_BASE + props.breweryId).then((response) => {
+        setBrewerInformation(response.data);
+      });
     }
   }
 
-  console.log(props)
-  const [breweryHours, setBreweryHours] = useState(new Map())
-
+  const [breweryHours, setBreweryHours] = useState(new Map());
 
   function handleChange(event) {
-    const {name, value, type, checked} = event.target
-    setBrewerInformation(prevBrewerInfo => {
+    const { name, value, type, checked } = event.target;
+    setBrewerInformation((prevBrewerInfo) => {
       return {
         ...prevBrewerInfo,
-        [name]: type === "checkbox" ? checked : value
-      }
-    })
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
   }
 
   const handleHoursChange = (event) => {
-    setBreweryHours(map => new Map(map.set(event.target.id, event.target.value)))
-  }
+    setBreweryHours(
+      (map) => new Map(map.set(event.target.id, event.target.value))
+    );
+  };
 
   function parseData() {
-    const newMap = new Map()
+    const newMap = new Map();
     for (let i = 0; i < 7; i++) {
-      newMap.set(i, [breweryHours.get(i + " start"), breweryHours.get(i + " end")])
+      newMap.set(i, [
+        breweryHours.get(i + " start"),
+        breweryHours.get(i + " end"),
+      ]);
     }
 
-    const obj = Object.fromEntries(newMap)
-    setBrewerInformation(prevInfo => {
+    const obj = Object.fromEntries(newMap);
+    setBrewerInformation((prevInfo) => {
       return {
         ...prevInfo,
-        breweryHours: obj
-      }
-    })
+        breweryHours: obj,
+      };
+    });
   }
 
-
   async function handleSubmit() {
-    await parseData()
-    if(props.breweryId || props.breweryId === 0) {
-      axios.put(API_BASE + props.breweryId, brewerInformation)
-      .then((response) => {
-        let status = response.status
-        if (status == 200) {
-          alert("Saved!")
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("Could not save brewer information")
-      })
+    await parseData();
+    if (props.breweryId || props.breweryId === 0) {
+      axios
+        .put(API_BASE + props.breweryId, brewerInformation)
+        .then((response) => {
+          let status = response.status;
+          if (status == 200) {
+            alert("Saved!");
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+          alert("Could not save brewer information");
+        });
     } else {
-    axios.post(API_BASE, brewerInformation)
-      .then((response) => {
-        let status = response.status
-        if (status == 200) {
-          alert("Saved!")
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("Could not save brewer information")
-      })
+      axios
+        .post(API_BASE, brewerInformation)
+        .then((response) => {
+          let status = response.status;
+          if (status == 200) {
+            alert("Saved!");
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+          alert("Could not save brewer information");
+        });
     }
   }
 
   return (
-    <div className="brewery-form">
-      <Row xs="3">
-        <Col xs="2">
+    <Form className="brewery-form">
+      <Row>
+        <Col className="BB---ProfileInfo"
+          xs={{
+            offset: 0,
+            size: 2,
+            
+          }}
+          
+        >
           <BreweryProfileDetail />
         </Col>
 
-        <Col md="4">
+        <Col
+          md={{
+            offset:0,
+     
+            size: 5,
+          }}
+
+          
+        >
           <BrewerInformation
             breweryName={brewerInformation.breweryName}
             breweryStreet={brewerInformation.breweryStreet}
@@ -119,18 +135,33 @@ export default function BreweryForm(props) {
             website={brewerInformation.website}
             description={brewerInformation.description}
             active={brewerInformation.active}
-            handleChange={handleChange} />
+            handleChange={handleChange}
+          />
+          
         </Col>
 
-        <Col md="5">
+        <Col 
+          md={{
+            offset: 0,
+            size: 4,
+          }}
+        >
           <BusinessHours
             breweryHours={breweryHours}
             handleHoursChange={handleHoursChange}
           />
-          <FileUploader image={brewerInformation.image} handleChange={handleChange}/>
-          <Button onClick={handleSubmit}>Submit</Button>
+          <FileUploader
+            image={brewerInformation.image}
+            handleChange={handleChange}
+          />
+       
         </Col>
+
+        <Container    fluid>
+        <button className="BB---submitBTN" onClick={handleSubmit}>Submit</button>
+        </Container>
+        
       </Row>
-    </div>
+    </Form>
   );
 }

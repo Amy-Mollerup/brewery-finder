@@ -93,7 +93,7 @@ export default function BeerReviewPage(props) {
         </Col>
 
         <Col className="reviewPost--contain" xs="6">
-        <Reviewer />  
+        <Reviewer beerId={props.beerId}/>  
         </Col>
 
     </Row>

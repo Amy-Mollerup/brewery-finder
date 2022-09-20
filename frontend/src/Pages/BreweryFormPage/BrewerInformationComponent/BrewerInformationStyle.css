@@ -1,14 +1,15 @@
 .breweryInfo--container {
     padding-top: 35px;
-    background: #80808059;
+    /* background: #80808059; */
     color: aliceblue;
     display: flex;
-    margin-left: 2.2rem;
+  /*   margin-left: 2.2rem; */
     flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
+    min-width: 400px;
     
 }
 
@@ -28,8 +29,48 @@
 }
 
 .breweryInfo--container span {
-   margin-left: 0.8rem;
+ /*   margin-left: 0.8rem; */
    font-size: 18px;
     
  /*    border: solid; */
 }
+
+.breweryInfo--container .form-control--plaintext{
+    width: 80%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    color: #fff  ;
+    padding: 3px;
+    margin-left: 56px;
+}
+
+#question---info{
+padding-top: 15px;
+}
+
+.Radio---Yes-No{
+color: aqua;
+display: inline-flex;
+flex-direction: row;
+align-content: center;
+margin-left: 3.1rem;
+
+}
+
+.Radio---Yes-No p{
+ margin-inline: -65px;
+}
+
+
+/* .form-control--plaintext,#description{
+  border: 0.1px;
+  color: aliceblue;
+  border-style: dashed;
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+
+} */

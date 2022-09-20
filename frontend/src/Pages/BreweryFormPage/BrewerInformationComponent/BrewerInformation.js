@@ -23,7 +23,7 @@ export default function BrewerInformation(props) {
               placeholder="Brewer or Company Name"
               type="text"
               autoComplete="off"
-              className="form-control-plaintext"
+              className="form-control--plaintext"
               value={props.breweryName}
               onChange={props.handleChange}
               required
@@ -38,7 +38,7 @@ export default function BrewerInformation(props) {
           name="website"
           placeholder="http://"
           autoComplete="off"
-          className="form-control-plaintext"
+          className="form-control--plaintext"
           value={props.website}
           onChange={props.handleChange}
         />
@@ -50,7 +50,7 @@ export default function BrewerInformation(props) {
           name="breweryStreet"
           placeholder="1234 Main St"
           autoComplete="off"
-          className="form-control-plaintext"
+          className="form-control--plaintext"
           value={props.breweryStreet}
           onChange={props.handleChange}
           required
@@ -64,7 +64,7 @@ export default function BrewerInformation(props) {
               id="exampleCity"
               name="breweryCity"
               autoComplete="off"
-              className="form-control-plaintext"
+              className="form-control--plaintext"
               value={props.breweryCity}
               onChange={props.handleChange}
               required
@@ -78,7 +78,7 @@ export default function BrewerInformation(props) {
               id="exampleState"
               name="breweryState"
               autoComplete="off"
-              className="form-control-plaintext"
+              className="form-control--plaintext"
               value={props.brewerState}
               onChange={props.handleChange}
               required
@@ -92,7 +92,7 @@ export default function BrewerInformation(props) {
               id="exampleZip"
               name="breweryPostCode"
               autoComplete="off"
-              className="form-control-plaintext"
+              className="form-control--plaintext"
               value={props.breweryPostCode}
               onChange={props.handleChange}
               required
@@ -110,7 +110,7 @@ export default function BrewerInformation(props) {
             placeholder="8062317495"
             type="text"
             autoComplete="off"
-            className="form-control-plaintext"
+            className="form-control--plaintext"
             value={props.phoneNumber}
             onChange={props.handleChange}
           />
@@ -118,24 +118,28 @@ export default function BrewerInformation(props) {
       </Col>
 
       <FormGroup>
+      <br />
         <Label for="exampleText">
           <span>Brewery Description</span>{" "}
         </Label>
         <Input
-          id="exampleText"
+          id="description"
           name="description"
           type="textarea"
-          className="ta10em"
+          className="form-control--plaintext"
           placeholder="Brewery History and Details"
           value={props.description}
           onChange={props.handleChange}
           autoComplete="off"
+          
         />
       </FormGroup>
 
-      <Label for="exampleCheck">Is company in operation?</Label>
+      <Label id= "question---info" for="exampleCheck">Is company in operation?</Label>
       <Row>
-        <Col md={3}>
+
+        <Col className="Radio---Yes-No" 
+        md={3}>
           <FormGroup check>
             <Input 
               id="exampleCheck" 
@@ -145,11 +149,10 @@ export default function BrewerInformation(props) {
               onChange={props.handleChange}
               />
             <Label check for="exampleCheck">
-              Active
+             <p> Active </p>
             </Label>
-          </FormGroup>
-        </Col>
-        <Col md={4}>
+          </FormGroup>    
+
           <FormGroup check>
             <Input
               id="exampleCheck"
@@ -159,10 +162,10 @@ export default function BrewerInformation(props) {
               onChange={props.handleChange}
             />
             <Label check for="exampleCheck">
-              Inactive
+             <p> Inactive </p> 
             </Label>
           </FormGroup>
-        </Col>
+          </Col>
       </Row>
     </Form>
   );
