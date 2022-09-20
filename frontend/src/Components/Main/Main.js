@@ -11,15 +11,12 @@ import BeerLoverWelcomePage from '../../Pages/BLWelcomePage/BeerLoverWelcomePage
 import BrewerDashboard from '../../Pages/BrewerDashboardPage/BrewerDashboard'
 import BreweriesListPage from '../../Pages/BreweriesListPage/BreweriesListPage'
 import BeerDetail from '../../Pages/BreweryBeerFormPage/BeerDetail'
-import BrewerBeerList from '../../Pages/BreweryBeerListPage/BreweryBeerListComponent/BrewerBeerList'
+import BrewerBeerList from '../../Pages/BreweryBeerListPage/BrewerBeerList'
 import BreweryForm from '../../Pages/BreweryFormPage/BreweryForm'
 import Hero from '../../Pages/LandingPage/Hero'
 import Login from '../../Pages/Login/Login'
 import Register from '../../Pages/Register/Register'
 import UserBeerList from '../../Pages/UserBeerListPage/UserBeerListPage'
-import BreweryCardDemoPage from '../BreweryCardComponent/BreweryCardDemoPage'
-import BeerReviewPage from '../BLReviewModalComp/BeerReviewPage'
-import BreweryInformationModal from '../BreweryInformationModalComp/BreweryInformationModal'
 
 
 const mapStateToProps = state => {
@@ -50,19 +47,23 @@ class Main extends Component {
     render(){
         const loggedIn = this.props.token.token !== undefined
         const authorities = (JSON.stringify(this.props.user.authorities[0]?.name)?.replace(/['"]+/g, ''))
-        const isAdmin = authorities == "ROLE_ADMIN"
-        const homePage = authorities == "ROLE_ADMIN" ? '/brewerDash' : '/welcome'
+        const isAuthorized = authorities === "ROLE_ADMIN" || authorities === "ROLE_BREWER"
+        const homePage = authorities === "ROLE_ADMIN" || "ROLE_BREWER" ? '/brewerDash' : '/welcome'
 
         const BreweryFormWithId = ({match}) => {
-            return loggedIn && isAdmin ? <BreweryForm breweryId={match.params.breweryId}/> : <AuthorizationWarning/>
+            return loggedIn && isAuthorized ? <BreweryForm breweryId={match.params.breweryId}/> : <AuthorizationWarning/>
         }
 
         const BrewerBeerListWithId = ({match}) => {
-            return loggedIn && isAdmin ? <BrewerBeerList breweryId={match.params.id}/> : <AuthorizationWarning/>
+            return loggedIn && isAuthorized ? <BrewerBeerList breweryId={match.params.id}/> : <AuthorizationWarning/>
         }
 
         const BeerFormWithId = ({match}) => {
-            return loggedIn && isAdmin ? <BeerDetail breweryId={match.params.breweryId} beerId={match.params.id}/> : <AuthorizationWarning/>
+            return loggedIn && isAuthorized ? <BeerDetail breweryId={match.params.breweryId} beerId={match.params.beerId}/> : <AuthorizationWarning/>
+        }
+
+        const BeerListWithId = ({match}) => {
+            return loggedIn ? <UserBeerList breweryId={match.params.breweryId} /> : <AuthorizationWarning/>
         }
         
         return(
@@ -104,12 +105,12 @@ class Main extends Component {
                     {/* For Beer Lovers */}
                     <Route path='/welcome'component={loggedIn ? () => <BeerLoverWelcomePage/> : () => <AuthorizationWarning/>}/>
                     <Route path='/breweryList' component={loggedIn ? () => <BreweriesListPage/> : () => <AuthorizationWarning/>}/>
-                    <Route path='/beerList' component={loggedIn ? () => <UserBeerList /> : () => <AuthorizationWarning/>}/>
+                    <Route path='/beerList/:breweryId?' component={BeerListWithId}/>
                     {/* For Brewers */}
-                    <Route path='/brewerDash' component={loggedIn && isAdmin ? () => <BrewerDashboard user={this.props.user}/> : () => <AuthorizationWarning/>}/>
-                    <Route path='/beerForm/brewery/:breweryId/:id?' component={BeerFormWithId}/>
+                    <Route path='/brewerDash' component={loggedIn && isAuthorized ? () => <BrewerDashboard user={this.props.user}/> : () => <AuthorizationWarning/>}/>
+                    <Route path='/beerForm/brewery/:breweryId/:beerId?' component={BeerFormWithId}/>
                     <Route path='/brewerBeerList/:id?' component={BrewerBeerListWithId}/>
-                    <Route path='/brewery/:id?' component={BreweryFormWithId}/>
+                    <Route path='/brewery/:breweryId?' component={BreweryFormWithId}/>
                     {/* Landing and Login */}
                     <Route path='/landingPage'component={() => <Hero/>}/>
                     <Route path='/login' component={() => <Login/>}/>

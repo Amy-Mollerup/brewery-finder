@@ -4,23 +4,34 @@ import { Row, Col, Button, Container } from "reactstrap";
 import "./UserBeerListStyle.css";
 import BeerListCard from "./BeerListCard";
 
-const UserBeerList = () => {
+const UserBeerList = (props) => {
 
-  
+
   /* console.log(product_card); */
   const [beers, setBeers] = React.useState([]);
-  
-  function getBeerList(){
-    axios.get("http://localhost:8081/beers",{})
-  .then(resp => {
-   setBeers(resp.data)
-  })
-  .catch(error => {
-    console.err(error)
-  })
-}
+  console.log(props.breweryId)
 
-  useEffect(() => getBeerList(),[])
+  function getBeerList() {
+    if (props.breweryId) {
+      axios.get("http://localhost:8081/" + props.breweryId + "/beers")
+        .then(resp => {
+          setBeers(resp.data)
+        })
+        .catch(error => {
+          console.err(error)
+        })
+    } else {
+      axios.get("http://localhost:8081/beers", {})
+        .then(resp => {
+          setBeers(resp.data)
+        })
+        .catch(error => {
+          console.err(error)
+        })
+    }
+  }
+
+  useEffect(() => getBeerList(), [])
   const listItems = beers.map((beer) => (
     <BeerListCard beer={beer} key={beer.beerName} />
   ));

@@ -10,14 +10,14 @@ export default function FileUploader(props) {
 
     return (
       <div className="uploadPic--section">
-        <Label for="image">Link an image for your entry</Label>
+        <Label for="image"><h6>Link an image for your entry</h6></Label>
         <Input
           id="image-link"
           type="text"
           name="image"
           placeholder="http://"
           autoComplete="off"
-          className="form-control-plaintext"
+          className="UploadPicForm-control-plaintext"
           value={props.image}
           onChange={props.handleChange}
         />

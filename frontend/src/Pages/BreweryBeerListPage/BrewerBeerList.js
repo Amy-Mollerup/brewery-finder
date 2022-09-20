@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Popup from "reactjs-popup";
-import product_card from "../../../Components/BeerListComponent/data/product_data";
+import product_card from "../../Components/BeerListComponent/data/product_data";
 import "./BeerListStyle.css";
-import BrewerAccessReviewComp from "../BrewerAccessReviewComponent/BrewerAccessReviewComp";
-import BeerForm from "../../../Components/BeerFormComponent/BeerForm"
+import BrewerAccessReviewComp from "./BrewerAccessReviewComponent/BrewerAccessReviewComp";
+import BeerForm from "../../Components/BeerFormComponent/BeerForm"
 import { useEffect } from "react";
 const BrewerBeerList = (props) => {
   const reviewLists = <BrewerAccessReviewComp />

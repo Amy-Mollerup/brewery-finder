@@ -2,9 +2,8 @@ import React, { useEffect } from "react";
 import {Row, Col} from "reactstrap";
 import "./BeerReviewPageStyle.css";
 import "../BeerListComponent/data/product_data";
-import BeerPic from "../assets/Beer Can Stone.png";
 import Reviewer from "../ReviewerComponent/Reviewer";
-import reviewData from "../ReviewerComponent/data/ReviewData";
+
 import axios from "axios";
 
 export default function BeerReviewPage(props) {
@@ -36,9 +35,16 @@ export default function BeerReviewPage(props) {
     const reviewLists = reviews.map((item) =>
     <div className="reviewRating--card" key={item.id}>  
         <div className="card_header">
-             <p>{item.review}</p>
-            {/* <h4>{item.username}</h4> */}
-            <p className="reviewRating--display">{item.rating}</p>
+          
+            {new Array(item.rating).fill(null).map(() => (
+              <i
+                className="fas fa-star"
+                style={{ color: "orange", fontSize: "15px" }}
+              />
+            ))} 
+            <br />
+            <p>{item.review}</p>
+            <div className="thinLine---reviewer"></div>
             
             
         </div>
@@ -87,13 +93,15 @@ export default function BeerReviewPage(props) {
         </div>
       </Col>
 
-      <Col className="review-card" xs="5">
-            {reviewLists} 
-            
+      <Col className="review---card" xs="5">
+      <div><h5> Reviews</h5></div>
+           <div>{reviewLists} 
+            </div> 
         </Col>
 
-        <Col className="reviewPost--contain" xs="6">
-        <Reviewer />  
+
+        <Col className="reviewPost--contain">
+        <Reviewer beerId={props.beerId}/>  
         </Col>
 
     </Row>

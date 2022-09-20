@@ -1,16 +1,26 @@
 .brewery-form .uploadPic--section {
-  margin-top: 6rem;
-  background-color: rgba(240, 248, 255, 0.151);
+  margin-top: 2.8rem;
+/*   background-color: rgba(240, 248, 255, 0.151); */
   box-shadow: 13px;
   box-sizing: content-box;
+  color: #fff;
 }
 
-.brewery-form .uploadPic--section,
-h3 h5 {
-  color: antiquewhite;
-
+.uploadPic--section h6{
+  color: white;
+  font-weight: 600;
 }
 
 .brewery-form .uploadDetail--section p {
   text-align: justify;
+}
+
+.uploadPic--section .UploadPicForm-control-plaintext{
+  width: 80%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    color: #fff;
+  
 }

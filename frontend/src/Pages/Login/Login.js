@@ -41,7 +41,7 @@ class Login extends Component {
 
     if(this.state.auth === "ROLE_USER") {
       this.props.history.push('/welcome')
-    } else if (this.state.auth === "ROLE_ADMIN") {
+    } else if (this.state.auth === "ROLE_ADMIN" || this.state.auth === "ROLE_BREWER") {
       this.props.history.push('/brewerDash')
     }
     
