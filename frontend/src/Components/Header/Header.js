@@ -26,7 +26,7 @@ function Header(props) {
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar >
             {/* Change me when site is finished! */}
-            {props.authorities == "ROLE_USER" &&
+            {(props.authorities === "ROLE_USER" || props.authorities === "ROLE_ADMIN") &&
             <>
             <NavItem>
               <NavLink href="/welcome">BL Welcome</NavLink>
@@ -39,7 +39,7 @@ function Header(props) {
             </NavItem>
             </>
             }
-            {props.authorities == "ROLE_ADMIN" &&
+            {(props.authorities === "ROLE_BREWER" || props.authorities == "ROLE_ADMIN") &&
             <>
             <NavItem>
               <NavLink href="/brewerDash">Brewer Dashboard</NavLink>

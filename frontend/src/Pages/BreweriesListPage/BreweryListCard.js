@@ -1,11 +1,11 @@
 import React from "react";
 import Popup from "reactjs-popup";
 import BeerListModal from "../../Components/BeerListComponent/BeerListModalComponent/BeerListModal";
-import BreweryInformationModal from "../../Components/BreweryInformationModalComp/BreweryInformationModal";
+import BreweryInformationModal from "./BreweryInformationModalComp/BreweryInformationModal";
 
 const BreweryListCard = (props) => {
   const beerList = <BeerListModal brewery={props.brewery} />;
-  const brewerInfo = <BreweryInformationModal />;
+  const brewerInfo = <BreweryInformationModal brewery={props.brewery}/>;
   return (
     <div className="businessCard--content">
       <div id="busicard">
@@ -40,7 +40,7 @@ const BreweryListCard = (props) => {
           >
             {(close) => (
               <div>
-                {brewerInfo}
+                <BreweryInformationModal brewery={props.brewery}/>
                 <a className="close" onClick={close}>
                   {" "}
                   &times;

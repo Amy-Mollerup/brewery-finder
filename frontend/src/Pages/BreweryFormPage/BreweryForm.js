@@ -27,10 +27,10 @@ export default function BreweryForm(props) {
   })
 
 
-  useEffect(() => fetchBreweryData(), [props.breweryId])
+  useEffect(() => fetchBreweryData(), [])
 
   function fetchBreweryData() {
-    if (props.breweryId || props.breweryId === 0){
+    if (props.breweryId){
     axios.get(API_BASE + props.breweryId)
       .then(response => {
         setBrewerInformation(response.data)
@@ -38,6 +38,7 @@ export default function BreweryForm(props) {
     }
   }
 
+  console.log(props)
   const [breweryHours, setBreweryHours] = useState(new Map())
 
 
@@ -101,7 +102,7 @@ export default function BreweryForm(props) {
   }
 
   return (
-    <Form className="brewery-form">
+    <div className="brewery-form">
       <Row xs="3">
         <Col xs="2">
           <BreweryProfileDetail />
@@ -130,6 +131,6 @@ export default function BreweryForm(props) {
           <Button onClick={handleSubmit}>Submit</Button>
         </Col>
       </Row>
-    </Form>
+    </div>
   );
 }

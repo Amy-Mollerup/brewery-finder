@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="Created persistence for Redux information, did more work on authentication and redirects">
-      <change beforePath="$PROJECT_DIR$/final-capstone.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BeerFormComponent/BeerForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BeerFormComponent/BeerForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BreweryInformationModalComp/BreweryInfomationStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BreweryInformationModalComp/BreweryInformationModal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BreweryInformationModalComp/data/BreweryInfo-Dummy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/Main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/Main/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweryListCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweryListCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BeerList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BeerListStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BeerListStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BreweryBeerListComponent/BeerListStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BreweryBeerListComponent/BrewerBeerList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BreweryBeerListComponent/BreweryBeerListCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BreweryForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BreweryForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BusinessHoursComponent/BusinessHours.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BusinessHoursComponent/BusinessHours.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/UserBeerListPage/UserBeerListPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +66,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -70,19 +86,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="final-capstone" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="final-capstone" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

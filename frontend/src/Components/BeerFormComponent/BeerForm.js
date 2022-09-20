@@ -21,14 +21,13 @@ export default function BeerForm(props) {
 
   const API_BASE = 'http://localhost:8081/beer/'
 
-  const [breweryName, setBrewery] = React.useState('')
+  const [breweryName, setBreweryName] = React.useState('')
 
-  console.log("beer id: " + props.beerId)
   useEffect(() => fetchBeerData(),
   getBrewery(), [])
 
   function fetchBeerData() {
-    if (props.beerId || props.beerId === 0) {
+    if (props.beerId) {
       axios.get(API_BASE + props.beerId)
         .then(response => {
           setFormData(response.data)
@@ -37,10 +36,10 @@ export default function BeerForm(props) {
   }
 
   function getBrewery() {
-    const url = 'http://localhost:8081/breweries/' + formData.breweryId
-    axios.get(url, [])
+    const url = 'http://localhost:8081/breweries/' + props.breweryId
+    axios.get(url)
       .then(resp => {
-        setBrewery(resp.data.breweryName)
+        setBreweryName(resp.data.breweryName)
       })
   }
 
@@ -204,7 +203,7 @@ export default function BeerForm(props) {
               required
             />
             <Button onClick={handleSubmit}> Submit </Button>
-            {!props.preview && <Link to={'/beerForm/' + props.beerId}><Button>Go To Preview</Button></Link>}
+            {!props.preview && <Link to={'/beerForm/brewery/' + props.breweryId + "/" + props.beerId}><Button>Go To Preview</Button></Link>}
           </Row>
         </Form>
       </Col>
