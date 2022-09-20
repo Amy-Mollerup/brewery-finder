@@ -1,54 +1,43 @@
-#reviewer--container {
-    background: rgb(243, 240, 240);
-    margin: 10% auto;
-    
-    max-width: 500px;
-    height: 600px;
-    width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+.BrewerAccessReview--container {
+  background: rgb(243, 240, 240);
+  width: 760px;
+  height: 600px;
 
-    border-radius: 25px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -o-border-radius: 15px;
-    -webkit-box-shadow:0px 5px 80px #cdcccc;
-    -moz-box-shadow:0px 5px 80px #b7b6b6;
-    -o-box-shadow:0px 5px 80px #8a8a8a;
-    box-shadow:0px 5px 80px #373636;
-      text-shadow: none;  
-}
+  overflow-y: auto;
+  overflow-x: hidden;
 
-#rev--box{
-margin: 0.5em 0 0 2rem;
-height: 100%;
-width: 380px;
-min-width: 100%;
-margin-bottom: -6rem;
+  background: rgba(255, 255, 255, 0.54);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(51px);
+  -webkit-backdrop-filter: blur(51px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 
+.BrewerAccessReview--box {
+padding: 10px 16px;
+margin: 10px 0 0 60px;
+border:solid;
 
-.testimonials {
-padding: 120px 0 80px;
 }
-.testimonials .heading {
-margin-bottom: 60px;
+.BrewerAccessReview--container .heading {
+margin: 60px;
 }
-.testimonials .heading h2 {
-font-size: 30px;
+.BrewerAccessReview--container .heading h2 {
+font-size: 35px;
 font-weight: 700;
 color: #313e4b;
-margin-top: -5rem;
+margin:10px 0 0px -1px;
 }
-.testimonials .heading h2 span {
+.BrewerAccessReview--container .heading h2 span {
 font-weight: 300;
-color: #02a2c4;
+color: coral;
 margin: 0;
 
 }
 
-.testimonials .heading p {
+.BrewerAccessReview--container heading p {
 font-size: 16px;
 font-weight: 300;
 line-height: 26px;
@@ -56,41 +45,37 @@ margin: 0 0 1rem calc(100% + 1px);
 color: #727f8c;
 
 }
-.testimonials .box {
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-padding: 40px;
+
+.BrewerAccessReview--container  .box {
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.53);
+padding: 15px 0 0 15px;
 border-radius: 15px;
 /* margin-bottom: 40px; */
 transition: all 0.4s ease-in-out;
 }
-.testimonials .box h3 {
+
+
+.BrewerAccessReview--container .box h3 {
 font-size: 18px;
 font-weight: 500;
 color: #313e4b;
 }
-.testimonials .box:hover {
+.BrewerAccessReview--box:hover {
 transform: translateY(-10px);
+transition: all 0.4s ease-in-out;
 }
-.testimonials .box h3 span {
-font-size: 13px;
-font-weight: 400;
-color: #02a2c4;
-margin-left: 10px;
+
+
+.BrewerAccessReview--box{
+background: rgba(255, 255, 255, 0.93);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+text-shadow: none;
 }
-.testimonials .box p {
-font-size: 15px;
-font-weight: 300;
-line-height: 24px;
-margin: 0;
-color: #727f8c;
-margin-bottom: 20px;
-margin-top: 10px;
-padding-right: 20px;
-}
-.testimonials .box .image img {
-width: 200px;
-border-radius: 50%;
-margin: 0;
-padding: 0;
-display: inline-block;
+
+.BrewerAccessReview--box>h6{
+text-align: right;
 }
