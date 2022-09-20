@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import PropTypes from "prop-types";
 
 function Reviewer(props) {
@@ -148,7 +148,7 @@ function Reviewer(props) {
                     />
                  </div>
                         <textarea 
-                            rows="3" 
+                            rows="10" 
                             cols="20" 
                             value={fieldData[i].text}
                             onChange={(event)=>{handleFieldTextChange(event.target.value, i)}}                            
@@ -175,7 +175,7 @@ function Reviewer(props) {
                     </div>
                     <div>
                         <textarea 
-                            rows="4" 
+                            rows="40" 
                             cols="40" 
                             value={textReview} 
                             onChange={handleTextChange}
@@ -219,7 +219,7 @@ function StarRating(props){
     }
 
     return (
-        <div style={{width:'270px'}}>
+        <div style={{width:'10px'}}>
             <div className="star-rating">
                 {[1,2,3,4,5].map((n, i) => (
                 <Star
@@ -243,4 +243,4 @@ Reviewer.propTypes = {
     fieldData: PropTypes.array
 };
 
-export default Reviewer;
+export default Reviewer; */

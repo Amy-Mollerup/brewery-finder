@@ -1,6 +1,6 @@
 .BrewerAccessReview--container {
   background: rgb(243, 240, 240);
-  width: 760px;
+  width: 860px;
   height: 600px;
 
   overflow-y: auto;
@@ -12,6 +12,7 @@
   backdrop-filter: blur(51px);
   -webkit-backdrop-filter: blur(51px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  
 }
 
 
@@ -38,8 +39,7 @@ margin: 0;
 }
 
 .BrewerAccessReview--container heading p {
-font-size: 16px;
-font-weight: 300;
+font-size: 18px;
 line-height: 26px;
 margin: 0 0 1rem calc(100% + 1px);
 color: #727f8c;
@@ -79,3 +79,33 @@ text-shadow: none;
 .BrewerAccessReview--box>h6{
 text-align: right;
 }
+
+.review---card{
+  height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;          
+   
+    
+}
+
+.review---card::-webkit-scrollbar {
+  width: 10px;               /* width of the entire scrollbar */
+}
+
+.review---card::-webkit-scrollbar-track {
+  background: rgb(239, 238, 237);        /* color of the tracking area */
+}
+
+.review---card::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 166, 0, 0.183);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid rgba(255, 166, 0, 0.246);  /* creates padding around scroll thumb */
+}
+
+.thinLine---reviewer {
+   border-bottom:1px solid rgba(241, 155, 7, 0.385);
+    width: 250px;
+    padding: 4px;
+    margin: 12px;
+  }

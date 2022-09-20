@@ -74,8 +74,8 @@ export default function Reviewer(props) {
     }
     
     const Star = ({ selected = false, onClick = f => f }) => (
-        <div style={{margin:'0.1px'}}>
-            {selected ? (<FaStar onClick={onClick} style={{color: 'orange', cursor: "pointer", fontSize:'12px'}} />):
+        <div style={{margin:'4px'}}>
+            {selected ? (<FaStar onClick={onClick} style={{color: 'orange', cursor: "pointer", fontSize:'10px'}} />):
                 (<FaStar onClick={onClick} style={{color: 'grey', cursor:'pointer', fontSize:'8px'}} />)}
         </div>
       );
@@ -103,17 +103,29 @@ export default function Reviewer(props) {
                         <StarRating value={formData.rating} onChange={handleStarChange} name="review" />
                     </div>
 
-                    <div>
-                        <input
+                    <div className='textarea---container'>
+                  {/*       <input
                             type='textarea'
-                            rows="4" 
+                            rows="10" 
+                            cols="10" 
+                            value={FormData.review} 
+                            name="review"
+                            onChange={handleChange}
+                            placeholder="Write your review here..."
+                           >
+                        </input> */}
+
+                        <textarea
+                            type='textarea'
+                            rows="10" 
                             cols="40" 
                             value={FormData.review} 
                             name="review"
                             onChange={handleChange}
                             placeholder="Write your review here..."
                            >
-                        </input>
+                        </textarea>
+
                     </div>
                     <div>
                         <button> Submit

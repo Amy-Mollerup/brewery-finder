@@ -1,7 +1,21 @@
-
-
-
-
-bod{
-color: #ff7f50;
+/* 
+.star-rating{
+    display: inline-flex;
+    flex-direction: row;
+    flex-grow: 1;
+    
 }
+
+#stars--clickOrange{
+    color: orange;
+    cursor: pointer;
+    font-size: 9px;
+}
+
+#stars--clickGrey{
+    color: grey; 
+    cursor: pointer; 
+    font-size: 6px;
+
+} */
+

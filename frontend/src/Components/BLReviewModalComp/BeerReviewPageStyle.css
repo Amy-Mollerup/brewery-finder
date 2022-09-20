@@ -10,11 +10,10 @@
 
 }
 
-.beer-review {
-  background:#FFF;
+.beer-review {  
   margin:10% auto;
   display:block;
-  max-width:800px;
+  max-width:890px;
   height:600px;
   width:100%;
   overflow-y: auto;
@@ -22,10 +21,15 @@
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -o-border-radius: 15px;
-  -webkit-box-shadow:0px 5px 80px #d8d8d8;
-  -moz-box-shadow:0px 5px 80px #d8d8d8;
-  -o-box-shadow:0px 5px 80px #d8d8d8;
-  box-shadow:0px 5px 80px #d8d8d8;
+  
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.89);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+
   text-shadow: none;
   overflow-x: hidden; 
 }
@@ -95,26 +99,26 @@
   color:#fe6067;
 }
 
-.rrp{
+/* .rrp{
   text-decoration:line-through;
-}
+} */
 
 .beer-review h4{
   color: #000000;
-  font-size:17px;
+  font-size:18px;
   margin-bottom:15px;
   margin-left: -260px;
 }
 
 .beer-review p{
   font-family: 'News Cycle', Helvetica, Arial sans-serif;
-  font-size:16px;
-  color:#818080;
+  font-size:17px;
   line-height:27px;
-  font-weight:normal;
+  font-weight:bold;
   letter-spacing:1px;
   margin: 0 0 6px -0.6rem;
   text-align: left;
+  text-shadow: none;
 }
 
 #product-img img.beer{
@@ -133,18 +137,19 @@
   width:70%;
   margin-bottom:16px;
 }
-
+/* 
 #ratings{
   width:25%;
   text-align:right;
-}
+} */
+
 .beer-wrapper{
   float:left;
   display:block;
 }
+
 .clearfix{
   clear:both;
-  
 }
 
 .clearfix-auto{
@@ -153,28 +158,9 @@
   margin-left: 1rem;
 }
 
-#pagination{
-  position:absolute;
-  top:600px;
-  display:block;
-  width:100%;
-  text-align:center;
-}
 
-#pagination li{
-  display:inline-block;
-  background:#349a98;
-  width:13px;
-  height:13px;
-  margin:3px;
-  border-radius:50%;
-}
 
-#pagination li.selected{
-  background:#fff;
-}
-
-.beer-review .button{
+/* .beer-review .button{
   font-size:23px; 
   line-height:70px;
   height:70px;
@@ -198,22 +184,22 @@
   -o-box-shadow:5px 5px 30px #ed949e;
   box-shadow:5px 5px 30px #ed949e;
   display:inline-block;
-}
+} */
 
-.beer-review .button:hover{
+/* .beer-review .button:hover{
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff876a), to(#db3652));
   background: -webkit-linear-gradient(top, #ff876a, #db3652);
   background: -moz-linear-gradient(top, #ff876a, #db3652);
   background: -ms-linear-gradient(top, #ff876a, #db3652);
   background: -o-linear-gradient(top, #ff876a, #db3652);
-}
+} */
 
-.shopping-cart{
+/* .shopping-cart{
   margin-right:20px;
   width:32px;
   height:32px;
   vertical-align: middle;
-}
+} */
 
 #color1{
   margin-left: 28rem;
@@ -232,27 +218,27 @@
    color: #5079ff;
   
 }
-#color ul li{
+/* #color ul li{
   list-style-type:none;
-  display:inline-block;
+
 }
 
-#size{
+/* #size{
   max-width: 60px;
   width: 84%;
   min-height: 70px;
   position: relative;
   padding:0 8%;
   border-right:2px solid #ededed;
-}
-
+} */
+/* 
 #quantity{
   max-width:80px;
   width:84%;
   min-height:70px;
   position:relative;
   padding:0 8%;
-}
+} */
 
 #quantity select,
 #size select{
@@ -271,7 +257,7 @@
   font-size:21px;
 }
 
-.beer-wrapper span.arr:after {
+/* .beer-wrapper span.arr:after {
   content: '\2304';
   color:#bbbbbb;
   position: absolute;
@@ -279,7 +265,7 @@
   font-size:30px;
   line-height:30px;
 
-}
+} */
 
 #quantity span.arr:after{
   left:44%;
@@ -296,10 +282,6 @@
   justify-content: space-around;
 }
 
-#ratings{
-  float:right;
-  padding:1px 0;
-}
 
 .review-rating{
     display: inline-block;
@@ -373,8 +355,22 @@ content: "-";
   
 }
 
-.review-card{
+.review---card{
 text-align: left;
 margin-left: 40px;
+
+
+background: rgba(255, 158, 9, 0.02);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(11px);
+-webkit-backdrop-filter: blur(11px);
+border: 1px solid rgba(255, 158, 9, 0.29);
+
 }
 
+.review---card h5{
+color:rebeccapurple;
+text-align: center;
+font-weight: 500;
+}
