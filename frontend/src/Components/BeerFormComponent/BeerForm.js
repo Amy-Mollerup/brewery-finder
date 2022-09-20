@@ -16,13 +16,14 @@ export default function BeerForm(props) {
     beerABV: "",
     beerType: "",
     beerImage: "",
-    brewery: ""
+    breweryId: props.breweryId
   })
 
   const API_BASE = 'http://localhost:8081/beer/'
 
-  const [brewery, setBrewery] = React.useState('')
+  const [breweryName, setBrewery] = React.useState('')
 
+  console.log("beer id: " + props.beerId)
   useEffect(() => fetchBeerData(),
   getBrewery(), [])
 
@@ -36,7 +37,7 @@ export default function BeerForm(props) {
   }
 
   function getBrewery() {
-    const url = 'http://localhost:8081/breweries/' + formData.brewery
+    const url = 'http://localhost:8081/breweries/' + formData.breweryId
     axios.get(url, [])
       .then(resp => {
         setBrewery(resp.data.breweryName)
@@ -89,7 +90,7 @@ export default function BeerForm(props) {
               <Input
                 id="breweryName"
                 name="breweryName"
-                value={brewery}
+                value={breweryName}
                 type="text"
                 className="form-control-plaintext"
                 readOnly

@@ -49,7 +49,7 @@ const BreweryCardComponent = (props) => {
       <div className="overlay-BcHeader" />
       <div className="BrewBody">
         {/* onClick needs link to beerlist page - filter by Brewery ID */}
-        <div class="BrewBody-action-button u-flex-center"><Link to={`/brewerBeerList/${brewery.breweryId}`}>
+        <div className="BrewBody-action-button u-flex-center"><Link to={`/brewerBeerList/${brewery.breweryId}`}>
           <img
             src="https://img.icons8.com/ios/50/000000/beer-bottle-cap.png"
             alt=" More Beers"

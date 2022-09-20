@@ -54,7 +54,7 @@ class Main extends Component {
         const homePage = authorities == "ROLE_ADMIN" ? '/brewerDash' : '/welcome'
 
         const BreweryFormWithId = ({match}) => {
-            return loggedIn && isAdmin ? <BreweryForm breweryId={match.params.id}/> : <AuthorizationWarning/>
+            return loggedIn && isAdmin ? <BreweryForm breweryId={match.params.breweryId}/> : <AuthorizationWarning/>
         }
 
         const BrewerBeerListWithId = ({match}) => {
@@ -107,7 +107,6 @@ class Main extends Component {
                     <Route path='/beerList' component={loggedIn ? () => <UserBeerList /> : () => <AuthorizationWarning/>}/>
                     {/* For Brewers */}
                     <Route path='/brewerDash' component={loggedIn && isAdmin ? () => <BrewerDashboard user={this.props.user}/> : () => <AuthorizationWarning/>}/>
-                    <Route path='/beerForm/:id?' component={BeerFormWithId}/>
                     <Route path='/beerForm/brewery/:breweryId/:id?' component={BeerFormWithId}/>
                     <Route path='/brewerBeerList/:id?' component={BrewerBeerListWithId}/>
                     <Route path='/brewery/:id?' component={BreweryFormWithId}/>
