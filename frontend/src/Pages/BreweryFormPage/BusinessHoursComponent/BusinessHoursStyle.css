@@ -2,7 +2,7 @@
 margin-top: 4.1rem;
 margin-left: 1rem;
 color: white;
-background: #80808059;
+/* background: #80808059; */
 }
 
 .businessHour--section span{
@@ -12,8 +12,10 @@ background: #80808059;
     }
 
 .businessHour--list  h5{
-    text-align: justify;
-    font-size: 14px;
+    text-align: left;
+    font-size: 16px;
+    color:aliceblue;
+
 }
 
 .businessHour--list{
@@ -28,5 +30,4 @@ margin-top: 0.1rem;
     text-align: left ;
     font-size: 5rem;
     }
-    
     

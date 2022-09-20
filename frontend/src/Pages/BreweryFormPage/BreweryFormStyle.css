@@ -1,0 +1,23 @@
+.BB---ProfileInfo{
+padding: 15px;
+}
+
+
+.brewery-form .BB---submitBTN{
+      /*   margin: 1rem 0 0 9rem; */
+        height: 40px;
+        width: 140px;
+        background: coral;
+        border-radius: 15px;
+        left: 200px;
+        color: #fff;
+        margin-left: 30%;
+        margin-top:2rem ;
+      }
+
+
+      .brewery-form .BB---submitBTN:hover{
+          background: white;
+          color: coral;
+         
+        }
