@@ -12,6 +12,15 @@
     justify-content: center;
 }
 
+.beerInfo--container{
+
+background: rgba(52, 51, 51, 0.75);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9.2px);
+-webkit-backdrop-filter: blur(9.2px);
+border: 1px solid rgba(52, 51, 51, 0.7);
+    }
 
 textarea {
     height: 11em;
@@ -35,12 +44,12 @@ textarea {
  /*    border: solid; */
 }
 
-.beerInfo--container .form-control-plaintext{
+/* .beerInfo--container .form-control-plaintext{
     padding: 8px;
 color: #050404;
 font-weight: 200;
 background-color: rgba(240, 255, 255, 0.867);
-}
+} */
 
 .beerInfo--container button{
     margin: 1rem 1rem 1rem 8rem;
@@ -62,3 +71,24 @@ background-color: rgba(240, 255, 255, 0.867);
     width: 0px;
     padding: 0;
 }
+
+.beerInfo--container .form-control-beerInfo{
+    width: 80%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    color: #fff  ;
+    padding: 4px;
+    margin-left: 56px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.beerInfo--container .form-control-beerInfo#breweryName{
+background: transparent;
+color: #fff;
+}
+
+
+
