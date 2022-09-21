@@ -22,20 +22,33 @@ export default function BreweryForm(props) {
     image: "",
     description: "",
     active: false,
-    breweryHours: {},
   });
 
-  useEffect(() => fetchBreweryData(), [props.breweryId]);
+  const [businessHours, setBusinessHours] = useState({
+    0: [],
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: [],
+    6: []
+  })
+
+  useEffect(() => fetchBreweryData(), []);
 
   function fetchBreweryData() {
     if (props.breweryId || props.breweryId === 0) {
       axios.get(API_BASE + props.breweryId).then((response) => {
         setBrewerInformation(response.data);
+        setBusinessHours(prevHours => {
+          return {
+            ...prevHours,
+            ...response.data.breweryHours
+          }
+        })
       });
     }
   }
-
-  const [breweryHours, setBreweryHours] = useState(new Map());
 
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
@@ -48,34 +61,42 @@ export default function BreweryForm(props) {
   }
 
   const handleHoursChange = (event) => {
-    setBreweryHours(
-      (map) => new Map(map.set(event.target.id, event.target.value))
-    );
+
+      setBusinessHours(prevHours => {
+        let num = 0;
+        if(event.target.id - 7 >= 0) {
+          num = event.target.id - 7
+          return {
+            ...prevHours,
+            [num]: [prevHours[num][0], event.target.value]
+          }
+        } else {
+          num = event.target.id
+          return {
+            ...prevHours,
+            [num]: [event.target.value, prevHours[num][1]]
+          }
+        }
+      })
+      console.log(businessHours)
   };
 
-  function parseData() {
-    const newMap = new Map();
-    for (let i = 0; i < 7; i++) {
-      newMap.set(i, [
-        breweryHours.get(i + " start"),
-        breweryHours.get(i + " end"),
-      ]);
-    }
+  // function parseData() {
+  //   setBrewerInformation((prevInfo) => {
+  //     return {
+  //       ...prevInfo,
+  //       breweryHours: businessHours
+  //     };
+  //   });
+  //   console.log(brewerInformation.breweryHours[0])
+  // }
 
-    const obj = Object.fromEntries(newMap);
-    setBrewerInformation((prevInfo) => {
-      return {
-        ...prevInfo,
-        breweryHours: obj,
-      };
-    });
-  }
-
-  async function handleSubmit() {
-    await parseData();
+  async function handleSubmit(event) {
+    // await parseData();
     if (props.breweryId || props.breweryId === 0) {
+      event.preventDefault();
       axios
-        .put(API_BASE + props.breweryId, brewerInformation)
+        .put(API_BASE + props.breweryId, {brewerInformation, businessHours})
         .then((response) => {
           let status = response.status;
           if (status == 200) {
@@ -87,8 +108,9 @@ export default function BreweryForm(props) {
           alert("Could not save brewer information");
         });
     } else {
+      event.preventDefault();
       axios
-        .post(API_BASE, brewerInformation)
+        .post(API_BASE, {brewerInformation, businessHours})
         .then((response) => {
           let status = response.status;
           if (status == 200) {
@@ -147,7 +169,7 @@ export default function BreweryForm(props) {
           }}
         >
           <BusinessHours
-            breweryHours={breweryHours}
+            breweryHours={businessHours}
             handleHoursChange={handleHoursChange}
           />
           <FileUploader

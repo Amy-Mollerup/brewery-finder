@@ -21,7 +21,7 @@ public class JdbcBreweryDao implements BreweryDao{
     @Override
     public List<Brewery> findAll() {
         List<Brewery> breweries = new ArrayList<>();
-        String sql = "select * from breweries";
+        String sql = "select * from breweries order by id";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         results.beforeFirst();
         while(results.next()) {
@@ -102,7 +102,7 @@ public class JdbcBreweryDao implements BreweryDao{
 
     @Override
     public Map<Integer, String[]> getHours(long breweryId) {
-        String sql = "SELECT * FROM brewery_hours WHERE brewery_id = ?";
+        String sql = "SELECT * FROM brewery_hours WHERE brewery_id = ? ORDER BY day_id";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, breweryId);
         Map<Integer, String[]> hours = new HashMap<>();
         while(results.next()){
@@ -122,13 +122,13 @@ public class JdbcBreweryDao implements BreweryDao{
         String[] friday = {"",""};
         String[] saturday = {"",""};
         if(!newHours.isEmpty()) {
-            sunday = newHours.get(0);
-            monday = newHours.get(1);
-            tuesday = newHours.get(2);
-            wednesday = newHours.get(3);
-            thursday = newHours.get(4);
-            friday = newHours.get(5);
-            saturday = newHours.get(6);
+            sunday = newHours.getOrDefault(0, sunday);
+            monday = newHours.getOrDefault(0, monday);
+            tuesday = newHours.getOrDefault(0, tuesday);
+            wednesday = newHours.getOrDefault(0, wednesday);
+            thursday = newHours.getOrDefault(0, thursday);
+            friday = newHours.getOrDefault(0, friday);
+            saturday = newHours.getOrDefault(0, saturday);
         }
 
         String sql =

@@ -7,21 +7,24 @@ export default function BreweryInformationModal(props) {
   console.log(props.brewery.breweryHours)
 
 
-  const hoursMap = Object.entries(props.brewery.breweryHours)
-  console.log(hoursMap)
-  const breweryHours = hoursMap.map(entry => {
+  const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+  const breweryHours = daysOfWeek.map((value, index) => {
+    
     return (
       <Row>
         <Col>
-          Open: {entry[1][0]}
+          {value}
         </Col>
         <Col>
-          Close: {entry[1][1]}
+          Open: {props.brewery.breweryHours[index] ? props.brewery.breweryHours[index][0] : "Closed"}
+        </Col>
+        <Col>
+          Close: {props.brewery.breweryHours[index] ? props.brewery.breweryHours[index][1] : "Closed"}
         </Col>
       </Row>
     )
   })
-  
 
   const BreweryInformationModal = (
     <Card key={props.brewery.breweryId} className="brewerInfo---Container">

@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="Created persistence for Redux information, did more work on authentication and redirects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BLReviewModalComp/BeerReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BLReviewModalComp/BeerReviewPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/ReviewerComponent/Reviewer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/ReviewerComponent/Reviewer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BreweryCardComponent/BreweryCardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BreweryCardComponent/BreweryCardComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweryInformationModalComp/BreweryInformationModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweryInformationModalComp/BreweryInformationModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BrewerInformationComponent/BrewerInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BrewerInformationComponent/BrewerInformation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BreweryForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BreweryForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BusinessHoursComponent/BusinessHours.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BusinessHoursComponent/BusinessHours.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,19 +76,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="final-capstone" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="final-capstone" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -190,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663291264637</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Changed DB so Brewer and Admin accounts both have associated breweries">
+      <created>1663714853420</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1663714853420</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -217,6 +215,7 @@
     <MESSAGE value="added api and adjusted styling to UserBeerList.js and BreweriesListPage.js created card components to increase readability" />
     <MESSAGE value="fixed missing brewery list card" />
     <MESSAGE value="fixed database hopefully for the last time" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed database hopefully for the last time" />
+    <MESSAGE value="Changed DB so Brewer and Admin accounts both have associated breweries" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed DB so Brewer and Admin accounts both have associated breweries" />
   </component>
 </project>

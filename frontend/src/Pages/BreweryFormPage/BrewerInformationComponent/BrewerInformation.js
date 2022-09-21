@@ -145,7 +145,8 @@ export default function BrewerInformation(props) {
               id="exampleCheck" 
               name="active" 
               type="radio"
-              value={true}
+              value="true"
+              checked={props.active === "true" || props.active === true}
               onChange={props.handleChange}
               />
             <Label check for="exampleCheck">
@@ -158,7 +159,8 @@ export default function BrewerInformation(props) {
               id="exampleCheck"
               name="active"
               type="radio"
-              value={false}
+              checked={props.active === "false" || props.active === false}
+              value="false"
               onChange={props.handleChange}
             />
             <Label check for="exampleCheck">

@@ -12,6 +12,7 @@ const BreweryCardComponent = (props) => {
 
   function deleteBrewery() {
     props.deleteBrewery(props.brewery.breweryId)
+    window.location.reload()
   }
 
 
