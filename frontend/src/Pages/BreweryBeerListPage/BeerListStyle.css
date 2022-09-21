@@ -78,13 +78,18 @@
 }
 
 .main_content .card .card_header h2 {
-    font-size: 22px;
+    padding: 3px;
+    font-size: 20px;
+    font-weight: 700;
     color: #000;
+    text-align: center;
+    text-transform:uppercase;
 }
 
 .main_content .card .card_header p {
     font-size: 18px;
     text-align: center;
+    text-transform: uppercase;
     color: rgba(67, 64, 64, 0.934);
     margin: 8px 0;
     word-break: break-all;
@@ -97,17 +102,18 @@
     
    }
 
-.main_content .card .card_header .price {
-    font-size: 25px;
+.main_content .card .card_header .Beer-Type-Abv {
+    font-size: 22px;
     color: #fe8033;
+    font-weight: 800;
 }
 
-.main_content .card .card_header .price span {
+.main_content .card .card_header .Beer-Type-Abv span {
     font-size: 18px;
     display: inline-block;
     border-radius: 45%;
     vertical-align: top;
-    padding-left: 9px;
+    padding-left: 1.2px;
 }
 
 .main_content .card:hover {

@@ -15,7 +15,7 @@ export default function BeerLoverWelcomePage() {
           sm={{
         offset: 1,
         order: 0,
-        size: 2
+        size: 3
       }}
         >
           <BeerLoverComponent />
@@ -25,7 +25,7 @@ export default function BeerLoverWelcomePage() {
           md={{
         offset: 2,
         order: 1,
-        size: 5
+        size: 6
       }}
         >
           <Top4BeerLoverComponent />

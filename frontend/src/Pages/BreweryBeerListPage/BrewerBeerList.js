@@ -53,7 +53,7 @@ const BrewerBeerList = (props) => {
       <div className="card_header">
         <h2>{item.beerName}</h2>
         <p>{item.beerDescription}</p>
-        <p className="price">{item.beerType}<span>\ abv : {item.beerABV}%</span></p>
+        <p className="Beer-Type-Abv">{item.beerType}<span>\ abv : {item.beerABV}%</span></p>
 
         <Popup
           trigger={<div className="beer-btn">Edit</div>}
