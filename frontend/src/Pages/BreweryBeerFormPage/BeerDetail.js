@@ -15,7 +15,7 @@ export default function BeerDetails(props) {
           <BreweryProfileDetail />
         </Col>
       </Row>
-      <Row xs="3">
+      <Row className="Beeeer--FormStyle">
         <BeerForm breweryId={props.breweryId} beerId={props.beerId} preview={true} />
       </Row>
     </>

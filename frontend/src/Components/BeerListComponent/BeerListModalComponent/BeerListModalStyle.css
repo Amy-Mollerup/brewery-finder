@@ -47,6 +47,13 @@
     padding: 25px;
     transition: all 0.2s ease-in-out;
     object-fit: cover;
+    background-image: url("../../assets/Add-IMG.png");
+    background-size: 100%;
+    width: 280px;
+    height: 300px;
+    border-radius: 15px;
+
+background-repeat: no-repeat;
   }
   
   .beerList----img img {
@@ -251,4 +258,8 @@
   height: 50px;
   color: rgb(138, 132, 132);
   
+  }
+
+  .BeeerList---Preview h5{
+  color:coral;
   }

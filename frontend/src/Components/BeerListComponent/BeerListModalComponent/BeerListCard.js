@@ -14,7 +14,7 @@ const BeerListCard = (props) => {
             <Col>
               <div className="beerList----product">
                 <div className="beerList----img">
-                  <img src={props.beer.beerImage} alt="beerImage"  />
+                  <img src={props.beer.beerImage} alt=""  />
                 </div>
     
                 <div className="beerList----text">
