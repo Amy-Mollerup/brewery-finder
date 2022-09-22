@@ -32,9 +32,6 @@ const BrewerAccessReviewComp = (props) => {
             ))} 
             <br />
             <p>{item.review}</p>
-
-
-            <h6>- {item.id}</h6>
           </div>
         
       </Col>

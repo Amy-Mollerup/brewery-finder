@@ -4,7 +4,6 @@ import "./BreweryInformationStyle.css";
 import { Link } from "react-router-dom";
 
 export default function BreweryInformationModal(props) {
-  console.log(props.brewery.breweryHours)
 
 
   const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -83,15 +82,16 @@ export default function BreweryInformationModal(props) {
               <p className="highlighted">{props.brewery.description}</p>
             </div>
             <Col>
+            <Link to={`/beerList/${props.brewery.breweryId}`}>
               <button id="beerPath-link">
                 {/* do not delete span tags */}
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                   <Link to={`/beerList/${props.brewery.breweryId}`}> </Link>
-                Beer List
+                   Beer List
               </button>
+            </Link>
           
             </Col>
           </Col>

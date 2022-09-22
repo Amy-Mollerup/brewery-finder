@@ -40,7 +40,7 @@ alt="images"/> */}
 
         <div className="info">
           <p>
-            {props.brewery.breweryStreet} {props.brewery.breweryCity} <br />{" "}
+            {props.brewery.breweryStreet} {props.brewery.breweryCity}{", "} <br />
             {props.brewery.breweryState} {props.brewery.breweryPostCode}
           </p>
 

@@ -38,7 +38,7 @@ export default function BusinessHours(props) {
   })
 
   return (
-    <Form className="businessHour--section">
+    <FormGroup className="businessHour--section">
 
       <span> Business Hours </span>
 
@@ -46,6 +46,6 @@ export default function BusinessHours(props) {
         {businessHourElements}
       </div>
 
-    </Form>
+    </FormGroup>
   )
 }

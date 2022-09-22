@@ -4,7 +4,7 @@ import "./BrewerInformationStyle.css";
 
 export default function BrewerInformation(props) {
   return (
-    <Form className="breweryInfo--container">
+    <FormGroup className="breweryInfo--container">
       <Col>
         <img src={require("../../../Components/assets/cheers-DashPic.png")} alt="Avatar" />{" "}
         <span> Brewer Information </span>
@@ -169,6 +169,6 @@ export default function BrewerInformation(props) {
           </FormGroup>
           </Col>
       </Row>
-    </Form>
+    </FormGroup>
   );
 }

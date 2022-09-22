@@ -26,7 +26,7 @@ const BreweriesListComp = () => {
 
   return (
     <div className="main_content">
-        <h3>Brewer Names</h3>
+        <h3>Breweries</h3>
         {breweriesList}
     </div>
 )

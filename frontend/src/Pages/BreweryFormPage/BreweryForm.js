@@ -25,13 +25,13 @@ export default function BreweryForm(props) {
   });
 
   const [breweryHours, setBreweryHours] = useState({
-    0: [],
-    1: [],
-    2: [],
-    3: [],
-    4: [],
-    5: [],
-    6: []
+    0: ["",""],
+    1: ["",""],
+    2: ["",""],
+    3: ["",""],
+    4: ["",""],
+    5: ["",""],
+    6: ["",""]
   })
 
   useEffect(() => fetchBreweryData(), []);
@@ -63,23 +63,23 @@ export default function BreweryForm(props) {
   const handleHoursChange = (event) => {
 
       setBreweryHours(prevHours => {
-        let num = 0;
+      let num = 0;
         if(event.target.id - 7 >= 0) {
-          num = event.target.id - 7
+        num = event.target.id - 7
           return {
             ...prevHours,
             [num]: [prevHours[num][0], event.target.value]
           }
-        } else {
-          num = event.target.id
-          return {
+      } else {
+        num = event.target.id
+      return {
             ...prevHours,
             [num]: [event.target.value, prevHours[num][1]]
           }
-        }
-      })
+      }
+    })
       console.log(breweryHours)
-      console.log(brewerInformation.breweryHours)
+    console.log(brewerInformation.breweryHours)
   };
 
   // function parseData() {
@@ -98,8 +98,8 @@ export default function BreweryForm(props) {
     if (props.breweryId) {
       event.preventDefault();
       axios
-      .put(API_BASE + props.breweryId, brewerInformation)
-      .then((response) => {
+        .put(API_BASE + props.breweryId, {brewerInformation, breweryHours: {...breweryHours}})
+        .then((response) => {
           let status = response.status;
           if (status == 200) {
             alert("Saved!");
@@ -133,9 +133,9 @@ export default function BreweryForm(props) {
           xs={{
             offset: 0,
             size: 2,
-            
+
           }}
-          
+
         >
           <BreweryProfileDetail />
         </Col>
@@ -143,11 +143,11 @@ export default function BreweryForm(props) {
         <Col
           md={{
             offset:0,
-     
+
             size: 5,
           }}
 
-          
+
         >
           <BrewerInformation
             breweryName={brewerInformation.breweryName}
@@ -161,10 +161,10 @@ export default function BreweryForm(props) {
             active={brewerInformation.active}
             handleChange={handleChange}
           />
-          
+
         </Col>
 
-        <Col 
+        <Col
           md={{
             offset: 0,
             size: 4,
@@ -178,13 +178,13 @@ export default function BreweryForm(props) {
             image={brewerInformation.image}
             handleChange={handleChange}
           />
-       
+
         </Col>
 
         <Container    fluid>
-        <button className="BB---submitBTN" onClick={handleSubmit}>Submit</button>
+          <button className="BB---submitBTN" onClick={handleSubmit}>Submit</button>
         </Container>
-        
+
       </Row>
     </Form>
   );
