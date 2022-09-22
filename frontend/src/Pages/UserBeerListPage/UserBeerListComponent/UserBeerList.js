@@ -9,7 +9,7 @@ const UserBeerList = (props) => {
 
   /* console.log(product_card); */
   const [beers, setBeers] = React.useState([]);
-  console.log(props.breweryId)
+  // console.log(props.breweryId)
 
   function getBeerList() {
     if (props.breweryId) {

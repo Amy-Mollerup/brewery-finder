@@ -78,8 +78,8 @@ export default function BreweryForm(props) {
           }
       }
     })
-      console.log(breweryHours)
-    console.log(brewerInformation.breweryHours)
+      // console.log(breweryHours)
+    // console.log(brewerInformation.breweryHours)
   };
 
   // function parseData() {
@@ -98,7 +98,7 @@ export default function BreweryForm(props) {
     if (props.breweryId) {
       event.preventDefault();
       axios
-        .put(API_BASE + props.breweryId, {brewerInformation, breweryHours: {...breweryHours}})
+        .put(API_BASE + props.breweryId, brewerInformation)
         .then((response) => {
           let status = response.status;
           if (status == 200) {

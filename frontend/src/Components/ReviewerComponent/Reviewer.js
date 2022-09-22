@@ -25,12 +25,12 @@ export default function Reviewer(props) {
             [event.target.name]: event.target.value
           }
         })
-        console.log(props.beerId)
+        // console.log(props.beerId)
       }
 
       function handleSubmit(event){
         event.preventDefault()
-        console.log(formData)
+        // console.log(formData)
         axios.post('http://localhost:8081/beer/' + props.beerId + '/reviews', formData)
         .then(resp => {
           if (resp.status === 200) {
@@ -89,7 +89,7 @@ export default function Reviewer(props) {
             ...oldData,
             rating: newValue
         }))
-        console.log(formData)
+        // console.log(formData)
     }
 
 
