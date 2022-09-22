@@ -24,7 +24,7 @@ export default function BreweryForm(props) {
     active: false,
   });
 
-  const [businessHours, setBusinessHours] = useState({
+  const [breweryHours, setBreweryHours] = useState({
     0: [],
     1: [],
     2: [],
@@ -40,7 +40,7 @@ export default function BreweryForm(props) {
     if (props.breweryId || props.breweryId === 0) {
       axios.get(API_BASE + props.breweryId).then((response) => {
         setBrewerInformation(response.data);
-        setBusinessHours(prevHours => {
+        setBreweryHours(prevHours => {
           return {
             ...prevHours,
             ...response.data.breweryHours
@@ -62,7 +62,7 @@ export default function BreweryForm(props) {
 
   const handleHoursChange = (event) => {
 
-      setBusinessHours(prevHours => {
+      setBreweryHours(prevHours => {
         let num = 0;
         if(event.target.id - 7 >= 0) {
           num = event.target.id - 7
@@ -78,7 +78,8 @@ export default function BreweryForm(props) {
           }
         }
       })
-      console.log(businessHours)
+      console.log(breweryHours)
+      console.log(brewerInformation.breweryHours)
   };
 
   // function parseData() {
@@ -93,11 +94,12 @@ export default function BreweryForm(props) {
 
   async function handleSubmit(event) {
     // await parseData();
-    if (props.breweryId || props.breweryId === 0) {
+
+    if (props.breweryId) {
       event.preventDefault();
       axios
-        .put(API_BASE + props.breweryId, {brewerInformation, businessHours})
-        .then((response) => {
+      .put(API_BASE + props.breweryId, brewerInformation)
+      .then((response) => {
           let status = response.status;
           if (status == 200) {
             alert("Saved!");
@@ -110,7 +112,7 @@ export default function BreweryForm(props) {
     } else {
       event.preventDefault();
       axios
-        .post(API_BASE, {brewerInformation, businessHours})
+        .post(API_BASE, brewerInformation)
         .then((response) => {
           let status = response.status;
           if (status == 200) {
@@ -169,7 +171,7 @@ export default function BreweryForm(props) {
           }}
         >
           <BusinessHours
-            breweryHours={businessHours}
+            breweryHours={breweryHours}
             handleHoursChange={handleHoursChange}
           />
           <FileUploader
