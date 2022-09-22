@@ -6,16 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d82628eb-aeb4-47de-95f4-ccb19be67df9" name="Changes" comment="Created persistence for Redux information, did more work on authentication and redirects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BLReviewModalComp/BeerReviewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BLReviewModalComp/BeerReviewPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BLReviewModalComp/BeerReviewPageStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BLReviewModalComp/BeerReviewPageStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweriesListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweriesListPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweryInformationModalComp/BreweryInformationModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweryInformationModalComp/BreweryInformationModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweryListCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweriesListPage/BreweryListCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BrewerAccessReviewComponent/BrewerAccessReviewComp.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryBeerListPage/BrewerAccessReviewComponent/BrewerAccessReviewComp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BrewerInformationComponent/BrewerInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BrewerInformationComponent/BrewerInformation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BreweryForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BreweryForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BusinessHoursComponent/BusinessHours.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/BreweryFormPage/BusinessHoursComponent/BusinessHours.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BreweryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/controller/BreweryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/BreweryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/main/java/com/techelevator/dao/JdbcBreweryDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

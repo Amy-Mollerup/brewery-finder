@@ -22,9 +22,8 @@ export default function BreweryForm(props) {
     image: "",
     description: "",
     active: false,
-  });
-
-  const [breweryHours, setBreweryHours] = useState({
+    brewer: 1,//replace this 1 with user id
+    breweryHours: {
     0: ["",""],
     1: ["",""],
     2: ["",""],
@@ -32,20 +31,45 @@ export default function BreweryForm(props) {
     4: ["",""],
     5: ["",""],
     6: ["",""]
-  })
+    }
+  });
 
   useEffect(() => fetchBreweryData(), []);
 
   function fetchBreweryData() {
-    if (props.breweryId || props.breweryId === 0) {
+    if (props.breweryId) {
       axios.get(API_BASE + props.breweryId).then((response) => {
-        setBrewerInformation(response.data);
-        setBreweryHours(prevHours => {
-          return {
-            ...prevHours,
-            ...response.data.breweryHours
-          }
-        })
+        if(!(response.data.breweryHours[0] === undefined)){
+          console.log('theres data')
+          setBrewerInformation(response.data);
+        }
+        else{
+          console.log('womp womp')
+          setBrewerInformation({
+          breweryId: response.data.breweryId,
+          breweryName: response.data.breweryName,
+          breweryStreet: response.data.breweryStreet,
+          breweryCity: response.data.breweryCity,
+          breweryState: response.data.breweryState,
+          breweryPostCode: response.data.breweryPostCode,
+          phoneNumber: response.data.phoneNumber,
+          website: response.data.website,
+          image: response.data.image,
+          description: response.data.description,
+          active: response.data.active,
+          brewer: response.data.brewer,
+          breweryHours: {
+          0: ["",""],
+          1: ["",""],
+          2: ["",""],
+          3: ["",""],
+          4: ["",""],
+          5: ["",""],
+          6: ["",""]
+          }})
+      
+      }
+        
       });
     }
   }
@@ -62,19 +86,21 @@ export default function BreweryForm(props) {
 
   const handleHoursChange = (event) => {
 
-      setBreweryHours(prevHours => {
+      setBrewerInformation(prev => {
       let num = 0;
         if(event.target.id - 7 >= 0) {
         num = event.target.id - 7
           return {
-            ...prevHours,
-            [num]: [prevHours[num][0], event.target.value]
+            ...prev,
+            breweryHours:{...prev.breweryHours,
+              [num]: [prev.breweryHours[num][0], event.target.value]}
           }
       } else {
         num = event.target.id
       return {
-            ...prevHours,
-            [num]: [event.target.value, prevHours[num][1]]
+            ...prev,
+            breweryHours:{...prev.breweryHours,
+              [num]: [event.target.value, prev.breweryHours[num][1]]}
           }
       }
     })
@@ -97,6 +123,7 @@ export default function BreweryForm(props) {
 
     if (props.breweryId) {
       event.preventDefault();
+      console.log(JSON.stringify(brewerInformation))
       axios
         .put(API_BASE + props.breweryId, brewerInformation)
         .then((response) => {
@@ -171,7 +198,7 @@ export default function BreweryForm(props) {
           }}
         >
           <BusinessHours
-            breweryHours={breweryHours}
+            breweryHours={brewerInformation.breweryHours}
             handleHoursChange={handleHoursChange}
           />
           <FileUploader

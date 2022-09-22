@@ -79,7 +79,7 @@ export default function BrewerInformation(props) {
               name="breweryState"
               autoComplete="off"
               className="form-control--plaintext"
-              value={props.brewerState}
+              value={props.breweryState}
               onChange={props.handleChange}
               required
             />

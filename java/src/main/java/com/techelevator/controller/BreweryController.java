@@ -45,8 +45,8 @@ public class BreweryController {
     }
 
     @PutMapping(value = "/breweries/{id}")
-    public Boolean updateBrewery(@RequestBody Brewery brewery){
-        return breweryDao.updateBrewery(brewery);
+    public Boolean updateBrewery(@RequestBody Brewery brewery, @PathVariable long id){
+        return breweryDao.updateBrewery(brewery, id);
     }
 
     @PutMapping(value = "/breweries/{id}/hours")

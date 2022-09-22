@@ -79,7 +79,7 @@ public class JdbcBreweryDao implements BreweryDao{
         String sql = "insert into breweries (name, street, city, state, post_code, phone, website, brewer, image, description, active) values (?,?,?,?,?,?,?,?,?,?,?)";
         try {
             jdbcTemplate.update(sql, brewery.getBreweryName(),
-                    brewery.getBreweryState(), brewery.getBreweryCity(), brewery.getBreweryState(),
+                    brewery.getBreweryStreet(), brewery.getBreweryCity(), brewery.getBreweryState(),
                     brewery.getBreweryPostCode(), brewery.getPhoneNumber(), brewery.getWebsite(),
                     brewery.getBrewer(), brewery.getImage(), brewery.getDescription(), brewery.isActive());
             String newSql = "select * from breweries where name = ? AND street = ? AND city = ? AND state = ?";
@@ -123,12 +123,12 @@ public class JdbcBreweryDao implements BreweryDao{
         String[] saturday = {"",""};
         if(!newHours.isEmpty()) {
             sunday = newHours.getOrDefault(0, sunday);
-            monday = newHours.getOrDefault(0, monday);
-            tuesday = newHours.getOrDefault(0, tuesday);
-            wednesday = newHours.getOrDefault(0, wednesday);
-            thursday = newHours.getOrDefault(0, thursday);
-            friday = newHours.getOrDefault(0, friday);
-            saturday = newHours.getOrDefault(0, saturday);
+            monday = newHours.getOrDefault(1, monday);
+            tuesday = newHours.getOrDefault(2, tuesday);
+            wednesday = newHours.getOrDefault(3, wednesday);
+            thursday = newHours.getOrDefault(4, thursday);
+            friday = newHours.getOrDefault(5, friday);
+            saturday = newHours.getOrDefault(6, saturday);
         }
 
         String sql =
@@ -178,10 +178,10 @@ public class JdbcBreweryDao implements BreweryDao{
     }
 
     @Override
-    public boolean updateBrewery(Brewery brewery) {
+    public boolean updateBrewery(Brewery brewery, long id) {
 
         String sql = "UPDATE breweries " +
-                "SET name = ?, street = ?, city = ?, state = ?, post_code = ?, phone = ?, website = ?, brewer = ?, image = ?, description = ?, active = ?" +
+                "SET name = ?, street = ?, city = ?, state = ?, post_code = ?, phone = ?, website = ?, brewer = ?, image = ?, description = ?, active = ? " +
                 "WHERE id = ?";
         try {
             Long brewer = null;
@@ -190,8 +190,10 @@ public class JdbcBreweryDao implements BreweryDao{
             }
             jdbcTemplate.update(sql, brewery.getBreweryName(), brewery.getBreweryStreet(), brewery.getBreweryCity(),
                     brewery.getBreweryState(), brewery.getBreweryPostCode(),brewery.getPhoneNumber(), brewery.getWebsite(), brewery.getBrewer(), brewery.getImage(),
-                    brewery.getDescription(), brewery.isActive(), brewery.getBreweryId());
-            updateHours(brewery.getBreweryId(), brewery.getBreweryHours());
+                    brewery.getDescription(), brewery.isActive(), id);
+            if(!createHours(id, brewery.getBreweryHours())){
+                updateHours(id, brewery.getBreweryHours());
+            }
             return true;
         }
         catch (Exception e) {

@@ -25,7 +25,7 @@ public interface BreweryDao {
 
     boolean updateHours(Long breweryId, Map<Integer, String[]> newHours);
 
-    boolean updateBrewery(Brewery brewery);
+    boolean updateBrewery(Brewery brewery, long id);
 
     void delete(long id);
 
