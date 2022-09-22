@@ -55,6 +55,9 @@ export default function BeerForm(props) {
       axios.put(API_BASE + props.beerId, formData).then((resp) => {
         if (resp.status === 200) {
           alert("Beer edited!");
+          if(!props.preview) {
+            window.location.reload();
+          }
           props.navigate('/brewerBeerList/' + formData.brewery);
         }
       });
@@ -62,7 +65,9 @@ export default function BeerForm(props) {
       axios.post(API_BASE, formData).then((resp) => {
         if (resp.status === 200) {
           alert("Beer created!");
-          console.log(formData.brewery)
+          if(!props.preview) {
+            window.location.reload();
+          }
           props.navigate('/brewerBeerList/' + formData.brewery);
         }
       });
