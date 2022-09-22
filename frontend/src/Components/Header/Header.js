@@ -29,7 +29,7 @@ function Header(props) {
             {(props.authorities === "ROLE_USER" || props.authorities === "ROLE_ADMIN") &&
             <>
             <NavItem>
-              <NavLink href="/welcome">BL Welcome</NavLink>
+              <NavLink href="/welcome">Welcome Page</NavLink>
             </NavItem>
                         <NavItem>
               <NavLink href="/breweryList">Brewery List</NavLink>
@@ -45,13 +45,10 @@ function Header(props) {
               <NavLink href="/brewerDash">Brewer Dashboard</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/beerForm">Beer Form</NavLink>
-            </NavItem>
-            <NavItem>
               <NavLink href="/brewerBeerList">Brewer Beer List</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/brewery">Brewery</NavLink>
+              <NavLink href="/brewery">New Brewery</NavLink>
             </NavItem>
             </>
             }

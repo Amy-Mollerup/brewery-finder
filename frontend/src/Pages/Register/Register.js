@@ -62,7 +62,7 @@ class Register extends Component {
         })
       
       
-    } else if (!age >= 21 || !age) {
+    } else if (!age >= 21) {
         alert("You must be over 21 to enter this site");
     } else if (!nameLength) {
       alert("Your username must be at least 4 characters long")
