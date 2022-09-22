@@ -1,9 +1,7 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect } from "react";
 import { Form, FormGroup, Label, Input, Row, Col, Button } from "reactstrap";
 import "./BeerForm.css";
-import { useEffect } from "react";
-import FileUploader from "../FileUploaderComponent/FileUploader";
 import BeerListCard from "../BeerListComponent/BeerListModalComponent/BeerListCard";
 import { Link } from "react-router-dom";
 
@@ -22,23 +20,27 @@ export default function BeerForm(props) {
 
   const [breweryName, setBreweryName] = React.useState("");
 
-  useEffect(() => fetchBeerData(), []);
-  useEffect(() => getBrewery(), []);
-  
-  function fetchBeerData() {
-    if (props.beerId) {
-      axios.get(API_BASE + props.beerId).then((response) => {
-        setFormData(response.data);
-      });
+  useEffect(() => {
+    function fetchBeerData() {
+      if (props.beerId) {
+        axios.get(API_BASE + props.beerId).then((response) => {
+          setFormData(response.data);
+        });
+      }
     }
-  }
+    fetchBeerData()
+  }, [props.beerId]);
 
+  useEffect(() => {
+    
   function getBrewery() {
     const url = "http://localhost:8081/breweries/" + props.breweryId;
     axios.get(url).then((resp) => {
       setBreweryName(resp.data.breweryName);
     });
   }
+    getBrewery()
+  }, [props.breweryId]);
 
   function handleChange(event) {
     setFormData((prevFormData) => {
@@ -55,23 +57,19 @@ export default function BeerForm(props) {
       axios.put(API_BASE + props.beerId, formData).then((resp) => {
         if (resp.status === 200) {
           alert("Beer edited!");
-          if(!props.preview) {
-            window.location.reload();
-          }
-          props.navigate('/brewerBeerList/' + formData.brewery);
         }
       });
     } else {
       axios.post(API_BASE, formData).then((resp) => {
         if (resp.status === 200) {
           alert("Beer created!");
-          if(!props.preview) {
-            window.location.reload();
-          }
-          props.navigate('/brewerBeerList/' + formData.brewery);
         }
       });
     }
+    if(!props.preview) {
+      window.location.reload();
+    }
+    props.navigate('/brewerBeerList/' + formData.brewery);
   }
 
   return (

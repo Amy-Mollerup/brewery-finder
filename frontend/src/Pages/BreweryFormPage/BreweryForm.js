@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button, Form, Container } from "reactstrap";
+import { Row, Col, Form, Container } from "reactstrap";
 import "./BreweryFormStyle.css";
 
 import BusinessHours from "./BusinessHoursComponent/BusinessHours";
@@ -34,45 +34,48 @@ export default function BreweryForm(props) {
     }
   });
 
-  useEffect(() => fetchBreweryData(), []);
-
-  function fetchBreweryData() {
-    if (props.breweryId) {
-      axios.get(API_BASE + props.breweryId).then((response) => {
-        if(!(response.data.breweryHours[0] === undefined)){
-          console.log('theres data')
-          setBrewerInformation(response.data);
-        }
-        else{
-          console.log('womp womp')
-          setBrewerInformation({
-          breweryId: response.data.breweryId,
-          breweryName: response.data.breweryName,
-          breweryStreet: response.data.breweryStreet,
-          breweryCity: response.data.breweryCity,
-          breweryState: response.data.breweryState,
-          breweryPostCode: response.data.breweryPostCode,
-          phoneNumber: response.data.phoneNumber,
-          website: response.data.website,
-          image: response.data.image,
-          description: response.data.description,
-          active: response.data.active,
-          brewer: response.data.brewer,
-          breweryHours: {
-          0: ["",""],
-          1: ["",""],
-          2: ["",""],
-          3: ["",""],
-          4: ["",""],
-          5: ["",""],
-          6: ["",""]
-          }})
-      
-      }
+  useEffect(() => {
+    function fetchBreweryData() {
+      if (props.breweryId) {
+        axios.get(API_BASE + props.breweryId).then((response) => {
+          if(response.data.breweryHours[0] !== undefined){
+            console.log('theres data')
+            setBrewerInformation(response.data);
+          }
+          else{
+            console.log('womp womp')
+            setBrewerInformation({
+            breweryId: response.data.breweryId,
+            breweryName: response.data.breweryName,
+            breweryStreet: response.data.breweryStreet,
+            breweryCity: response.data.breweryCity,
+            breweryState: response.data.breweryState,
+            breweryPostCode: response.data.breweryPostCode,
+            phoneNumber: response.data.phoneNumber,
+            website: response.data.website,
+            image: response.data.image,
+            description: response.data.description,
+            active: response.data.active,
+            brewer: response.data.brewer,
+            breweryHours: {
+            0: ["",""],
+            1: ["",""],
+            2: ["",""],
+            3: ["",""],
+            4: ["",""],
+            5: ["",""],
+            6: ["",""]
+            }})
         
-      });
+        }
+          
+        });
+      }
     }
-  }
+    fetchBreweryData()
+  }, [props.breweryId]);
+
+  
 
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
@@ -85,6 +88,7 @@ export default function BreweryForm(props) {
   }
 
   const handleHoursChange = (event) => {
+    console.log(brewerInformation);
 
       setBrewerInformation(prev => {
       let num = 0;
@@ -104,22 +108,10 @@ export default function BreweryForm(props) {
           }
       }
     })
-      // console.log(breweryHours)
-    // console.log(brewerInformation.breweryHours)
   };
 
-  // function parseData() {
-  //   setBrewerInformation((prevInfo) => {
-  //     return {
-  //       ...prevInfo,
-  //       breweryHours: businessHours
-  //     };
-  //   });
-  //   console.log(brewerInformation.breweryHours[0])
-  // }
 
   async function handleSubmit(event) {
-    // await parseData();
 
     if (props.breweryId) {
       event.preventDefault();
@@ -128,7 +120,7 @@ export default function BreweryForm(props) {
         .put(API_BASE + props.breweryId, brewerInformation)
         .then((response) => {
           let status = response.status;
-          if (status == 200) {
+          if (status === 200) {
             alert("Saved!");
           }
           props.navigate('/brewerDash');
@@ -143,7 +135,7 @@ export default function BreweryForm(props) {
         .post(API_BASE, brewerInformation)
         .then((response) => {
           let status = response.status;
-          if (status == 200) {
+          if (status === 200) {
             alert("Saved!");
             props.navigate('/brewerDash');
           }

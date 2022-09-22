@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Button, ButtonGroup } from "reactstrap";
 import "./BreweryCardStyle.css";
-import BreweryForm from '../../Pages/BreweryFormPage/BreweryForm'
 import Popup from "reactjs-popup";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
 const BreweryCardComponent = (props) => {

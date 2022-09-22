@@ -2,7 +2,6 @@ import React from 'react'
 import {Row} from 'reactstrap'
 import BreweryCardComponent from './BreweryCardComponent'
 import "./BreweryCardStyle.css"
-import BreweryInfo from "./data/Breweries_list";
 import axios from "axios";
 import { useEffect } from 'react';
 
@@ -11,13 +10,6 @@ export default function BreweryCardDemoPage(props) {
   const [breweries, setBreweries] = React.useState([]);
 
   const API_BASE = 'http://localhost:8081'
-  
-  function getBreweryList() {
-    axios.get(`${API_BASE}/brewer/${props.brewer}`)
-    .then(resp => {
-      setBreweries(resp.data);
-    })
-  }
 
   function deleteBrewery(breweryId) {
     axios.delete(`${API_BASE}/breweries/${breweryId}`)
@@ -34,11 +26,19 @@ export default function BreweryCardDemoPage(props) {
     })
   }
 
-  useEffect(() => getBreweryList(), [])
+  useEffect(() => {
+    function getBreweryList() {
+      axios.get(`${API_BASE}/brewer/${props.brewer}`)
+      .then(resp => {
+        setBreweries(resp.data);
+      })
+    }
+    getBreweryList()
+  }, [props.brewer])
 
   const breweryList = breweries.length > 1 ? 
-        breweries.map((item) => <BreweryCardComponent brewery={item} deleteBrewery={deleteBrewery} navigate={props.navigate}/>) : 
-        <BreweryCardComponent brewery={breweries} deleteBrewery={deleteBrewery} navigate={props.navigate}/>
+        breweries.map((item) => <BreweryCardComponent brewery={item} deleteBrewery={deleteBrewery} navigate={props.navigate} key={item.breweryId}/>) : 
+        <BreweryCardComponent brewery={breweries} deleteBrewery={deleteBrewery} navigate={props.navigate} />
   return (
     
     <Row className="BreweryCard--DemoPage" sm="4" fluid="md">
