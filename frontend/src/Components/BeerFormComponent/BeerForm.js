@@ -22,8 +22,9 @@ export default function BeerForm(props) {
 
   const [breweryName, setBreweryName] = React.useState("");
 
-  useEffect(() => fetchBeerData(), getBrewery(), []);
-
+  useEffect(() => fetchBeerData(), []);
+  useEffect(() => getBrewery(), []);
+  
   function fetchBeerData() {
     if (props.beerId) {
       axios.get(API_BASE + props.beerId).then((response) => {
