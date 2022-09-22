@@ -43,6 +43,9 @@ class Main extends Component {
         this.props.deleteUser()
     }
 
+    navigate = (path) => {
+        this.props.history.push(path)
+    }
     
     render(){
         const loggedIn = this.props.token.token !== undefined
@@ -51,7 +54,7 @@ class Main extends Component {
         const homePage = authorities === "ROLE_ADMIN" || "ROLE_BREWER" ? '/brewerDash' : '/welcome'
 
         const BreweryFormWithId = ({match}) => {
-            return loggedIn && isAuthorized ? <BreweryForm breweryId={match.params.breweryId}/> : <AuthorizationWarning/>
+            return loggedIn && isAuthorized ? <BreweryForm breweryId={match.params.breweryId} brewer={this.props.user.id} navigate={this.navigate}/> : <AuthorizationWarning/>
         }
 
         const BrewerBeerListWithId = ({match}) => {
@@ -59,7 +62,7 @@ class Main extends Component {
         }
 
         const BeerFormWithId = ({match}) => {
-            return loggedIn && isAuthorized ? <BeerDetail breweryId={match.params.breweryId} beerId={match.params.beerId}/> : <AuthorizationWarning/>
+            return loggedIn && isAuthorized ? <BeerDetail breweryId={match.params.breweryId} beerId={match.params.beerId} navigate={this.navigate}/> : <AuthorizationWarning/>
         }
 
         const BeerListWithId = ({match}) => {
@@ -107,7 +110,7 @@ class Main extends Component {
                     <Route path='/breweryList' component={loggedIn ? () => <BreweriesListPage/> : () => <AuthorizationWarning/>}/>
                     <Route path='/beerList/:breweryId?' component={BeerListWithId}/>
                     {/* For Brewers */}
-                    <Route path='/brewerDash' component={loggedIn && isAuthorized ? () => <BrewerDashboard user={this.props.user}/> : () => <AuthorizationWarning/>}/>
+                    <Route path='/brewerDash' component={loggedIn && isAuthorized ? () => <BrewerDashboard user={this.props.user} navigate={this.navigate}/> : () => <AuthorizationWarning/>}/>
                     <Route path='/beerForm/brewery/:breweryId/:beerId?' component={BeerFormWithId}/>
                     <Route path='/brewerBeerList/:id?' component={BrewerBeerListWithId}/>
                     <Route path='/brewery/:breweryId?' component={BreweryFormWithId}/>

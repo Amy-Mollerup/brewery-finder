@@ -21,8 +21,8 @@ export default function BreweryForm(props) {
     website: "",
     image: "",
     description: "",
-    active: false,
-    brewer: 1,//replace this 1 with user id
+    active: true,
+    brewer: props.brewer,
     breweryHours: {
     0: ["",""],
     1: ["",""],
@@ -131,6 +131,7 @@ export default function BreweryForm(props) {
           if (status == 200) {
             alert("Saved!");
           }
+          props.navigate('/brewerDash');
         })
         .catch((err) => {
           console.error(err);
@@ -144,6 +145,7 @@ export default function BreweryForm(props) {
           let status = response.status;
           if (status == 200) {
             alert("Saved!");
+            props.navigate('/brewerDash');
           }
         })
         .catch((err) => {

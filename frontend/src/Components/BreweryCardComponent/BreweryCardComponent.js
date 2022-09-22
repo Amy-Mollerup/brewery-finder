@@ -15,8 +15,9 @@ const BreweryCardComponent = (props) => {
     window.location.reload()
   }
 
-
- 
+  function editNavigate() {
+    props.navigate(`/brewery/${brewery.breweryId}`)
+  }
 
   return (
   <>
@@ -74,8 +75,8 @@ const BreweryCardComponent = (props) => {
         
         <div className="BrewBody-more">
         <ButtonGroup >
-            <Button id="editDelete--button" size="sm">
-              <Link to={`/brewery/${brewery.breweryId}`}>Edit</Link>
+            <Button id="editDelete--button" size="sm" onClick={editNavigate}>
+              Edit
             </Button>
           <Popup
             trigger={<Button id="editDelete--button" size="sm"> Delete </Button>}

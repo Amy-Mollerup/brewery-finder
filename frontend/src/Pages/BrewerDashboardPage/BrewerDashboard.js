@@ -38,7 +38,7 @@ export default function BrewerDashboard(props) {
             size: 19,
           }}
         >
-         <BreweryCardDemoPage brewer={props.user.id} />
+         <BreweryCardDemoPage brewer={props.user.id} navigate={props.navigate} />
 
           
 

@@ -15,7 +15,7 @@ export default function BeerForm(props) {
     beerABV: "",
     beerType: "",
     beerImage: "",
-    breweryId: props.breweryId,
+    brewery: props.breweryId,
   });
 
   const API_BASE = "http://localhost:8081/beer/";
@@ -55,14 +55,15 @@ export default function BeerForm(props) {
       axios.put(API_BASE + props.beerId, formData).then((resp) => {
         if (resp.status === 200) {
           alert("Beer edited!");
-          window.location.reload();
+          props.navigate('/brewerBeerList/' + formData.brewery);
         }
       });
     } else {
       axios.post(API_BASE, formData).then((resp) => {
         if (resp.status === 200) {
           alert("Beer created!");
-          window.location.reload();
+          console.log(formData.brewery)
+          props.navigate('/brewerBeerList/' + formData.brewery);
         }
       });
     }

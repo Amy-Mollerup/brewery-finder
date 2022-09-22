@@ -37,8 +37,8 @@ export default function BreweryCardDemoPage(props) {
   useEffect(() => getBreweryList(), [])
 
   const breweryList = breweries.length > 1 ? 
-        breweries.map((item) => <BreweryCardComponent brewery={item} deleteBrewery={deleteBrewery}/>) : 
-        <BreweryCardComponent brewery={breweries} deleteBrewery={deleteBrewery}/>
+        breweries.map((item) => <BreweryCardComponent brewery={item} deleteBrewery={deleteBrewery} navigate={props.navigate}/>) : 
+        <BreweryCardComponent brewery={breweries} deleteBrewery={deleteBrewery} navigate={props.navigate}/>
   return (
     
     <Row className="BreweryCard--DemoPage" sm="4" fluid="md">
