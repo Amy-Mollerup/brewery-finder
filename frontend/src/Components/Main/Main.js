@@ -51,7 +51,7 @@ class Main extends Component {
         const loggedIn = this.props.token.token !== undefined
         const authorities = (JSON.stringify(this.props.user.authorities[0]?.name)?.replace(/['"]+/g, ''))
         const isAuthorized = authorities === "ROLE_ADMIN" || authorities === "ROLE_BREWER"
-        const homePage = authorities === "ROLE_ADMIN" || "ROLE_BREWER" ? '/brewerDash' : '/welcome'
+        const homePage = authorities === isAuthorized ? '/brewerDash' : '/welcome'
 
         const BreweryFormWithId = ({match}) => {
             return loggedIn && isAuthorized ? <BreweryForm breweryId={match.params.breweryId} brewer={this.props.user.id} navigate={this.navigate}/> : <AuthorizationWarning/>
